@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "pages#home"
   resources :favorites, only: :create
   resources :activities, only: %i[index show]
