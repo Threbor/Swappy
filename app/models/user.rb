@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :activities, through: :favorites
   has_many :groups, through: :group_users
 
-  # has_one_attached :photo
+  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
