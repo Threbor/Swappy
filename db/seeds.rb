@@ -85,7 +85,7 @@ user20 = User.create({first_name: "David", last_name: "Brosseau", email: "david.
   file = File.open(Rails.root.join("db/seeds/images/users/homme10.jpg"))
   user20.photo.attach(io: file, filename: "homme10.jpg", content_type: "image/jpeg")
 
-puts "Creating 9 activities ..."
+puts "Creating activities ..."
 
 restaurant1 = Activity.create!({
   user: user1,
@@ -96,11 +96,119 @@ restaurant1 = Activity.create!({
   address: "32 rue Leon Jamin, 44000, Nantes France",
   ages: "Pour petits et grands",
   category: :restaurant})
-
   file = File.open(Rails.root.join("db/seeds/images/activities/Lamandale.jpg"))
   restaurant1.photo.attach(io: file, filename: "Lamandale.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+restaurant2 = Activity.create!({
+  user: user2,
+  title: "La Passagère",
+  description: "Au cœur du Passage Pommeraye, l’un des plus beaux passages couverts du XIXème siècle,
+  La Passagère vous accueille toute la journée pour une pause gourmande sucrée ou salée.",
+  price: "10€ - 50€",
+  duration: 120,
+  address: "Passage Pommeraye 1 Rue du Puits d'Argent, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/passagere.jpg"))
+  restaurant2.photo.attach(io: file, filename: "passagere.jpg", content_type: "image/jpeg")
+
+restaurant3 = Activity.create!({
+  user: user3,
+  title: "Art'N Blum",
+  description: "Restaurant intimiste aux formules créatives régulièrement renouvelées, accompagnées de vin et composées de produits de saison.",
+  price: "14€ - 40€",
+  duration: 120,
+  address: "10 rue Léon Blum, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/artnblum.jpg"))
+  restaurant3.photo.attach(io: file, filename: "artnblum.jpg", content_type: "image/jpeg")
+
+restaurant4 = Activity.create!({
+  user: user4,
+  title: "Ch’ Ti Breizh Bar Brasserie",
+  description: "La brasserie 100% Ch’ti au cœur de Nantes Cuisine du nord maison Frites double cuisson cuites dans la graisse de bœuf Cocktails et Bières du Nord",
+  price: "10€ - 25€",
+  duration: 120,
+  address: "5 Rue de l'Hôtel de Ville, 44000 Nantes",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/chtibrasserie.png"))
+  restaurant4.photo.attach(io: file, filename: "chtibraésserie.png", content_type: "image/jpeg")
+
+restaurant5 = Activity.create!({
+  user: user5,
+  title: "Maison Bagarre",
+  description: "Maison Bagarre est un restaurant bistronomique qui tabasse les papilles... Avec des plats savoureux, cuisinés avec attention dans une ambiance sympa en plein centre-ville de Nantes.",
+  price: "13€ - 38€",
+  duration: 120,
+  address: "6 Rue Jean Jacques Rousseau, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/bagarre.jpg"))
+  restaurant5.photo.attach(io: file, filename: "bagarre.jpg", content_type: "image/jpeg")
+
+restaurant6 = Activity.create!({
+  user: user6,
+  title: "Le Bistro des Enfants Nantais",
+  description: "Pour le Bistro des Enfants Nantais, sa culture bistrotière sincère et presque touchante, ses menus très accessibles et copieux et la mécanique de précision de son service le midi, c’est immanquablement un oui.",
+  price: "15€ - 32€",
+  duration: 120,
+  address: "4 Rue Desaix, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/bistrodesenfants.jpg"))
+  restaurant6.photo.attach(io: file, filename: "bistrodesenfants.jpg", content_type: "image/jpeg")
+
+restaurant7 = Activity.create!({
+  user: user7,
+  title: "Nota Bene",
+  description: "Après plusieurs expériences culinaires, nous avons choisi de poser nos casseroles et nos tabliers de service au NOTA BENE, pour partager avec vous, notre passion pour les bons produits et notre service attentionné. Ici, nous privilégions l’éco-responsabilité et le fait maison à partir d’ingrédients de grande qualité issus de fournisseurs et de producteurs locaux. Nous sélectionnons également les meilleurs produits en provenance d’Italie.",
+  price: "6€ - 28€",
+  duration: 120,
+  address: "3 rue saint-Denis, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/notabene.jpg"))
+  restaurant7.photo.attach(io: file, filename: "notabene.jpg", content_type: "image/jpeg")
+
+restaurant8 = Activity.create!({
+  user: user8,
+  title: "Imagine",
+  description: "Situé dans le centre de Nantes, non loin du Musée Dobrée et du Théâtre Graslin, le restaurant Imagine vous invite à venir découvrir son univers. Une gastronomie gourmande & contemporaine dont la carte évolue constamment pour une expérience différente à chaque fois: déjeuner, dîner ou brunch, toutes les occasions sont bonnes pour s'y retrouver !",
+  price: "15€ - 42€",
+  duration: 120,
+  address: "55 rue Leon Blum, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/imagine.jpg"))
+  restaurant8.photo.attach(io: file, filename: "imagine.jpg", content_type: "image/jpeg")
+
+restaurant9 = Activity.create!({
+  user: user9,
+  title: "Restaurant ICI",
+  description: "Au coin de l’une des jolies rues du centre de Nantes, le restaurant ICI vous invite à vous laisser surprendre par une cuisine gastronomique moderne et créative qui fait la part belle aux produits locaux de qualité. Vous y découvrirez une carte qui évolue au gré des saisons, à savourer dans un cadre contemporain et convivial.",
+  price: "18€ - 55€",
+  duration: 120,
+  address: "1 rue Leon Blum, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/restauici.jpg"))
+  restaurant9.photo.attach(io: file, filename: "restauici.jpg", content_type: "image/jpeg")
+
+restaurant10 = Activity.create!({
+  user: user10,
+  title: "Le Lion et L'Agneau",
+  description: "Le Lion et L’Agneau propose une cuisine du terroir réinventée et créative, où soins et saveurs dominent. Nous nous efforçons de travailler en collaboration avec des producteurs locaux pour vous proposer des produits de qualité et de saison.",
+  price: "15€ - 25€",
+  duration: 120,
+  address: "40 rue Fourré, 44000, Nantes France",
+  ages: "Pour petits et grands",
+  category: :restaurant})
+  file = File.open(Rails.root.join("db/seeds/images/activities/le-lion-et-l-agneau.jpg"))
+  restaurant10.photo.attach(io: file, filename: "le-lion-et-l-agneau.jpg", content_type: "image/jpeg")
+
+# /////////////////////////
 
 culture1 = Activity.create!({
   user: user1,
@@ -115,7 +223,7 @@ culture1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/passagepom.jpg"))
   culture1.photo.attach(io: file, filename: "passagepom.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 sport1 = Activity.create!({
   user: user1,
@@ -130,7 +238,7 @@ sport1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/jardindesplantes.jpg"))
   sport1.photo.attach(io: file, filename: "jardindesplantes.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 cinema1 = Activity.create!({
   user: user1,
@@ -145,7 +253,7 @@ cinema1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/avatar.jpg"))
   cinema1.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 party1 = Activity.create!({
   user: user1,
@@ -160,7 +268,7 @@ party1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/lemolière.jpg"))
   party1.photo.attach(io: file, filename: "lemolière.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 family1 = Activity.create!({
   user: user1,
@@ -175,7 +283,7 @@ family1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/chateaudesducs.jpg"))
   family1.photo.attach(io: file, filename: "chateaudesducs.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 food1 = Activity.create!({
   user: user1,
@@ -189,7 +297,8 @@ food1 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
   food1.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
-/////////////////////////
+
+# /////////////////////////
 
 creativity1 = Activity.create!({
   user: user1,
@@ -203,7 +312,8 @@ creativity1 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/peinture.jpg"))
   creativity1.photo.attach(io: file, filename: "peinture.jpg", content_type: "image/jpeg")
-/////////////////////////
+
+# /////////////////////////
 
 book1 = Activity.create!({
   user: user1,

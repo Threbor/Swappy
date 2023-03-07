@@ -4,7 +4,7 @@ class Activity < ApplicationRecord
   has_many :favorites
   has_many :likers, through: :favorites, source: :users, class_name: "User"
 
-  has_many_attached :photo
+  has_one_attached :photo
 
   CATEGORIES = %w(
     restaurant
