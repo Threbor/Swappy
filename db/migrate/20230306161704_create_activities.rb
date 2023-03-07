@@ -9,8 +9,8 @@ class CreateActivities < ActiveRecord::Migration[7.0]
       t.string :ages
       t.string :photos
       t.string :category
-      t.string :status
-      t.boolean :done
+      t.string :status, default: :pending
+      t.boolean :done, default: false
       t.date :date
       t.references :user, null: false, foreign_key: true
 
