@@ -100,7 +100,7 @@ restaurant1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/Lamandale.jpg"))
   restaurant1.photo.attach(io: file, filename: "Lamandale.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 culture1 = Activity.create!({
   user: user1,
@@ -115,7 +115,7 @@ culture1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/passagepom.jpg"))
   culture1.photo.attach(io: file, filename: "passagepom.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 sport1 = Activity.create!({
   user: user1,
@@ -130,7 +130,7 @@ sport1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/jardindesplantes.jpg"))
   sport1.photo.attach(io: file, filename: "jardindesplantes.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 cinema1 = Activity.create!({
   user: user1,
@@ -145,7 +145,7 @@ cinema1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/avatar.jpg"))
   cinema1.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 party1 = Activity.create!({
   user: user1,
@@ -160,7 +160,7 @@ party1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/lemolière.jpg"))
   party1.photo.attach(io: file, filename: "lemolière.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 family1 = Activity.create!({
   user: user1,
@@ -175,7 +175,7 @@ family1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/chateaudesducs.jpg"))
   family1.photo.attach(io: file, filename: "chateaudesducs.jpg", content_type: "image/jpeg")
 
-/////////////////////////
+# /////////////////////////
 
 food1 = Activity.create!({
   user: user1,
@@ -189,7 +189,8 @@ food1 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
   food1.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
-/////////////////////////
+
+# /////////////////////////
 
 creativity1 = Activity.create!({
   user: user1,
@@ -203,7 +204,8 @@ creativity1 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/peinture.jpg"))
   creativity1.photo.attach(io: file, filename: "peinture.jpg", content_type: "image/jpeg")
-/////////////////////////
+
+# /////////////////////////
 
 book1 = Activity.create!({
   user: user1,
