@@ -1,1 +1,9 @@
-<p>index des activité avec les swipes et tout</p>
+<div data-controller = "swype-index">
+  <% @activities.each_with_index do |activity, index| %>
+    <div data-swype-index-target ="activity" class="d-none" id=<%="#{index + 1}"%>>
+      <%= link_to activity.title, activity_path(activity) %>
+      <%= cl_image_tag activity.photo.key %>
+      <button type="button" class="btn btn-primary" data-action ="click->swype-index#next"> next </button>
+    </div>
+  <% end %>
+</div>
