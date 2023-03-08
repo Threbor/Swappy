@@ -12,10 +12,10 @@ export default class extends Controller {
   }
 
   next (event) {
-    var nextId = nextId + 1
-    console.log(nextId);
-    const nextElement = document.getElementById(`${nextId}`)
-    console.log(nextElement);
+    // var nextId = nextId + 1;
+    // console.log(nextId);
+    // const nextElement = document.getElementById(`${nextId}`);
+    // console.log(nextElement);
     this.activityTarget.classList.add("d-none");
     this.activityTarget.nextElementSibling.classList.remove("d-none")
   }
