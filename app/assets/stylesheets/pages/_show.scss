@@ -1,0 +1,33 @@
+.card-activity > img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+
+.card-activity-title {
+  font-family: $headers-font;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.card-activity-info {
+  margin: 15px 20px 15px 20px;
+}
+
+
+.card-activity-icon {
+  margin: 10px 0px 15px 0px;
+  opacity: 0.8;
+}
+
+.card-activity-title-category {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.card-activity-description p{
+  font-size: 12px ;
+  text-align: justify;
+}
