@@ -3,8 +3,10 @@ class Activity < ApplicationRecord
   has_many :groups
   has_many :favorites
   has_many :likers, through: :favorites, source: :users, class_name: "User"
-
   has_one_attached :photo
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   CATEGORIES = %w(
     restaurant

@@ -1,7 +1,11 @@
 class ActivitiesController < ApplicationController
 
   def index
-    @activities = Activity.all
+    if params[:city].present?
+      @activities = Activity.near(params[:city], params[:km])
+    else
+      @activities = Activity.all
+    end
   end
 
   def show
