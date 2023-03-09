@@ -6,8 +6,8 @@ export default class extends Controller {
   static targets = ["activity"]
 
   connect() {
-    // console.log("controlleur connecté");
-    console.log(this.activityTarget.id);
+    console.log("controlleur connecté");
+    console.log(this.activityTarget);
     this.activityTarget.classList.remove("d-none");
   }
 
@@ -16,7 +16,7 @@ export default class extends Controller {
     // console.log(nextId);
     // const nextElement = document.getElementById(`${nextId}`);
     // console.log(nextElement);
-    this.activityTarget.classList.add("d-none");
-    this.activityTarget.nextElementSibling.classList.remove("d-none")
+    // this.activityTarget.classList.add("d-none");
+    // this.activityTarget.nextElementSibling.classList.remove("d-none")
   }
 }

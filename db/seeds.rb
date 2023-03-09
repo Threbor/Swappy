@@ -1,10 +1,14 @@
 puts "Cleaning DB ..."
 Favorite.destroy_all
+
 Group.destroy_all
+
+Reject.destroy_all
+
 Activity.destroy_all
 User.destroy_all
 puts "DB cleaned"
-puts "Creating 10 users ..."
+puts "Creating users ..."
 
 user1 = User.create({first_name: "Laeticia", last_name: "Guerin", email: "laeticia.guerin@gmail.com", password: "123456"})
   file = File.open(Rails.root.join("db/seeds/images/users/femme5.jpg"))
