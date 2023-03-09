@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get "localisation", to: "pages#localisation"
   resources :favorites, only: %i[index update create]
   post "reject", to: "rejects#create"
   resources :activities, only: %i[index show]

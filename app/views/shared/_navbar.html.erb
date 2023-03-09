@@ -1,0 +1,33 @@
+<div class="bottom-bar">
+  <%# //CHANGER LES ROUTES (LOCALISATION + GROUPS + PROFILE PAGE )  %>
+
+  <div class="nav-link <%='active' if current_page?(favorites_path)%>">
+    <%= link_to favorites_path do  %>
+      <i class="fa-solid fa-location-dot nav-link-icon"></i>
+    <% end %>
+  </div>
+
+  <div class="nav-link <%='active' if current_page?(activities_path)%>">
+    <%= link_to activities_path do  %>
+      <p class="s-swappy nav-link-icon">S</p>
+    <% end %>
+  </div>
+
+  <div class="nav-link <%='active' if current_page?(favorites_path)%>">
+    <%= link_to favorites_path do  %>
+      <i class="fa-solid fa-heart nav-link-icon"></i>
+    <% end %>
+  </div>
+
+  <div class="nav-link <%='active' if current_page?(favorites_path)%>">
+    <%= link_to favorites_path do  %>
+      <i class="fa-solid fa-comment-dots nav-link-icon"></i>
+    <% end %>
+  </div>
+
+  <div class="nav-link <%='active' if current_page?(favorites_path)%>">
+    <%= link_to favorites_path do  %>
+      <i class="fa-solid fa-circle-user nav-link-icon"></i>
+    <% end %>
+  </div>
+</div>
