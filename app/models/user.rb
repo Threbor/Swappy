@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favorites
+  has_many :rejects
   has_many :group_users
   has_many :messages
   has_many :activities, through: :favorites

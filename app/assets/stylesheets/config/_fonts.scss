@@ -1,9 +1,28 @@
-// Import Google fonts
+// from before
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+//lobster italique gras
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+//open sans serif
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+//lobster non italique non gras (lobster two)
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Open+Sans&display=swap');
 
-// Define fonts for body and headers
+
+
+// Fonts from before
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
+
+
+// OUR FONTS :
+
+$font-app-original: 'Lobster', 'cursive';
+$font-body: 'Open Sans', 'sans-serif';
+$font-app-second: 'Lobster Two', cursive;
+
+
+
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

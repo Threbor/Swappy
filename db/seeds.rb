@@ -1,8 +1,17 @@
 puts "Cleaning DB ..."
+
+Favorite.destroy_all
+
+GroupUser.destroy_all
+
+Group.destroy_all
+
+Reject.destroy_all
+
 Activity.destroy_all
 User.destroy_all
 puts "DB cleaned"
-puts "Creating 10 users ..."
+puts "Creating users ..."
 
 user1 = User.create({first_name: "Laeticia", last_name: "Guerin", email: "laeticia.guerin@gmail.com", password: "123456"})
   file = File.open(Rails.root.join("db/seeds/images/users/femme5.jpg"))
@@ -327,3 +336,97 @@ book1 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/lemondesansfin.jpg"))
   book1.photo.attach(io: file, filename: "lemondesansfin.jpg", content_type: "image/jpeg")
+
+
+  # /////////////////////////
+
+print "groups creation :"
+
+group1 = Group.new({name: "1er groupe"})
+
+  group1.activity = restaurant1
+
+  group1.save!
+
+print "."
+
+group2 = Group.new({name: "2eme groupe"})
+
+  group2.activity = restaurant2
+
+  group2.save!
+
+print "."
+
+group3 = Group.new({name: "3eme groupe"})
+
+  group3.activity = restaurant3
+
+  group3.save!
+
+print "."
+
+group4 = Group.new({name: "4eme groupe"})
+
+  group4.activity = restaurant4
+
+  group4.save!
+
+print "."
+
+group5 = Group.new({name: "5eme groupe"})
+
+  group5.activity = restaurant5
+
+  group5.save!
+
+print "."
+
+puts "groups created !"
+
+
+print "group_users creation :"
+
+group_user1 = GroupUser.new
+
+  group_user1.group = group1
+
+  group_user1.user = user1
+
+  group_user1.save!
+
+print "."
+
+group_user2 = GroupUser.new
+
+  group_user2.group = group2
+
+  group_user2.user = user2
+
+  group_user2.save!
+
+print "."
+
+group_user3 = GroupUser.new
+
+  group_user3.group = group3
+
+  group_user3.user = user3
+
+  group_user3.save!
+
+print "."
+
+puts "groups_user created !"
+
+
+
+favorite1 = Favorite.create!({
+  activity: restaurant1,
+  user: user1,
+})
+
+group1 = Group.create!({
+  name: "restaurant 3",
+  activity: restaurant3,
+})
