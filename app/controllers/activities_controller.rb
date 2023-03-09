@@ -3,12 +3,12 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show]
 
   def index
-    if params[:activity][:city].present?
+    if params[:activity].present? && params[:activity][:city].present?
       @activities = Activity.near(params[:activity][:city], params[:activity][:km])
     else
       @activities = Activity.all
     end
-    if params[:activity][:category].compact_blank.present?
+    if params[:activity].present? && params[:activity][:category].compact_blank.present?
       @activities = @activities.where(category: params[:activity][:category].compact_blank)
     end
 
