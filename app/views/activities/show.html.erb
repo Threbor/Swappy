@@ -1,3 +1,23 @@
-<%= @activity.title %>
-<%= @activity.description %>
-<%= cl_image_tag @activity.photo.key %>
+<div class="card-activity">
+  <%= cl_image_tag @activity.photo.key %>
+  <div class="card-activity-info">
+    <div class="card-activity-title">
+      <h1><strong><%= @activity.title %></strong></h1>
+      <div class="card-activity-title-category"><%= @activity.category.upcase %></div>
+    </div>
+    <div class="card-activity-icon">
+        <i class="fas fa-euro-sign"></i>&ensp;<%= @activity.price%>
+      <br>
+        <i class="far fa-clock"></i>&ensp;<%= (@activity.duration)/60 %> heures
+      <br>
+        <i class="fas fa-child"></i>&ensp;<%= @activity.ages%>
+      <br>
+      <i class="fa-solid fa-location-dot"></i>&ensp;<%= @activity.address%>
+    </div>
+    <div class="card-activity-description">
+      <p><%= @activity.description %></p>
+    </div>
+    <div class="card-activity-button">
+    </div>
+  </div>
+</div>

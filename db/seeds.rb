@@ -1,9 +1,15 @@
 puts "Cleaning DB ..."
+
+Favorite.destroy_all
+
 Group.destroy_all
+
+Reject.destroy_all
+
 Activity.destroy_all
 User.destroy_all
 puts "DB cleaned"
-puts "Creating 10 users ..."
+puts "Creating users ..."
 
 user1 = User.create({first_name: "Laeticia", last_name: "Guerin", email: "laeticia.guerin@gmail.com", password: "123456"})
   file = File.open(Rails.root.join("db/seeds/images/users/femme5.jpg"))
@@ -329,6 +335,7 @@ book1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/lemondesansfin.jpg"))
   book1.photo.attach(io: file, filename: "lemondesansfin.jpg", content_type: "image/jpeg")
 
+
   # /////////////////////////
 
 print "groups creation :"
@@ -409,3 +416,16 @@ group_user3 = GroupUser.new
 print "."
 
 puts "groups_user created !"
+
+
+
+favorite1 = Favorite.create!({
+  activity: restaurant1,
+  user: user1,
+})
+
+group1 = Group.create!({
+  name: "restaurant 3",
+  activity: restaurant3,
+})
+

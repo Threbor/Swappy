@@ -2,6 +2,7 @@ class Activity < ApplicationRecord
   belongs_to :user
   has_many :groups
   has_many :favorites
+  has_many :rejects
   has_many :likers, through: :favorites, source: :users, class_name: "User"
 
   has_one_attached :photo
