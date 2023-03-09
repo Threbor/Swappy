@@ -1,31 +1,12 @@
-<%= form_with url: activities_path(city: params[:city], km: params[:km]), method: :get, class: "d-flex" do %>
-  <%= text_field_tag :city,
-    params[:city],
+<%= simple_form_for :activity, url: activities_path, method: :get, class: "d-flex" do |f| %>
+  <%= f.input :city,
     class: "form-control",
     placeholder: "Enter your city"
   %>
-  <%= text_field_tag :km,
-    params[:km],
+  <%= f.input :km,
     class: "form-control",
     placeholder: "How far away?"
   %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Restaurants") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Sorties culturelles") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Sorties sportives") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Films & Séries") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "En soirée") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "En famille") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Activités culinaires") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Activités créatives") %>
-  <%= check_box_tag(:category)%>
-  <%= label_tag(:category, "Livres") %>
-  <%= submit_tag "Confirm my selection", class: "btn btn-primary" %>
+  <%= f.input :category, as: :check_boxes, collection: Activity::CATEGORIES %>
+  <%= f.submit "Confirm my selection", class: "btn btn-primary" %>
 <% end %>
