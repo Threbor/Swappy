@@ -1,0 +1,51 @@
+.card-product-groups {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.groups-img img {
+  height: 150px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.groups-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.groups-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.groups-description {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.infos-groups .infos-groups-2 {
+  display: flex;
+  font-size: xx-small;
+}
+.card-text-infos-groups {
+  padding: 10px;
+}
+
+.head-groups {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-top: 80px;
+}

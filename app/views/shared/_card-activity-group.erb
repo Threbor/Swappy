@@ -1,0 +1,29 @@
+<div class="card-product-infos-groups d-flex align-items-center">
+  <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
+
+  <div class="card-text-infos-groups">
+    <div class="right-element-groups">
+      <div class="groups-name">
+        <%= group.activity.title %>
+          <div class= "icon-groups">
+            <i class="fa-solid fa-user-group">5</i>
+          </div>
+      </div>
+    </div>
+
+    <div class="groups-price"><%= group.activity.price %></div>
+
+    <div class="infos-groups d-flex">
+      <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= group.activity.duration %>min</div>
+    </div>
+    <div class="infos-groups-2 align-items-end d-flex">
+      <div class="groups-address">
+        <i class="fa-solid fa-location-dot"></i>
+        <%= group.activity.address %>
+      </div>
+      <div class= "icon-deroulant">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+    </div>
+  </div>
+</div>
