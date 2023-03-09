@@ -5,3 +5,49 @@
   margin-top: 2px;
   letter-spacing: 0.5px;
 }
+
+.welcome-homepage {
+  font-family: $font-app-original;
+  color: $blue-pastel;
+  font-weight: 400;
+  font-size: 32px;
+
+}
+
+.container-home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 84px 0px;
+  gap: 79px;
+  position: absolute;
+  width: auto;
+  top: 110px;
+  left: 70px;
+  right: 70px;
+
+}
+
+.text-homepage {
+  font-size: 20px;
+  padding: 22px;
+  color: $blue-dark;
+  font-family: $font-body;
+
+}
+
+.homepage-button {
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: $blue-dark;
+  padding: 9px;
+  border-radius: 6px;
+  color: white;
+  padding-inline: 58px;
+
+
+}

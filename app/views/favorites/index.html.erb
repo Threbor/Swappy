@@ -5,8 +5,13 @@
 
 <div class="cards-favorites">
   <% @favorites.sort.reverse.each do |favorite| %>
-    <div class="card-product-favorites">
-        <%= render "shared/card-activity-fav", favorite: favorite %>
-      </div>
+    <div class="card-fav">
+      <%= link_to activities_path(@activity) do %>
+        <div class="card-product-favorites">
+            <%= render "shared/card-activity-fav", favorite: favorite %>
+          </div>
+      <% end %>
+    </div>
+
   <% end %>
 </div>
