@@ -1,3 +1,4 @@
+<h5>Find activities you likes around you and propose your friends to join you ! </h5>
 <%= simple_form_for :activity, url: activities_path, method: :get, class: "d-flex" do |f| %>
   <%= f.input :city,
     class: "form-control",
@@ -8,5 +9,5 @@
     placeholder: "How far away?"
   %>
   <%= f.input :category, as: :check_boxes, collection: Activity::CATEGORIES %>
-  <%= f.submit "Confirm my selection", class: "btn btn-primary" %>
+  <%= f.submit "Confirm my selection", class: "btn-confirm-selection" %>
 <% end %>
