@@ -1,10 +1,22 @@
 <div data-controller = "swype-index">
   <% @activities.each do |activity| %>
-    <div class="d-none" data-swype-index-target="activity">
-      <%= link_to activity.title, activity_path(activity) %>
-      <%= cl_image_tag activity.photo.key %>
-      <%= link_to "reject", reject_path( id: activity.id ), data: { turbo_method: :post} %>
-      <%= link_to "add to favorite", favorites_path( id: activity.id ), data: { turbo_method: :post} %>
+    <div class="d-none activity" data-swype-index-target="activity">
+      <div class="background-img-index d-flex align-items-end" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path activity.photo.key %>);">
+        <div>
+          <h3 class="activity-title"> <%= activity.title %> </h3>
+          <div class="index-infos">
+              <i class="far fa-clock"></i><%= (activity.duration)/60 %> hours
+              <i class="fas fa-euro-sign"></i><% activity.price %>
+              <i class="fa-solid fa-location-dot"></i><%= activity.address %>
+          </div>
+            <div class="button-index d-flex justify-content-between" >
+              <%= link_to activity_path(activity) do %><i class="fa-solid fa-arrow-up"></i><% end %>
+              <%= link_to reject_path( id: activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
+              <%= link_to favorites_path( id: activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-heart"></i><% end %>
+              <%= link_to groups_path do %><i class="fa-solid fa-users"></i><% end %>
+            </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

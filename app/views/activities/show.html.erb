@@ -1,5 +1,12 @@
+<div class="background-img-show d-flex align-items-end" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path @activity.photo.key %>);">
+  <div class="button-show d-flex justify-content-between" >
+    <%= link_to activities_path do %><i class="fa-solid fa-arrow-down"></i><% end %>
+    <%= link_to reject_path( id: @activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
+    <%= link_to favorites_path( id: @activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-heart"></i><% end %>
+    <%= link_to groups_path do %><i class="fa-solid fa-users"></i><% end %>
+  </div>
+</div>
 <div class="card-activity">
-  <%= cl_image_tag @activity.photo.key %>
   <div class="card-activity-info">
     <div class="card-activity-title">
       <h1><strong><%= @activity.title %></strong></h1>
@@ -8,7 +15,7 @@
     <div class="card-activity-icon">
         <i class="fas fa-euro-sign"></i>&ensp;<%= @activity.price%>
       <br>
-        <i class="far fa-clock"></i>&ensp;<%= (@activity.duration)/60 %> heures
+        <i class="far fa-clock"></i>&ensp;<%= (@activity.duration)/60 %> hours
       <br>
         <i class="fas fa-child"></i>&ensp;<%= @activity.ages%>
       <br>
