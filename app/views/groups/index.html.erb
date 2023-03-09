@@ -1,0 +1,10 @@
+<div class="head-groups">
+  <p><strong>Groups</strong></p>
+  <p>trier par : Date d'ajout</p>
+</div>
+
+<div class="card-product-groups">
+  <% @groups.each do |group| %>
+    <%= render "shared/card-activity-group", group: group %>
+  <% end %>
+</div>

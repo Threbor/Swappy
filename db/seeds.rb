@@ -1,6 +1,10 @@
 puts "Cleaning DB ..."
 Favorite.destroy_all
+
+Group.destroy_all
+
 Reject.destroy_all
+
 Activity.destroy_all
 User.destroy_all
 puts "DB cleaned"
@@ -329,3 +333,13 @@ book1 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/lemondesansfin.jpg"))
   book1.photo.attach(io: file, filename: "lemondesansfin.jpg", content_type: "image/jpeg")
+
+favorite1 = Favorite.create!({
+  activity: restaurant1,
+  user: user1,
+})
+
+group1 = Group.create!({
+  name: "restaurant 3",
+  activity: restaurant3,
+})
