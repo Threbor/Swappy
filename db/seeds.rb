@@ -2,6 +2,8 @@ puts "Cleaning DB ..."
 
 Favorite.destroy_all
 
+GroupUser.destroy_all
+
 Group.destroy_all
 
 Reject.destroy_all
@@ -428,4 +430,3 @@ group1 = Group.create!({
   name: "restaurant 3",
   activity: restaurant3,
 })
-
