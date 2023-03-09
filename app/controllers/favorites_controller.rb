@@ -7,7 +7,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new
 
     @favorite.activity_id = params[:activity_id]
-    @favorite.user_id = current_user.index
+    @favorite.user_id = current_user.id
     @favorite.save
     # TODO if save redirect to ...
 
