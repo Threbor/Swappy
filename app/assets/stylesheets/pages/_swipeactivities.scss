@@ -1,12 +1,36 @@
+a {
+  text-decoration: none;
+}
+
 .activity{
   height: 100vh;
-  padding: 65px 30px 75px;
+  padding-inline: 30px;
+}
+
+.activity-title {
+  color: white;
+  font-size: 30px;
+}
+
+.button-index {
+  margin-top: 20px;
 }
 
 .background-img-index {
- border-radius: 10px;
- height:100%;
- width: 100%;
- background-size: cover;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height:100%;
+  width: 100%;
+  background-size: cover;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+}
+
+.index-infos {
+  i{
+    color:white;
+    margin: 15px;
+  }
+  color:white;
+  font-size: 12px;
+  margin-top:20px;
 }

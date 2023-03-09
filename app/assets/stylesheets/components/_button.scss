@@ -1,1 +1,83 @@
 
+.fa-arrow-up {
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  background: #FFFFFF;
+  border-radius: 25px;
+}
+
+.fa-arrow-down {
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  background: #FFFFFF;
+  border-radius: 25px;
+}
+
+.fa-xmark {
+  color:black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  /* Red-light */
+  background: $red-light;
+  border-radius: 50px;
+}
+
+.fa-heart {
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  /* Green Blue Aqua */
+  background: $green-blue-aqua;
+  border-radius: 50px;
+}
+
+.fa-users {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  /* Blue Pastel */
+  background: $blue-pastel;
+  border-radius: 50px;
+}
