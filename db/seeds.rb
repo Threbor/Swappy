@@ -104,7 +104,7 @@ restaurant1 = Activity.create!({
   duration: 120,
   address: "32 rue Leon Jamin, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/Lamandale.jpg"))
   restaurant1.photo.attach(io: file, filename: "Lamandale.jpg", content_type: "image/jpeg")
 
@@ -117,7 +117,7 @@ restaurant2 = Activity.create!({
   duration: 120,
   address: "Passage Pommeraye 1 Rue du Puits d'Argent, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/passagere.jpg"))
   restaurant2.photo.attach(io: file, filename: "passagere.jpg", content_type: "image/jpeg")
 
@@ -129,7 +129,7 @@ restaurant3 = Activity.create!({
   duration: 120,
   address: "10 rue Léon Blum, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/artnblum.jpg"))
   restaurant3.photo.attach(io: file, filename: "artnblum.jpg", content_type: "image/jpeg")
 
@@ -141,7 +141,7 @@ restaurant4 = Activity.create!({
   duration: 120,
   address: "5 Rue de l'Hôtel de Ville, 44000 Nantes",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/chtibrasserie.png"))
   restaurant4.photo.attach(io: file, filename: "chtibraésserie.png", content_type: "image/jpeg")
 
@@ -153,7 +153,7 @@ restaurant5 = Activity.create!({
   duration: 120,
   address: "6 Rue Jean Jacques Rousseau, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/bagarre.jpg"))
   restaurant5.photo.attach(io: file, filename: "bagarre.jpg", content_type: "image/jpeg")
 
@@ -165,7 +165,7 @@ restaurant6 = Activity.create!({
   duration: 120,
   address: "4 Rue Desaix, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/bistrodesenfants.jpg"))
   restaurant6.photo.attach(io: file, filename: "bistrodesenfants.jpg", content_type: "image/jpeg")
 
@@ -177,7 +177,7 @@ restaurant7 = Activity.create!({
   duration: 120,
   address: "3 rue saint-Denis, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/notabene.jpg"))
   restaurant7.photo.attach(io: file, filename: "notabene.jpg", content_type: "image/jpeg")
 
@@ -189,7 +189,7 @@ restaurant8 = Activity.create!({
   duration: 120,
   address: "55 rue Leon Blum, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/imagine.jpg"))
   restaurant8.photo.attach(io: file, filename: "imagine.jpg", content_type: "image/jpeg")
 
@@ -201,7 +201,7 @@ restaurant9 = Activity.create!({
   duration: 120,
   address: "1 rue Leon Blum, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/restauici.jpg"))
   restaurant9.photo.attach(io: file, filename: "restauici.jpg", content_type: "image/jpeg")
 
@@ -213,7 +213,7 @@ restaurant10 = Activity.create!({
   duration: 120,
   address: "40 rue Fourré, 44000, Nantes France",
   ages: "Pour petits et grands",
-  category: :restaurant})
+  category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/le-lion-et-l-agneau.jpg"))
   restaurant10.photo.attach(io: file, filename: "le-lion-et-l-agneau.jpg", content_type: "image/jpeg")
 
@@ -227,7 +227,7 @@ culture1 = Activity.create!({
   duration: 30,
   address: "20 Pass. Pommeraye, 44000 Nantes",
   ages: "Pour petits et grands",
-  category: :culture})
+  category: :Culture})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/passagepom.jpg"))
   culture1.photo.attach(io: file, filename: "passagepom.jpg", content_type: "image/jpeg")
@@ -242,7 +242,7 @@ sport1 = Activity.create!({
   duration: 120,
   address: "Rue Stanislas Baudry, 44000 Nantes",
   ages: "Pour petits et grands",
-  category: :sport})
+  category: :Sport})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/jardindesplantes.jpg"))
   sport1.photo.attach(io: file, filename: "jardindesplantes.jpg", content_type: "image/jpeg")
@@ -257,7 +257,7 @@ cinema1 = Activity.create!({
   duration: 162,
   address: "Depuis votre télé en VOD",
   ages: "12 ans et plus",
-  category: :cinema})
+  category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/avatar.jpg"))
   cinema1.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
@@ -272,7 +272,7 @@ party1 = Activity.create!({
   duration: 120,
   address: "2 Rue Racine, 44000 Nantes",
   ages: "Pour petits et grands",
-  category: :party})
+  category: :Party})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/lemolière.jpg"))
   party1.photo.attach(io: file, filename: "lemolière.jpg", content_type: "image/jpeg")
@@ -287,7 +287,7 @@ family1 = Activity.create!({
   duration: 120,
   address: "4 Pl. Marc Elder, 44000 Nantes",
   ages: "Pour petits et grands",
-  category: :family})
+  category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/chateaudesducs.jpg"))
   family1.photo.attach(io: file, filename: "chateaudesducs.jpg", content_type: "image/jpeg")
@@ -302,7 +302,7 @@ food1 = Activity.create!({
   duration: 160,
   address: "4 Rue de Lorraine, 44240 La Chapelle-sur-Erdre",
   ages: "16 ans - 99 ans",
-  category: :food})
+  category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
   food1.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
@@ -317,7 +317,7 @@ creativity1 = Activity.create!({
   duration: 120,
   address: "Chez vous",
   ages: "pour petits et grands",
-  category: :creativity})
+  category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/peinture.jpg"))
   creativity1.photo.attach(io: file, filename: "peinture.jpg", content_type: "image/jpeg")
@@ -332,7 +332,7 @@ book1 = Activity.create!({
   duration: 160,
   address: "Chez vous ou à la bibliothèque",
   ages: "+ de 15 ans",
-  category: :book})
+  category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/lemondesansfin.jpg"))
   book1.photo.attach(io: file, filename: "lemondesansfin.jpg", content_type: "image/jpeg")
