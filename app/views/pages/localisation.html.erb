@@ -1,13 +1,27 @@
-<h5>Find activities you likes around you and propose your friends to join you ! </h5>
-<%= simple_form_for :activity, url: activities_path, method: :get, class: "d-flex" do |f| %>
-  <%= f.input :city,
-    class: "form-control",
-    placeholder: "Enter your city"
-  %>
-  <%= f.input :km,
-    class: "form-control",
-    placeholder: "How far away?"
-  %>
-  <%= f.input :category, as: :check_boxes, collection: Activity::CATEGORIES %>
-  <%= f.submit "Confirm my selection", class: "btn-confirm-selection" %>
-<% end %>
+<div class="localisation-components">
+  <h5 class="localisation-text-title">Find activities you likes around you and propose your friends to join you ! </h5>
+  <%= simple_form_for :activity, url: activities_path, method: :get, class: "d-flex" do |f| %>
+    <div class="localisation-city-km>
+      <div class="localisation-city">
+        <%= f.input :city,
+          class: "form-control",
+          placeholder: "Enter your city here"
+        %>
+      <div class="localisation-km">
+        <%= f.input :km,
+          class: "form-control",
+          placeholder: "How far away ?"
+        %>
+      </div>
+    </div>
+      <%= f.input :category,
+        as: :check_boxes,
+        input_html: { class: "tag-selector" },
+        item_wrapper_class: 'tag-item',
+        legend_tag: false,
+        collection: Activity::CATEGORIES%>
+    <div class="button-confirm-selection">
+    <%= f.submit "Confirm my selection", class: "btn-blue-dark" %>
+    </div>
+  <% end %>
+</div>

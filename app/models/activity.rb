@@ -10,15 +10,15 @@ class Activity < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   CATEGORIES = %w(
-    restaurant
-    culture
-    sport
-    cinema
-    party
-    family
-    food
-    creativity
-    book
+    Restaurant
+    Culture
+    Sport
+    Cinema
+    Party
+    Family
+    Food
+    Creativity
+    Book
   ).freeze
 
   validates :title, presence: true
