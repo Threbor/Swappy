@@ -7,8 +7,5 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import LocalisationController from "./localisation_controller"
-application.register("localisation", LocalisationController)
-
 import SwypeIndexController from "./swype_index_controller"
 application.register("swype-index", SwypeIndexController)
