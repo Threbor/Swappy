@@ -1,23 +1,12 @@
-<div>
-<%# TO DO : PUT LOGO %>
-</div>
-
 <div class="head-favorites">
- <p><strong>Favoris</strong></p>
+  <p><strong>Favoris</strong></p>
   <p>trier par : Date d'ajout</p>
 </div>
 
-<div class="card-product-favorites">
-  <div class="card-product-infos-favorites d-flex">
-    <% @favorites.each do |favorite| %>
-      <%= render "shared/card-activity-fav", favorite: favorite %>
-      <% end %>
-  </div>
-</div>
-
-<%# TO-DO -- MENU DEROULANT %>
-<div class="icone-deroulant">
-  <i class="fa-solid fa-heart"></i>
-  <i class="fa-solid fa-thumbs-up"></i>
-  <i class="fa-solid fa-user-group"></i>
+<div class="cards-favorites">
+  <% @favorites.sort.reverse.each do |favorite| %>
+    <div class="card-product-favorites">
+        <%= render "shared/card-activity-fav", favorite: favorite %>
+      </div>
+  <% end %>
 </div>

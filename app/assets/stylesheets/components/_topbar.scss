@@ -1,0 +1,24 @@
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 58px;
+  width: 100%;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.08);
+  background-color: white;
+  a{
+  text-decoration: none;
+  color: $blue-dark;
+  }
+}
+
+
+.top-bar-logo {
+  font-family: $font-app-original;
+  font-size: 33px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 2px;
+}
