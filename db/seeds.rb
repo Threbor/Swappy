@@ -419,14 +419,12 @@ print "."
 
 puts "groups_user created !"
 
-
-
 favorite1 = Favorite.create!({
   activity: restaurant1,
-  user: user1,
+  user: user1
 })
 
 group1 = Group.create!({
   name: "restaurant 3",
-  activity: restaurant3,
+  activity: restaurant3
 })

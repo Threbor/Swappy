@@ -4,6 +4,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 42px;
 }
 
 .groups-img img {
@@ -23,6 +24,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  font-size: 16px;
 }
 
 .groups-description {
@@ -35,10 +37,9 @@
 
 .infos-groups .infos-groups-2 {
   display: flex;
-  font-size: xx-small;
 }
 .card-text-infos-groups {
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .head-groups {
@@ -48,4 +49,17 @@
   align-items: flex-end;
   position: relative;
   margin-top: 80px;
+}
+
+.groups-duration {
+  font-size: 10px;
+  margin-top:20px;
+  color: $blue-pastel-fade;
+}
+.groups-address {
+  font-size: 10px;
+  color: $blue-pastel-fade;
+}
+.groups-price {
+  font-size: 15px;
 }

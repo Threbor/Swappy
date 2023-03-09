@@ -1,9 +1,3 @@
-.card-activity > img {
-  width: 100%;
-  height: 310px;
-  object-fit: cover;
-}
-
 .card-activity-title {
   font-family: $headers-font;
   width: 100%;
@@ -12,10 +6,14 @@
   align-items: end;
 }
 
+.button-show {
+  margin: 0px 60px 20px 60px;
+  width:100%;
+}
+
 .card-activity-info {
   margin: 15px 20px 15px 20px;
 }
-
 
 .card-activity-icon {
   margin: 10px 0px 15px 0px;
@@ -30,4 +28,10 @@
 .card-activity-description p{
   font-size: 12px ;
   text-align: justify;
+}
+
+.background-img-show {
+  height:310px;
+  width: 100%;
+  background-size: cover;
 }
