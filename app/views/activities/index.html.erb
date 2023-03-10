@@ -12,7 +12,7 @@
             <div class="button-index d-flex justify-content-between" >
               <%= link_to activity_path(activity) do %><i class="fa-solid fa-arrow-up"></i><% end %>
               <%= link_to reject_path( id: activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
-              <%= link_to favorites_path( id: activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-heart"></i><% end %>
+              <%= link_to favorites_path( id: activity.id ), data: { turbo_method: :post} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
               <%= link_to groups_path do %><i class="fa-solid fa-users"></i><% end %>
             </div>
         </div>
