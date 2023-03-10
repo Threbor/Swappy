@@ -18,12 +18,21 @@
     overflow: scroll;
     padding: 1rem;
 
+    p {
+      width: 80%;
+    }
+
+    i {
+      color: $blue-pastel;
+    }
 
     .current-user {
       float: right;
       display: flex;
       flex-direction: column;
       align-items: end;
+      text-align: right;
+
 
     }
 
@@ -47,5 +56,11 @@
   .message-box {
 
     padding-bottom: 65px;
+  }
+
+  .btn-send-message {
+    background-color: $blue-dark;
+    border: 0px;
+    border-radius: 10px;
   }
 }
