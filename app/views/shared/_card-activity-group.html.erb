@@ -1,13 +1,15 @@
-<div class="card-product-infos-groups d-flex align-items-center">
-  <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
-
+<div class="card-product-infos-groups d-flex justify-content-center">
+  <%= link_to activity_path(group.activity) do%>
+    <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
+  <% end %>
   <div class="card-text-infos-groups">
+  <%= link_to group_path(group) do %>
     <div class="right-element-groups">
       <div class="groups-name">
         <%= group.activity.title %>
-          <div class= "icon-groups">
-            <i class="fa-solid fa-user-group">5</i>
-          </div>
+        <div class= "icon-groups">
+          <i class="fa-solid fa-user-group"><%= group.users.count %></i>
+        </div>
       </div>
     </div>
 
@@ -25,5 +27,6 @@
         <i class="fa-solid fa-ellipsis"></i>
       </div>
     </div>
+  <% end %>
   </div>
 </div>
