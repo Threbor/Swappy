@@ -25,8 +25,17 @@
         <i class="fa-solid fa-location-dot"></i>
         <%= if group.activity.address.size > 35 then "#{group.activity.address[0..35]...}" else group.activity.address end %>
       </div>
-      <div class= "icon-deroulant">
-        <i class="fa-solid fa-ellipsis"></i>
+
+      <input type="checkbox" id="menu">
+      <label for="menu" class="icon">
+          <i class="icon-link fa-solid fa-ellipsis"></i>
+      </label>
+
+      <div class="menu-link">
+          <i class="icon-link fa-solid fa-ellipsis"></i>
+          <i class="icon-link fa-solid fa-users"></i>
+          <i class="icon-link fa-regular fa-calendar-check"></i>
+          <i class="icon-link fa-solid fa-heart"></i>
       </div>
     </div>
   </div>
