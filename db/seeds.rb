@@ -11,7 +11,9 @@ Group.destroy_all
 Reject.destroy_all
 
 Activity.destroy_all
+
 User.destroy_all
+
 puts "DB cleaned"
 puts "Creating users ..."
 
@@ -101,11 +103,11 @@ puts "Creating activities ..."
 restaurant1 = Activity.create!({
   user: user1,
   title: "La Mandale",
-  description: "C'est le Goût du Partage qui a donné naissance à ce lieu de découverte... La MANDALE Restaurant, composé de Léo & Maximilien, vous propose une cuisine francaise moderne, locale & de saison aux douces notes asiatiques en accord avec nos produits de région! À la carte, vous retrouverez une sélection de bières, vins et boissons sans alcool issus de la culture biologique!",
-  price: "13€ - 32€",
+  description: "It is the Taste of Sharing that gave birth to this place of discovery... La MANDALE Restaurant, composed of Léo & Maximilien, offers you a modern, local & seasonal French cuisine with soft Asian notes in harmony with our regional products! On the menu, you will find a selection of organic beers, wines and soft drinks!",
+  price: 20,
   duration: 120,
-  address: "32 rue Leon Jamin, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "32 rue Leon Jamin, 44000, Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/Lamandale.jpg"))
   restaurant1.photo.attach(io: file, filename: "Lamandale.jpg", content_type: "image/jpeg")
@@ -113,12 +115,11 @@ restaurant1 = Activity.create!({
 restaurant2 = Activity.create!({
   user: user2,
   title: "La Passagère",
-  description: "Au cœur du Passage Pommeraye, l’un des plus beaux passages couverts du XIXème siècle,
-  La Passagère vous accueille toute la journée pour une pause gourmande sucrée ou salée.",
-  price: "10€ - 50€",
+  description: "In the heart of the Passage Pommeraye, one of the most beautiful covered passages of the 19th century, La Passagère welcomes you all day long for a sweet or savoury break.",
+  price: 30,
   duration: 120,
   address: "Passage Pommeraye 1 Rue du Puits d'Argent, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/passagere.jpg"))
   restaurant2.photo.attach(io: file, filename: "passagere.jpg", content_type: "image/jpeg")
@@ -126,11 +127,11 @@ restaurant2 = Activity.create!({
 restaurant3 = Activity.create!({
   user: user3,
   title: "Art'N Blum",
-  description: "Restaurant intimiste aux formules créatives régulièrement renouvelées, accompagnées de vin et composées de produits de saison.",
-  price: "14€ - 40€",
+  description: "Intimate restaurant with regularly renewed creative formulas, accompanied by wine and composed of seasonal products.",
+  price: 26,
   duration: 120,
   address: "10 rue Léon Blum, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/artnblum.jpg"))
   restaurant3.photo.attach(io: file, filename: "artnblum.jpg", content_type: "image/jpeg")
@@ -138,11 +139,11 @@ restaurant3 = Activity.create!({
 restaurant4 = Activity.create!({
   user: user4,
   title: "Ch’ Ti Breizh Bar Brasserie",
-  description: "La brasserie 100% Ch’ti au cœur de Nantes Cuisine du nord maison Frites double cuisson cuites dans la graisse de bœuf Cocktails et Bières du Nord",
-  price: "10€ - 25€",
+  description: "The 100% Ch'ti brewery in the heart of Nantes Home-made northern cuisine Double-cooked Chips cooked in beef fat Cocktails and northern beers.",
+  price: 16,
   duration: 120,
   address: "5 Rue de l'Hôtel de Ville, 44000 Nantes",
-  ages: "Pour petits et grands",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/chtibrasserie.png"))
   restaurant4.photo.attach(io: file, filename: "chtibraésserie.png", content_type: "image/jpeg")
@@ -150,11 +151,11 @@ restaurant4 = Activity.create!({
 restaurant5 = Activity.create!({
   user: user5,
   title: "Maison Bagarre",
-  description: "Maison Bagarre est un restaurant bistronomique qui tabasse les papilles... Avec des plats savoureux, cuisinés avec attention dans une ambiance sympa en plein centre-ville de Nantes.",
-  price: "13€ - 38€",
+  description: "Maison Bagarre is a bistronomic restaurant that tickles the taste buds... With tasty dishes, cooked with care in a friendly atmosphere in the centre of Nantes.",
+  price: 26,
   duration: 120,
-  address: "6 Rue Jean Jacques Rousseau, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "6 Rue Jean Jacques Rousseau, 44000 Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/bagarre.jpg"))
   restaurant5.photo.attach(io: file, filename: "bagarre.jpg", content_type: "image/jpeg")
@@ -162,11 +163,11 @@ restaurant5 = Activity.create!({
 restaurant6 = Activity.create!({
   user: user6,
   title: "Le Bistro des Enfants Nantais",
-  description: "Pour le Bistro des Enfants Nantais, sa culture bistrotière sincère et presque touchante, ses menus très accessibles et copieux et la mécanique de précision de son service le midi, c’est immanquablement un oui.",
-  price: "15€ - 32€",
+  description: "For the Bistro des Enfants Nantais, its sincere and almost touching bistro culture, its very accessible and copious menus and the precision of its service at lunchtime, it is inevitably a yes.",
+  price: 27,
   duration: 120,
-  address: "4 Rue Desaix, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "4 Rue Desaix, 44000 Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/bistrodesenfants.jpg"))
   restaurant6.photo.attach(io: file, filename: "bistrodesenfants.jpg", content_type: "image/jpeg")
@@ -174,11 +175,11 @@ restaurant6 = Activity.create!({
 restaurant7 = Activity.create!({
   user: user7,
   title: "Nota Bene",
-  description: "Après plusieurs expériences culinaires, nous avons choisi de poser nos casseroles et nos tabliers de service au NOTA BENE, pour partager avec vous, notre passion pour les bons produits et notre service attentionné. Ici, nous privilégions l’éco-responsabilité et le fait maison à partir d’ingrédients de grande qualité issus de fournisseurs et de producteurs locaux. Nous sélectionnons également les meilleurs produits en provenance d’Italie.",
-  price: "6€ - 28€",
+  description: "After several culinary experiences, we have chosen to put down our pots and pans and our service aprons at NOTA BENE, to share with you our passion for good products and our attentive service. Here, we favour eco-responsibility and homemade food made from high quality ingredients from local suppliers and producers. We also select the best products from Italy.",
+  price: 17,
   duration: 120,
-  address: "3 rue saint-Denis, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "3 rue saint-Denis, 44000 Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/notabene.jpg"))
   restaurant7.photo.attach(io: file, filename: "notabene.jpg", content_type: "image/jpeg")
@@ -186,11 +187,11 @@ restaurant7 = Activity.create!({
 restaurant8 = Activity.create!({
   user: user8,
   title: "Imagine",
-  description: "Situé dans le centre de Nantes, non loin du Musée Dobrée et du Théâtre Graslin, le restaurant Imagine vous invite à venir découvrir son univers. Une gastronomie gourmande & contemporaine dont la carte évolue constamment pour une expérience différente à chaque fois: déjeuner, dîner ou brunch, toutes les occasions sont bonnes pour s'y retrouver !",
-  price: "15€ - 42€",
+  description: "Located in the centre of Nantes, not far from the Dobrée Museum and the Graslin Theatre, the Imagine restaurant invites you to come and discover its world. A gourmet & contemporary gastronomy whose menu is constantly evolving for a different experience every time: lunch, dinner or brunch, any occasion is good to be there!",
+  price: 28,
   duration: 120,
-  address: "55 rue Leon Blum, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "55 rue Leon Blum, 44000 Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/imagine.jpg"))
   restaurant8.photo.attach(io: file, filename: "imagine.jpg", content_type: "image/jpeg")
@@ -198,11 +199,11 @@ restaurant8 = Activity.create!({
 restaurant9 = Activity.create!({
   user: user9,
   title: "Restaurant ICI",
-  description: "Au coin de l’une des jolies rues du centre de Nantes, le restaurant ICI vous invite à vous laisser surprendre par une cuisine gastronomique moderne et créative qui fait la part belle aux produits locaux de qualité. Vous y découvrirez une carte qui évolue au gré des saisons, à savourer dans un cadre contemporain et convivial.",
-  price: "18€ - 55€",
+  description: "On the corner of one of the pretty streets in the centre of Nantes, the ICI restaurant invites you to be surprised by its modern and creative gastronomic cuisine, which gives pride of place to quality local products. You will discover a menu that changes with the seasons, to be enjoyed in a contemporary and friendly setting.",
+  price: 37,
   duration: 120,
-  address: "1 rue Leon Blum, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "1 rue Leon Blum, 44000 Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/restauici.jpg"))
   restaurant9.photo.attach(io: file, filename: "restauici.jpg", content_type: "image/jpeg")
@@ -210,11 +211,11 @@ restaurant9 = Activity.create!({
 restaurant10 = Activity.create!({
   user: user10,
   title: "Le Lion et L'Agneau",
-  description: "Le Lion et L’Agneau propose une cuisine du terroir réinventée et créative, où soins et saveurs dominent. Nous nous efforçons de travailler en collaboration avec des producteurs locaux pour vous proposer des produits de qualité et de saison.",
-  price: "15€ - 25€",
+  description: "Le Lion et L'Agneau offers reinvented and creative local cuisine, where care and flavour are paramount. We strive to work in collaboration with local producers to offer you quality and seasonal products.",
+  price: 20,
   duration: 120,
-  address: "40 rue Fourré, 44000, Nantes France",
-  ages: "Pour petits et grands",
+  address: "40 rue Fourré, 44000 Nantes",
+  ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/le-lion-et-l-agneau.jpg"))
   restaurant10.photo.attach(io: file, filename: "le-lion-et-l-agneau.jpg", content_type: "image/jpeg")
@@ -224,56 +225,199 @@ restaurant10 = Activity.create!({
 culture1 = Activity.create!({
   user: user1,
   title: "Passage Pommeraye",
-  description: "Le passage Pommeraye est une galerie marchande du centre-ville de Nantes, en France. Construit à partir de fin 1840, il est mis en service le 3 juillet 1843, et classé monument historique depuis le 26 décembre 1976.",
-  price: "Free",
+  description: "The Passage Pommeraye is a shopping mall in downtown Nantes, France. Built from the end of 1840, it was put into service on 3 July 1843, and classified as a historical monument since 26 December 1976.",
+  price: 0,
   duration: 30,
-  address: "20 Pass. Pommeraye, 44000 Nantes",
-  ages: "Pour petits et grands",
+  address: "20 Passage Pommeraye, 44000 Nantes",
+  ages: "For children and adults",
   category: :Culture})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/passagepom.jpg"))
   culture1.photo.attach(io: file, filename: "passagepom.jpg", content_type: "image/jpeg")
 
+culture2 = Activity.create!({
+  user: user2,
+  title: "Nantes Art Museum",
+  description: "The Musée d'Arts de Nantes is an art museum offering an overview of the main French and European artistic movements, placing its collections among the most important French public collections.",
+  price: 12,
+  duration: 60,
+  address: "10 Rue Georges Clemenceau, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Culture})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/Musee-d-arts-de-Nantes.jpg"))
+  culture2.photo.attach(io: file, filename: "Musee-d-arts-de-Nantes.jpg", content_type: "image/jpeg")
+
+culture3 = Activity.create!({
+  user: user3,
+  title: "Natural History Museum of Nantes",
+  description: "The Nantes Museum has an important scientific heritage, placing it among the first in France in terms of number of specimens.",
+  price: 12,
+  duration: 60,
+  address: "12 rue Voltaire, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Culture})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/museehistoirenaturelle.jpg"))
+  culture3.photo.attach(io: file, filename: "museehistoirenaturelle.jpg", content_type: "image/jpeg")
+
+culture4 = Activity.create!({
+  user: user4,
+  title: "Machines de l'île",
+  description: "The Machines de l'île is located at the crossroads of Jules Verne's 'invented worlds', Leonardo da Vinci's mechanical universe and the industrial history of Nantes. In October 2007, in Paris, the International Tourism Fair awarded it its special jury prize for innovative tourist facilities.",
+  price: 20,
+  duration: 120,
+  address: "Parc des Chantiers, Bd Léon Bureau, 44200 Nantes",
+  ages: "For children and adults",
+  category: :Culture})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/machineile.jpg"))
+  culture4.photo.attach(io: file, filename: "machineile.jpg", content_type: "image/jpeg")
+
+culture5 = Activity.create!({
+  user: user5,
+  title: "Graslin Theater",
+  description: "Discover the upper and lower parts of a theater with a rich and unique history! From the backstage to the underside of the stage, discover the secrets of the production of the shows.",
+  price: 15,
+  duration: 60,
+  address: "Place Graslin, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Culture})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/graslin.png"))
+  culture5.photo.attach(io: file, filename: "graslin.png", content_type: "image/jpeg")
+
+culture6 = Activity.create!({
+  user: user6,
+  title: "The LU Tower & Le Lieu Unique",
+  description: "Part of the emblems of Nantes. A monument not to be missed. Once a cookie factory, today a cultural Mecca, with its national art scene, etc. Discover its past, as rich industrially as culturally.",
+  price: 9,
+  duration: 60,
+  address: "2 Rue de la Biscuiterie, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Culture})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/tourlu.png"))
+  culture6.photo.attach(io: file, filename: "tourlu.png", content_type: "image/jpeg")
+
 # /////////////////////////
 
 sport1 = Activity.create!({
   user: user1,
-  title: "Balade au Jardin des Plantes",
-  description: "Avec 7 hectares de verdure en plein centre-ville, plus de 10 000 espèces vivantes, 800 mètres carrés de serres et plus de 50 000 fleurs plantées chaque saison, le Jardin des Plantes de Nantes, labellisé Jardin Remarquable, figure parmi les quatre grands jardins botaniques de France.",
-  price: "Free",
+  title: "Walk in the Jardin des Plantes",
+  description: "With 7 hectares of greenery in the city centre, more than 10,000 living species, 800 square metres of greenhouses and more than 50,000 flowers planted each season, the Jardin des Plantes de Nantes, which has been awarded the Jardin Remarquable label, is one of the four major botanical gardens in France.",
+  price: 0,
   duration: 120,
   address: "Rue Stanislas Baudry, 44000 Nantes",
-  ages: "Pour petits et grands",
+  ages: "For children and adults",
   category: :Sport})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/jardindesplantes.jpg"))
   sport1.photo.attach(io: file, filename: "jardindesplantes.jpg", content_type: "image/jpeg")
+
+sport2 = Activity.create!({
+  user: user2,
+  title: "The Banana Shed",
+  description: "It is the place to be in Nantes, with its 18 luminous and colored rings at night. Stroll in an environment that is both historical and mythical, as well as alive. And with many bars. To do with family or friends. An entire bike path goes around the hangar.",
+  price: 0,
+  duration: 60,
+  address: "4, place Marc Elder 44000 Nantes",
+  ages: "For children and adults",
+  category: :Sport})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/hangarbanane.jpg"))
+  sport2.photo.attach(io: file, filename: "hangarbanane.jpg", content_type: "image/jpeg")
+
+sport3 = Activity.create!({
+  user: user3,
+  title: "Forget island",
+  description: "Ile Forget is a small island in the Loire. It is separated in two by the railway line that links Nantes to La Roche-sur-Yon. On the western part of the island, there are 5 hectares of late mowing (typology: natural area). The eastern part has long been developed for sports and leisure activities (playground, fitness facilities, green theatre, etc. .... - typology: developed natural space).",
+  price: 0,
+  duration: 60,
+  address: "Ile forget, 44230 Saint-Sébastien-sur-Loire",
+  ages: "For children and adults",
+  category: :Sport})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/ileforget.jpg"))
+  sport3.photo.attach(io: file, filename: "ileforget.jpg", content_type: "image/jpeg")
+
+sport4 = Activity.create!({
+  user: user4,
+  title: "The Miséry quarry",
+  description: "The Miséry quarry is located on the right bank of the Loire, at the foot of the Saint-Anne hillock forming the southern end of the Sillon de Bretagne. More than 200 plant species are planted here and benefit from the micro-climate of the quarry, which is sheltered from the wind and faces due south. It includes a 25-metre high waterfall, a staircase on the side of the cliff leading to Maurice Schwob Square, which will be inaugurated in March 20208 , seven overhanging lookouts and a climbing wall with 30 routes divided into four sectors of varying difficulty, ranging from beginners to the most technical levels..",
+  price: 0,
+  duration: 120,
+  address: "Quai Marquis d'Aiguillon, 44100 Nantes",
+  ages: "For children and adults",
+  category: :Sport})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/carrieremisery.jpg"))
+  sport4.photo.attach(io: file, filename: "carrieremisery.jpg", content_type: "image/jpeg")
+
+sport5 = Activity.create!({
+  user: user5,
+  title: "Sailing on the Erdre",
+  description: "From the Ile de Versailles in Nantes, sail on the Erdre river in an electric boat, stand-up paddle or canoe to discover the magnificent river. The perfect activity to let go totally, try the innovative leisure activities.",
+  price: 10,
+  duration: 120,
+  address: "Ile de Versailles, Nantes 44000",
+  ages: "For children and adults",
+  category: :Sport})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/bateauerdre.jpg"))
+  sport5.photo.attach(io: file, filename: "bateauerdre.jpg", content_type: "image/jpeg")
+
+sport6 = Activity.create!({
+  user: user6,
+  title: "Pool Leo Lagrange",
+  description: "Léo Lagrange is a swimming pool with its 50m Olympic pool and 8 swimming lanes as well as its 21m training pool. It is the perfect place to let off steam and enjoy a great infrastructure.",
+  price: 6,
+  duration: 60,
+  address: "Allée de l'Île Gloriette, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Sport})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/piscineleolagrange.jpg"))
+  sport6.photo.attach(io: file, filename: "piscineleolagrange.jpg", content_type: "image/jpeg")
 
 # /////////////////////////
 
 cinema1 = Activity.create!({
   user: user1,
   title: "Avatar (2009)",
-  description: "Sur le monde extraterrestre luxuriant de Pandora vivent les Na'vi, des êtres qui semblent primitifs, mais qui sont très évolués. Jake Sully, un ancien Marine paralysé, redevient mobile grâce à un tel Avatar et tombe amoureux d'une femme Na'vi. Alors qu'un lien avec elle grandit, il est entraîné dans une bataille pour la survie de son monde.",
-  price: "3€ - 5€",
+  description: "On the lush alien world of Pandora live the Na'vi, beings who appear primitive, but are highly evolved. Jake Sully, a paralyzed former Marine, becomes mobile again thanks to such an Avatar and falls in love with a Na'vi woman. As a bond with her grows, he is drawn into a battle for the survival of his world.",
+  price: 4,
   duration: 162,
-  address: "Depuis votre télé en VOD",
-  ages: "12 ans et plus",
+  address: "From your TV with VOD",
+  ages: "12 years and older",
   category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/avatar.jpg"))
   cinema1.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
+cinema2 = Activity.create!({
+  user: user2,
+  title: "Forest Gump (1994)",
+  description: "On a bench in Savannah, Georgia, Forrest Gump waits for the bus. As it is late in coming, the young man tells his life story to his bored companions. At first sight, his rather limited intellectual capacities did not destined him to great things. No matter. Forrest Gump, without ever understanding anything, became associated with all the great events of his country's history.",
+  price: 0,
+  duration: 140,
+  address: "From your TV with VOD",
+  ages: "12 years and older",
+  category: :Cinema})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/forestgump.jpg"))
+  cinema2.photo.attach(io: file, filename: "forestgump.jpg", content_type: "image/jpeg")
 
 # /////////////////////////
 
 party1 = Activity.create!({
   user: user1,
   title: "Le Molière",
-  description: "Carte classique dans cette brasserie contemporaine et bar d'ambiance avec suspensions au design chapeau melon.",
-  price: "4€ - 10€",
+  description: "Classic menu in this contemporary brasserie and atmospheric bar with melon hat design.",
+  price: 7,
   duration: 120,
   address: "2 Rue Racine, 44000 Nantes",
-  ages: "Pour petits et grands",
+  ages: "For children and adults",
   category: :Party})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/lemolière.jpg"))
@@ -283,27 +427,40 @@ party1 = Activity.create!({
 
 family1 = Activity.create!({
   user: user1,
-  title: "Château des ducs de Bretagne",
-  description: "Au cœur du quartier médiéval de Nantes, découvrez le Château des ducs de Bretagne, site emblématique de la ville, construit à la fin du 15e siècle par François II et sa fille Anne de Bretagne.",
-  price: "0€ - 10€",
+  title: "Castle of Ducs de Bretagne",
+  description: "In the heart of the medieval quarter of Nantes, discover the Château des Ducs de Bretagne, an emblematic site of the city, built at the end of the 15th century by François II and his daughter Anne de Bretagne.",
+  price: 5,
   duration: 120,
-  address: "4 Pl. Marc Elder, 44000 Nantes",
-  ages: "Pour petits et grands",
+  address: "4 Place Marc Elder, 44000 Nantes",
+  ages: "For children and adults",
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/chateaudesducs.jpg"))
   family1.photo.attach(io: file, filename: "chateaudesducs.jpg", content_type: "image/jpeg")
 
+family2 = Activity.create!({
+  user: user2,
+  title: "Petit-Port",
+  description: "The Petit-Port swimming pool is located a few minutes away from the city center of Nantes. With a leisure pool, a wave pool, a relaxation area and a large swimming pool. Various activities such as swimming lessons, aquagym, or diving lessons are organized in the pool.",
+  price: 6,
+  duration: 60,
+  address: "Boulevard Du Petit Port, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/piscinepetitport.jpg"))
+  family2.photo.attach(io: file, filename: "piscinepetitport.jpg", content_type: "image/jpeg")
+
 # /////////////////////////
 
 food1 = Activity.create!({
   user: user1,
-  title: "Atelier Vincent Guerlais",
-  description: "Venez apprendre à travailler le chocolat ou la pâtisserie sous toutes ses formes ! Les recettes peuvent variées selon l'imagination du pâtissier.",
-  price: "50€ - 80€",
+  title: "Workshop Vincent Guerlais",
+  description: "Come and learn how to work with chocolate or pastry in all its forms! The recipes can vary according to the imagination of the pastry chef.",
+  price: 65,
   duration: 160,
   address: "4 Rue de Lorraine, 44240 La Chapelle-sur-Erdre",
-  ages: "16 ans - 99 ans",
+  ages: "16 years and older",
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
@@ -313,12 +470,12 @@ food1 = Activity.create!({
 
 creativity1 = Activity.create!({
   user: user1,
-  title: "Peinture",
-  description: "Faites votre plus beau tableau, et laissez exprimer vos émotions",
-  price: "0€ - 10€",
+  title: "Painting",
+  description: "Make your most beautiful painting, and let your emotions flow.",
+  price: 5,
   duration: 120,
-  address: "Chez vous",
-  ages: "pour petits et grands",
+  address: "At home",
+  ages: "For children and adults",
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/peinture.jpg"))
@@ -329,11 +486,11 @@ creativity1 = Activity.create!({
 book1 = Activity.create!({
   user: user1,
   title: "Le Monde sans fin",
-  description: "Le monde sans fin est un album de bande dessinée français de Christophe Blain et Jean-Marc Jancovici paru en octobre 2021 chez Dargaud. Succès de librairie, c'est l'ouvrage le plus vendu en France en 2022.",
-  price: "15€ - 30€",
+  description: "Le monde sans fin is a French comic book by Christophe Blain and Jean-Marc Jancovici published in October 2021 by Dargaud. A bestseller, it is the best-selling book in France in 2022.",
+  price: 28,
   duration: 160,
-  address: "Chez vous ou à la bibliothèque",
-  ages: "+ de 15 ans",
+  address: "At home or in the library",
+  ages: "15 years and older",
   category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/lemondesansfin.jpg"))
