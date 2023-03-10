@@ -13,7 +13,13 @@
       <div class="card-activity-title-category"><%= @activity.category.upcase %></div>
     </div>
     <div class="card-activity-icon">
-        <i class="fas fa-euro-sign"></i>&ensp;<%= @activity.price%>
+      <% if @activity.price <= 20 %>
+        <i class="fas fa-euro-sign euro-index"></i>
+      <% elsif  @activity.price.between?(20, 50) %>
+        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+      <% elsif  @activity.price >= 50 %>
+        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+      <% end %>
       <br>
         <i class="far fa-clock"></i>&ensp;<%= (@activity.duration)/60 %> hours
       <br>
