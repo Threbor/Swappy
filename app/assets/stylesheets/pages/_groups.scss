@@ -48,7 +48,6 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  margin-top: 80px;
 }
 
 .groups-duration {
@@ -62,4 +61,50 @@
 }
 .groups-price {
   font-size: 15px;
+}
+
+.icon {
+  background: $blue-pastel-fade;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  border-radius: 40px;
+}
+label.icon {
+  position: absolute;
+  right: 20px;
+  z-index: 200;
+}
+.menu-link {
+  background: lightgrey;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  height: 40px;
+  padding-top: 0;
+  position: absolute;
+  transition: max-width ease .6s;
+  max-width: 40px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 40px;
+  right: 20px;
+}
+.icon-link {
+  margin: 1rem;
+  text-align: center;
+}
+.menu:checked ~ .menu-link {
+  max-width: 200px;
+  transition: max-width ease .6s;
+}
+
+.user-menu-deroulant {
+  color: $blue-pastel;
+  padding: 0px;
+  background-color: transparent;
 }

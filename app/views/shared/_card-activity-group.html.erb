@@ -1,5 +1,7 @@
 <div class="card-product-infos-groups d-flex align-items-center">
-  <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
+  <%= link_to activities_path(@activity) do %>
+    <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
+  <% end %>
 
   <div class="card-text-infos-groups">
     <div class="right-element-groups">
@@ -21,8 +23,17 @@
         <i class="fa-solid fa-location-dot"></i>
         <%= group.activity.address %>
       </div>
-      <div class= "icon-deroulant">
-        <i class="fa-solid fa-ellipsis"></i>
+
+      <input type="checkbox" id="menu">
+      <label for="menu" class="icon">
+          <i class="icon-link fa-solid fa-ellipsis"></i>
+      </label>
+
+      <div class="menu-link">
+          <i class="icon-link fa-solid fa-ellipsis"></i>
+          <i class="icon-link fa-solid fa-users"></i>
+          <i class="icon-link fa-regular fa-calendar-check"></i>
+          <i class="icon-link fa-solid fa-heart"></i>
       </div>
     </div>
   </div>
