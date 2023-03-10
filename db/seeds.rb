@@ -378,7 +378,7 @@ group5.name = restaurant5.title
 group5.save!
 
 print "."
-
+puts "Done"
 puts "groups created !"
 
 print "group_users creation :"
@@ -412,30 +412,31 @@ group_user4.save!
 print "."
 
 group_user5 = GroupUser.new
-group_user4.group = group2
-group_user4.user = user2
-group_user4.save!
+group_user5.group = group2
+group_user5.user = user2
+group_user5.save!
 print "."
 
 group_user6 = GroupUser.new
-group_user4.group = group3
-group_user4.user = user1
-group_user4.save!
+group_user6.group = group3
+group_user6.user = user1
+group_user6.save!
 print "."
 
 group_user7 = GroupUser.new
 group_user7.group = group3
-group_user7.user = user1
+group_user7.user = user3
 group_user7.save!
 print "."
+puts "Done"
 puts "groups_user created !"
 
 puts "creating messages :"
-print ">creating group1 messages :"
+print "> creating group1 messages :"
 g1_message1 = Message.new
 g1_message1.group = group1
-g1_message1.user = user1
-g1_message1.content = "hello tout le monde! ça vous dit d'y aller samedi ?"
+g1_message1.user = user6
+g1_message1.content = "Salut tout le monde! Je vous propose dit d'aller à la Mandale samedi juste avant qu'ils ferment pour leurs travaux."
 g1_message1.save
 print "."
 
@@ -452,9 +453,47 @@ g1_message3.user = user3
 g1_message3.content = "Pas moi désolé :/"
 g1_message3.save
 print "."
-puts "group1 messages created"
-puts "all messages created !"
+puts "Done"
+puts "> group1 messages created"
 
+print "> creating group2 messages :"
+g2_message1 = Message.new
+g2_message1.group = group2
+g2_message1.user = user1
+g2_message1.content = "Salut Christina ! Je te propose qu'on aille à la Passagère Samedi aprèm pour un thé. T'es dispo ?"
+g2_message1.save
+print "."
+
+g2_message2 = Message.new
+g2_message2.group = group2
+g2_message2.user = user5
+g2_message2.content = "Oui avec plaisir :)"
+g2_message2.save
+print "."
+
+puts "Done"
+puts "> group2 messages created"
+
+print "> creating group3 messages :"
+
+g3_message1 = Message.new
+g3_message1.group = group3
+g3_message1.user = user4
+g3_message1.content = "Salut j'ai trop envie de tester le Art'n Blum, je suis sure que ça te tente ! on y va Mercredi prochain ?"
+g3_message1.save
+print "."
+
+g3_message2 = Message.new
+g3_message2.group = group3
+g3_message2.user = user1
+g3_message2.content = "Hello Laura, ça fait super longtemps !! Oui avec plaisir :)"
+g3_message2.save
+print "."
+
+puts "Done"
+puts "> group3 messages created"
+
+puts "all messages created !"
 
 puts "creating favorits"
 
@@ -464,7 +503,6 @@ favorite1 = Favorite.create!({
 })
 print "."
 puts "all messages created !"
-
 
 # group1 = Group.create!({
 #   name: "restaurant 3",

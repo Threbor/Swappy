@@ -17,6 +17,22 @@
     height: 100%;
     overflow: scroll;
     padding: 1rem;
+
+
+    .current-user {
+      float: right;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+    }
+
+
+
+  }
+
+  .messages > div {
+    width: fit-content;
   }
 
   #new_message {
