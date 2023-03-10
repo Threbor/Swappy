@@ -1,26 +1,29 @@
-<%= current_user_group.group.name %>
 <div class="card-product-infos-groups d-flex justify-content-center">
-  <div class="groups-img"><%= cl_image_tag current_user_group.group.activity.photo.key %></div>
-
+  <%= link_to activity_path(group.activity) do%>
+    <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
+  <% end %>
   <div class="card-text-infos-groups">
+    <%= link_to group_path(group) do %>
     <div class="right-element-groups">
       <div class="groups-name">
-        <%= current_user_group.group.activity.title %>
-          <div class= "icon-groups">
-            <i class="fa-solid fa-user-group"><%= current_user_group.group.group_users.count %></i>
-          </div>
+        <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
+        <div class= "icon-groups">
+          <i class="fa-solid fa-user-group"><%= group.users.count %></i>
+        </div>
       </div>
     </div>
 
-    <div class="groups-price"><%= current_user_group.group.activity.price %></div>
+    <div class="groups-price"><%= group.activity.price %></div>
 
     <div class="infos-groups d-flex">
-      <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= current_user_group.group.activity.duration %>min</div>
+      <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= group.activity.duration %>min</div>
     </div>
+    <% end %>
+    
     <div class="infos-groups-2 align-items-end d-flex">
       <div class="groups-address">
         <i class="fa-solid fa-location-dot"></i>
-        <%= current_user_group.group.activity.address %>
+        <%= if group.activity.address.size > 35 then "#{group.activity.address[0..35]...}" else group.activity.address end %>
       </div>
 
       <input type="checkbox" id="menu">

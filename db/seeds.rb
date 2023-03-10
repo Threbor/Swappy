@@ -1,5 +1,7 @@
 puts "Cleaning DB ..."
 
+Message.destroy_all
+
 Favorite.destroy_all
 
 GroupUser.destroy_all
@@ -342,89 +344,130 @@ book1 = Activity.create!({
 
 print "groups creation :"
 
-group1 = Group.new({name: "1er groupe"})
-
-  group1.activity = restaurant1
-
-  group1.save!
-
-print "."
-
-group2 = Group.new({name: "2eme groupe"})
-
-  group2.activity = restaurant2
-
-  group2.save!
+group1 = Group.new
+group1.activity = restaurant1
+group1.name = restaurant1.title
+group1.save!
 
 print "."
 
-group3 = Group.new({name: "3eme groupe"})
-
-  group3.activity = restaurant3
-
-  group3.save!
+group2 = Group.new
+group2.activity = restaurant2
+group2.name = restaurant2.title
+group2.save!
 
 print "."
 
-group4 = Group.new({name: "4eme groupe"})
+group3 = Group.new
+group3.activity = restaurant3
+group3.name = restaurant3.title
+group3.save!
 
-  group4.activity = restaurant4
+print "."
 
-  group4.save!
+group4 = Group.new
+group4.activity = restaurant4
+group4.name = restaurant4.title
+group4.save!
 
 print "."
 
 group5 = Group.new({name: "5eme groupe"})
-
-  group5.activity = restaurant5
-
-  group5.save!
+group5.activity = restaurant5
+group5.name = restaurant5.title
+group5.save!
 
 print "."
 
 puts "groups created !"
 
-
 print "group_users creation :"
 
 group_user1 = GroupUser.new
-
-  group_user1.group = group1
-
-  group_user1.user = user1
-
-  group_user1.save!
+group_user1.group = group1
+group_user1.user = user1
+group_user1.save!
 
 print "."
 
 group_user2 = GroupUser.new
-
-  group_user2.group = group2
-
-  group_user2.user = user2
-
-  group_user2.save!
+group_user2.group = group1
+group_user2.user = user2
+group_user2.save!
 
 print "."
 
 group_user3 = GroupUser.new
-
-  group_user3.group = group3
-
-  group_user3.user = user3
-
-  group_user3.save!
+group_user3.group = group1
+group_user3.user = user3
+group_user3.save!
 
 print "."
 
+group_user4 = GroupUser.new
+group_user4.group = group2
+group_user4.user = user1
+group_user4.save!
+
+print "."
+
+group_user5 = GroupUser.new
+group_user4.group = group2
+group_user4.user = user2
+group_user4.save!
+print "."
+
+group_user6 = GroupUser.new
+group_user4.group = group3
+group_user4.user = user1
+group_user4.save!
+print "."
+
+group_user7 = GroupUser.new
+group_user7.group = group3
+group_user7.user = user1
+group_user7.save!
+print "."
 puts "groups_user created !"
+
+puts "creating messages :"
+print ">creating group1 messages :"
+g1_message1 = Message.new
+g1_message1.group = group1
+g1_message1.user = user1
+g1_message1.content = "hello tout le monde! ça vous dit d'y aller samedi ?"
+g1_message1.save
+print "."
+
+g1_message2 = Message.new
+g1_message2.group = group1
+g1_message2.user = user2
+g1_message2.content = "Salut super idée ! moi j'y vais !"
+g1_message2.save
+print "."
+
+g1_message3 = Message.new
+g1_message3.group = group1
+g1_message3.user = user3
+g1_message3.content = "Pas moi désolé :/"
+g1_message3.save
+print "."
+puts "group1 messages created"
+puts "all messages created !"
+
+
+puts "creating favorits"
 
 favorite1 = Favorite.create!({
   activity: restaurant1,
   user: user1
 })
+print "."
+puts "all messages created !"
 
-group1 = Group.create!({
-  name: "restaurant 3",
-  activity: restaurant3
-})
+
+# group1 = Group.create!({
+#   name: "restaurant 3",
+#   activity: restaurant3
+# })
+# print"."
