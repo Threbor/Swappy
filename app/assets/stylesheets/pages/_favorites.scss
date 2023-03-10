@@ -13,6 +13,10 @@
   border-radius: 10px;
 }
 
+.subtile-favorites{
+  font-size: 12px;
+}
+
 .favorites-title {
   font-size: 16px;
   margin: 0;
@@ -41,7 +45,7 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
 }
 
@@ -70,4 +74,8 @@
   color: $blue-dark;
   }
 
+}
+
+.title-favorites{
+  font-size: 20px;
 }
