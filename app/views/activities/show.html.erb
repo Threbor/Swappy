@@ -3,7 +3,7 @@
     <%= link_to activities_path do %><i class="fa-solid fa-arrow-down"></i><% end %>
     <%= link_to reject_path( id: @activity.id ), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
     <%= link_to favorites_path( id: @activity.id ), data: { turbo_method: :post} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
-    <%= link_to groups_path do %><i class="fa-solid fa-users"></i><% end %>
+    <%= link_to new_group_path(activity_id: @activity.id) do %><i class="fa-solid fa-users"></i><% end %>
   </div>
 </div>
 <div class="card-activity">

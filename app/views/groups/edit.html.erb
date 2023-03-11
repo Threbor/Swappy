@@ -1,0 +1,12 @@
+Edit page
+
+besoin d'un formulaire pour y faire passer des infos.
+Modification de votre groupe nommé :
+<%= @group.name %>
+du groupe pour l'activité :
+<%= @activity.title %>
+<%= form_with model: @group do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+
+<% end %>
