@@ -4,6 +4,8 @@ class ProfileController < ApplicationController
     @groups = Group.all.sort.reverse
     @group_users = GroupUser.all
     @current_user_groups = GroupUser.where(user: current_user)
+    @current_groups = GroupUser.where(user_id: current_user.id).sort.reverse
+
   end
 
   def update

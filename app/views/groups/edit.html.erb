@@ -1,12 +1,10 @@
-Edit page
+<div style="margin: auto;">
+  <h1><%= @group.name %></h1>
+  <h2><%= @group.activity.title %></h2>
+  <%= form_with model: @group do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit 'change the name'%>
+  <% end %>
 
-besoin d'un formulaire pour y faire passer des infos.
-Modification de votre groupe nommé :
-<%= @group.name %>
-du groupe pour l'activité :
-<%= @activity.title %>
-<%= form_with model: @group do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-
-<% end %>
+  <%= render "group_users/index" %>
+</div>

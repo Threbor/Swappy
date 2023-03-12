@@ -1,0 +1,38 @@
+<h6>DEBBUGGG : ici , c'est la partial dans app/views/group_users/_index.html.erb </h6>
+
+<h2>Add Your friends for your activity !</h2>
+
+<div class = "d-flex">
+  <div>
+    <% if @current_group_users%>
+      <h2>Users in your current Group for your activity</h2>
+      <% @current_group_users.each do |current_group_user| %>
+        <% unless current_group_user.user == current_user %>
+          <h6>
+            <%= cl_image_tag(current_group_user.user.photo.key, width: 50, height: 50, crop: :fill) %>
+            <%= current_group_user.user.first_name %>
+            <%= button_to 'REMOVE', delete_group_user_path, method: :delete, params: { user_group_id:current_group_user.id ,user_id: current_group_user.user.id, group_id: @group.id } %>
+          </h6>
+        <% end %>
+      <% end %>
+    <% else %>
+    <h2>you don't have friends yet</h2>
+    <% end %>
+  </div>
+  <div>
+    <h2>All Users display you can add</h2>
+    <% @users.each do |user| %>
+      <% unless user == current_user %>
+        <h6 class = "d-flex">
+          <%= cl_image_tag(user.photo.key, width: 50, height: 50, crop: :fill) %>
+          <%= user.first_name %>
+          <%= form_with(model: @group_user, url: "/group_users#create") do |f| %>
+            <%= f.hidden_field :user_id, value:user.id %>
+            <%= f.hidden_field :group_id, value:@group.id %>
+            <%= f.submit 'ADD'%>
+          <% end %>
+        </h6>
+      <% end %>
+    <% end %>
+  </div>
+</div>

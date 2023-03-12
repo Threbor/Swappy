@@ -19,13 +19,13 @@
     <% end %>
   </div>
 
-  <div class="nav-link <%='active' if current_page?(groups_path)%>">
+  <div class="nav-link <%='active' if current_page?(groups_path)%> ">
     <%= link_to groups_path do  %>
       <i class="fa-solid fa-comment-dots nav-link-icon"></i>
     <% end %>
   </div>
 
-  <div class="nav-link <%='active' if current_page?(profile_index_path)%>">
+  <div class="nav-link <%='active' if current_page?(profile_index_path) %>">
     <%= link_to profile_index_path do  %>
       <i class="fa-solid fa-circle-user nav-link-icon"></i>
     <% end %>
