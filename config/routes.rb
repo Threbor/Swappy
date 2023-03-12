@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :groups, only: %i[index show new create edit update destroy] do
     resources :messages, only: :create
   end
-  resources :groups_user, only: :destroy
+  resources :group_users, only: %i[index new create edit update]
+  delete '/group_users/:id', to: 'group_users#destroy', as: 'delete_group_user'
   resources :profile, only: %i[index update]
 end

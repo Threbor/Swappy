@@ -1,11 +1,10 @@
-New page
 
 <h1>
 <%= @activity.title %>
 </h1>
 <%= form_with model: @group do |f| %>
   <%= f.hidden_field :activity_id, value:@activity.id %>
+  <p>First, choose a name for your event</p>
   <%= f.text_field :name %>
   <%= f.submit %>
-
 <% end %>
