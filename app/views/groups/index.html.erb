@@ -5,5 +5,7 @@
 </div>
 
 <% @groups.each do |group| %>
+  <% if !group.done %>
     <%= render "shared/card-activity-groupv2", group: group %>
+  <% end %>
 <% end %>

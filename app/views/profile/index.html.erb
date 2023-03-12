@@ -1,0 +1,11 @@
+<%= cl_image_tag(current_user.photo.key, width: 300, height: 300, crop: :fill) %>
+
+<h2>current user : <%= current_user.first_name %> <%= current_user.last_name %></h2>
+<h3>Activities you have done:</h3>
+
+
+<% @groups.each do |group| %>
+  <% if group.done %>
+    <%= render "shared/activity-done-group", group: group %>
+  <% end %>
+<% end %>
