@@ -1,31 +1,25 @@
 .home-page-text {
   font-size: 14px;
-  opacity: .7;
   text-align: center;
-  margin-top: 2px;
   letter-spacing: 0.5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .welcome-homepage {
   font-family: $font-app-original;
   color: $blue-pastel;
   font-weight: 400;
-  font-size: 32px;
-
+  font-size: 80px;
 }
 
-.container-home{
+.container-home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 84px 0px;
-  gap: 79px;
-  position: absolute;
-  width: auto;
-  top: 110px;
-  left: 70px;
-  right: 70px;
-
 }
 
 .text-homepage {
@@ -33,7 +27,6 @@
   padding: 22px;
   color: $blue-dark;
   font-family: $font-body;
-
 }
 
 .homepage-button {
@@ -49,5 +42,15 @@
   color: white;
   padding-inline: 58px;
 
+  &:hover {
+    color: white;
+  }
+}
 
+.image-home {
+  background-image: asset-url('home-image/IMG_821733cut-removebg-preview.png');
+  width: 100vw;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
 }
