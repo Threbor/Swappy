@@ -1,7 +1,7 @@
-<div class="card-product-infos-groups d-flex align-items-center">
+<div class="card-product-infos-groups d-flex flex-grow-1 align-items-center">
   <div class="groups-img"><%= cl_image_tag favorite.activity.photo.key %></div>
 
-  <div class="card-text-infos-groups">
+  <div class="card-text-infos-groups flex-grow-1">
     <div class="right-element-groups">
       <div class="groups-name">
         <%= favorite.activity.title %>
@@ -34,10 +34,9 @@
       </label>
 
       <div class="menu-link">
-          <i class="icon-link fa-solid fa-ellipsis"></i>
-          <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <i class="icon-link fa-regular fa-calendar-check"></i>
           <i class="icon-link fa-solid fa-heart"></i>
+          <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
+          <i class="icon-link fa-solid fa-ellipsis"></i>
       </div>
     </div>
   </div>
