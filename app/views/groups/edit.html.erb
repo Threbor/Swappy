@@ -1,7 +1,29 @@
 <div style="margin: auto;">
   <div class="d-flex justify-content-center"><h2><strong>Création de votre groupe ...</strong></h2></div>
-  <h1><%= @group.name %></h1>
-  <h2><%= @group.activity.title %></h2>
+  <div class="wrapper d-flex">
+    <div class="card">
+      <div class="activity-img">
+        <%= cl_image_tag(@group.activity.photo.key) %>
+      </div>
+      <div class="d-flex infos">
+        <div>
+          <%= @group.name %>
+        </div>
+        <div>
+          <% if @group.activity.price <= 20 %>
+            <i class="fas fa-euro-sign euro-index"></i>
+          <% elsif  @group.activity.price.between?(20, 50) %>
+            <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+          <% elsif  @group.activity.price >= 50 %>
+            <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+          <% end %>
+        </div>
+        <div>
+          <i class="far fa-clock"></i><%= (@group.activity.duration)/60 %> hours
+        </div>
+      </div>
+    </div>
+  </div>
   <%= form_with model: @group do |f| %>
     <%= f.text_field :name %>
     <%= f.submit 'change the name'%>
