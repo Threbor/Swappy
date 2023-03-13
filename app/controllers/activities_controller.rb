@@ -17,6 +17,7 @@ class ActivitiesController < ApplicationController
     @rejects = current_user.rejects
     @user_rejects = @rejects.map {|reject| reject.activity_id}
     @activities = @activities.where.not(id: @user_favorites.union(@user_rejects))
+    @activities.shuffle
   end
 
   def show
