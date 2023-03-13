@@ -1,51 +1,60 @@
-<%= button_to 'DONE!', group_path(group), method: :patch, params: { group: { done: true } } %>
-<div class="card-product-groups d-flex justify-content-center">
+<div class="card-product-groups d-flex flex-grow-1 justify-content-center">
   <%= link_to activity_path(group.activity) do%>
     <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
   <% end %>
-  <div class="card-text-infos-groups">
+  <div class="card-text-infos-groups flex-grow-1">
     <%= link_to group_path(group) do %>
-    <div class="right-element-groups">
-      <%= group.name %>
-      <div class="groups-name">
-        <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
-        <div class= "icon-groups">
-          <i class="fa-solid fa-user-group"><%= group.users.count %></i>
+      <div class="right-element-groups">
+        <%= group.name %>
+        <div class="groups-name">
+          <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
+          <div class= "icon-groups">
+            <i class="fa-solid fa-user-group"><%= group.users.count %></i>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div>
-      <% if group.activity.price <= 20 %>
-        <i class="fas fa-euro-sign euro-index"></i>
-      <% elsif  group.activity.price.between?(20, 50) %>
-        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-      <% elsif  group.activity.price >= 50 %>
-        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-      <% end %>
-    </div>
-
-    <div class="infos-groups d-flex">
-      <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= group.activity.duration %>min</div>
-    </div>
+      <div>
+        <% if group.activity.price <= 20 %>
+          <i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  group.activity.price.between?(20, 50) %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  group.activity.price >= 50 %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% end %>
+      </div>
     <% end %>
 
-    <div class="infos-groups-2 align-items-end d-flex">
-      <div class="groups-address">
-        <i class="fa-solid fa-location-dot"></i>
-        <%= if group.activity.address.size > 35 then "#{group.activity.address[0..35]...}" else group.activity.address end %>
+    <div class="bottom-infos-groups d-flex">
+      <div class="infos-groups d-flex">
+        <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= group.activity.duration %>min</div>
       </div>
 
-      <input type="checkbox" id="menu">
-      <label for="menu" class="icon">
-          <i class="icon-link fa-solid fa-ellipsis"></i>
-      </label>
+      <div class="infos-groups-2 align-items-end d-flex">
+        <div class="groups-address">
+          <i class="fa-solid fa-location-dot"></i>
+          <%= if group.activity.address.size > 18 then "#{group.activity.address[0..18]...}" else group.activity.address end %>
+        </div>
+      </div>
 
-      <div class="menu-link">
-          <i class="icon-link fa-solid fa-ellipsis"></i>
-          <i class="icon-link fa-solid fa-users"></i>
-          <i class="icon-link fa-regular fa-calendar-check"></i>
-          <i class="icon-link fa-solid fa-heart"></i>
+      <div class="menu-bar">
+        <input type="checkbox" class="menu" id="menu-<%= group.activity.id%>" style="display:none">
+        <label for="menu-<%= group.activity.id%>" class="icon">
+            <i class="icon-link fa-solid fa-ellipsis"></i>
+        </label>
+
+        <div class="menu-link">
+            <%= button_to group_path(group), method: :delete, class:"icon-link btn-done",  data: { turbo_confirm: 'Are you sure?' }  do%>
+              <i class="fa-regular fa-calendar-xmark"></i>
+            <% end %>
+            <%= button_to group_path(group), method: :patch, params: { group: { done: true } }, class:"icon-link btn-done" do%>
+              <i class="fa-solid fa-calendar-check"></i>
+            <% end %>
+            <%= link_to new_group_path(activity_id: group.activity.id) do %>
+              <i class="icon-link fa-solid fa-users user-menu-deroulant"></i>
+            <% end %>
+            <i class="icon-link fa-solid fa-ellipsis"></i>
+        </div>
       </div>
     </div>
   </div>

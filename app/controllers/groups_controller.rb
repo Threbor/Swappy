@@ -64,7 +64,13 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-
+    @group = Group.find(params[:id])
+    @group_users = GroupUser.where(group_id: @group)
+    @group_users.each do |group_user|
+      group_user.destroy
+    end
+    @group.destroy
+    redirect_to groups_path
   end
 
   private
@@ -74,7 +80,7 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:activity_id, :name, :done, :participate)
+    params.require(:group).permit(:id, :activity_id, :name, :done, :participate)
 
   end
 end
