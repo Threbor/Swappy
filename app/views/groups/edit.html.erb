@@ -1,4 +1,5 @@
 <div style="margin: auto;">
+  <div class="d-flex justify-content-center"><h2><strong>Création de votre groupe ...</strong></h2></div>
   <h1><%= @group.name %></h1>
   <h2><%= @group.activity.title %></h2>
   <%= form_with model: @group do |f| %>
@@ -6,5 +7,5 @@
     <%= f.submit 'change the name'%>
   <% end %>
 
-  <%= render "display_users" %>
+  <%= render "/shared/display_users" %>
 </div>
