@@ -1,5 +1,10 @@
 <div class="container chatroom">
+  <h2>participants : </h2>
+  <% @group_users.each do |group_users| %>
+    <%= group_users.user.first_name %>
+  <% end %>
   <h1><%= @group.name %></h1>
+  <h4><%= link_to 'edit', edit_group_path(@group) %></h4>
 
 
   <div class="messages">
