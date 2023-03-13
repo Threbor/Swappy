@@ -11,10 +11,13 @@
         %>
       </div>
       <div class="localisation-km" data-controller="range">
-      <h5 data-range-target="km"></h5>
+        <div class="loc-km-infos">
+          <h5><strong>How far away ?</strong></h5>
+          <h5 data-range-target="km" class="value-of-km">0 km</h5>
+        </div>
         <%= f.input :km,
           as: :range,
-          input_html:{ data: { action: "change->range#updateTextInput", range_target: "range"}, min:"0", max:"25"},
+          input_html:{ data: { action: "change->range#updateTextInput", range_target: "range"}, min:"0", max:"25", value: 0},
           label: false,
           class: "form-control",
           placeholder: "How far away ?"

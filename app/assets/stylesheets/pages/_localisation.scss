@@ -1,8 +1,8 @@
 .localisation-components {
   width: 100%;
-  padding: 18px;
+  padding: 10px;
   height: 72vh !important;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 .localisation-city {
@@ -14,6 +14,19 @@
   top: 10px;
   left: 10px;
   color: $blue-dark;
+}
+
+.loc-km-infos {
+    h5 {
+      color: $blue-dark;
+      margin-bottom: 0px;
+    }
+}
+
+.value-of-km {
+  display: flex;
+  justify-content: flex-end !important;
+  margin-bottom: 10px !important;
 }
 
 #activity_city {
@@ -30,12 +43,13 @@
   color: #000000;
   padding-left: 22px;
   padding-right: 22px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .form-control {
-  background-color: $blue-pastel-light;
+  background-color: rgb(230, 228, 228);
   border-radius: 10px;
+  margin-bottom: 30px;
   color: #172045;
 }
 
@@ -43,6 +57,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  margin-top: 30px !important;
   margin-bottom: 40px !important;
 }
 
@@ -57,12 +72,13 @@
   display: inline-block;
   font-size: 1rem;
   width: 100%;
-  height: 60px;
+  height: 90px;
   border-radius: 16px;
   padding: 0.1rem 0.5rem;
-  background-color: $blue-pastel-light;
-  color: $blue-dark;
-  border: 1px solid $blue-pastel-light;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  border: 1px solid lightgrey;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -70,11 +86,61 @@
 }
 
 .tag-selector:checked + label {
-  background-color: $blue-pastel;
   color: white;
+  font-weight: bolder;
 }
 
 .button-confirm-selection {
   display: flex;
   justify-content: center ;
+}
+
+#activity_category_restaurant + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+
+#activity_category_restaurant + label:after {
+  background-image: url("../../images/restaurant.svg");
+}
+
+#activity_category_culture + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://api-www.louvre.fr/sites/default/files/2021-03/la-grande-galerie.jpg");
+}
+
+#activity_category_sport + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://www.runtastic.com/blog/wp-content/uploads/2019/09/Copy-of-thumbnail_blog_1200x800-5-1-1024x683.jpg");
+}
+
+#activity_category_cinema + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.rtl.fr/~c/770v513/rtl/www/1215383-une-salle-de-cinema-vide-illustration.jpg");
+}
+
+#activity_category_party + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://cdn.sortiraparis.com/images/80/77153/554223-fete-anniversaire-pique-nique-rassemblement-ce-qu-on-aura-le-droit-de-faire-a-partir-du-11-mai.jpg");
+}
+
+#activity_category_family + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://www.ma-naissance.com/wp-content/uploads/2020/08/activites-sorties-famille-dax-1200x620-300x155.png");
+}
+
+#activity_category_food + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://woody.cloudly.space/app/uploads/crt-paca/2020/07/thumbs/ateliers-cuisine-f102082575-1920x960.jpg");
+}
+
+#activity_category_creativity + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://img.freepik.com/photos-gratuite/palette-peinture-couleur-sale_23-2148660898.jpg");
+}
+
+#activity_category_book + label {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://i.la-croix.com/1400x933/smart/2021/03/05/1201143937/monde-contenu-livres_0.jpg");
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 15px;
+  -webkit-appearance: none;
+  height: 15px;
+  border-radius: 50%;
+  cursor: ew-resize;
+  background: black;
+  margin-bottom: 3px;
 }
