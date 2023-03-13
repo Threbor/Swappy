@@ -14,9 +14,9 @@ class GroupsController < ApplicationController
   def new
     @activity = Activity.find(params["activity_id"])
     @group = Group.new
-    @users = User.all
     @group_users = GroupUser.all
     @current_group_users = @group_users.where(group_id: params[:id])
+    @users = User.all
   end
 
   def create
@@ -37,13 +37,11 @@ class GroupsController < ApplicationController
     end
   end
 
-
   def edit
     @group = Group.find(params[:id])
-    @users = User.all
-    @group_users = GroupUser.all
-    @current_group_users = @group_users.where(group_id: params[:id])
+    @participants = @group.users
     @group_user = GroupUser.new
+    @users = User.all - @participants - [current_user]
   end
 
   def update
