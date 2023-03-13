@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  margin-top: 10vh;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -19,7 +20,11 @@
     padding: 1rem;
 
     p {
-      width: 80%;
+      background-color: $blue-pastel-light;
+      color: $blue-dark;
+      padding: 10px;
+      border-radius: 20px;
+      width: fit-content;
     }
 
     i {
@@ -32,16 +37,13 @@
       flex-direction: column;
       align-items: end;
       text-align: right;
-
-
+      p {
+        background-color: $blue-dark;
+        color: $blue-pastel-light;
+        padding: 10px;
+        border-radius: 20px;
+      }
     }
-
-
-
-  }
-
-  .messages > div {
-    width: fit-content;
   }
 
   #new_message {
@@ -54,7 +56,6 @@
   }
 
   .message-box {
-
     padding-bottom: 65px;
   }
 
@@ -62,5 +63,6 @@
     background-color: $blue-dark;
     border: 0px;
     border-radius: 10px;
+    height: 38px;
   }
 }

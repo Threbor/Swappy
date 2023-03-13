@@ -1,11 +1,13 @@
 <div class="container chatroom">
+  <div class="img-grp-activity">
+    <%= cl_image_tag(@group.activity.photo.key)%>
+  </div>
   <h2>participants : </h2>
   <% @group_users.each do |group_users| %>
     <%= group_users.user.first_name %>
   <% end %>
   <h1><%= @group.name %></h1>
   <h4><%= link_to 'edit', edit_group_path(@group) %></h4>
-
 
   <div class="messages">
     <% @group.messages.each do |message| %>
@@ -27,7 +29,7 @@
         placeholder: "Message ##{@group.name}",
         wrapper_html: {class: "flex-grow-1"}
       %>
-      <%= f.submit "Send", class: "btn btn-primary btn-send-message mb-3" %>
+      <%= f.submit "Send", class: "btn btn-primary btn-send-message" %>
     <% end %>
   </div>
 </div>
