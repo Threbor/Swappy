@@ -1,36 +1,38 @@
 <h2>Add Your friends for your activity !</h2>
 <div>
-  <div class="wrapper">
-    <% @users.each do |user| %>
-        <div class = "d-flex justify-content-between">
-          <div class="d-flex align-items-center">
-            <%= cl_image_tag(user.photo.key, crop: :thumb, gravity: :face) %>
+  <div class="wrapper group-participants">
+    <% @participants.each do |participant| %>
+      <% unless participant == current_user %>
+        <div class = "d-flex align-items-center justify-content-between">
+          <div>
+            <%= cl_image_tag(participant.photo.key, crop: :thumb, gravity: :face) %>
+            <%= participant.first_name %>
           </div>
-          <div class="d-flex align-items-center">
-            <%= user.first_name %>
-          </div>
-          <div class="d-flex align-items-center">
-            <%= form_with(model: @group_user, url: "/group_users#create") do |f| %>
-              <%= f.hidden_field :user_id, value:user.id %>
-              <%= f.hidden_field :group_id, value:@group.id %>
-              <%= button_tag"", type: 'submit', class:"fa-solid fa-plus" %>
-            <% end %>
+          <div>
+            <%= button_to delete_group_user_path,
+              method: :delete,
+              params: { user_id: participant.id, group_id: @group.id } do %>
+                <div class="btn-group-action btn-minus-group fas fa-check"></div>
+              <% end %>
           </div>
         </div>
+      <% end %>
     <% end %>
   </div>
-  <div class="wrapper">
-    <% @participants.each do |participant| %>
-      <div class = "d-flex justify-content-between">
-        <div class="d-flex align-items-center">
-          <%= cl_image_tag(participant.photo.key, crop: :thumb, gravity: :face) %>
+  <div class="wrapper group-user">
+    <% @users.each do |user| %>
+      <div class = "d-flex align-items-center justify-content-between">
+        <div>
+          <%= cl_image_tag(user.photo.key, crop: :thumb, gravity: :face) %>
+          <%= user.first_name %>
         </div>
-        <div class="d-flex align-items-center">
-          <%= participant.first_name %>
-        </div>
-        <div class="d-flex align-items-center">
-          <% unless participant == current_user %>
-          <%= button_to "remove", delete_group_user_path, method: :delete, params: { user_id: participant.id, group_id: @group.id } %>
+        <div>
+          <%= form_with(model: @group_user, url: "/group_users#create") do |f| %>
+            <%= f.hidden_field :user_id, value:user.id %>
+            <%= f.hidden_field :group_id, value:@group.id %>
+            <%= button_tag"",
+             type: 'submit',
+             class:"btn-group-action btn-plus-group" %>
           <% end %>
         </div>
       </div>

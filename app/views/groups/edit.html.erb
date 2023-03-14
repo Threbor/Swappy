@@ -1,5 +1,5 @@
-<div style="margin: auto;">
-  <div class="d-flex justify-content-center"><h2><strong>Création de votre groupe ...</strong></h2>
+
+  <div class="d-flex justify-content-center"><h2><strong>Group creation ...</strong></h2>
   </div>
   <div class="wrapper d-flex">
     <div class="card-product-group">
@@ -18,9 +18,7 @@
           <i class="far fa-clock"></i><%= (@group.activity.duration)/60 %> hours
         </p>
       </div>
-  </div>
-
-
+    </div>
   </div>
   <%= form_with model: @group do |f| %>
     <%= f.text_field :name %>

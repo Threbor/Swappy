@@ -9,3 +9,30 @@ img{
 .wrapper{
   margin-inline: 20px;
 }
+.button_to button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.button_to {
+  display: flex;
+  align-items: center;
+}
+.btn-group-action {
+  border: 2px solid $blue-dark;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-minus-group{
+  color: white;
+  background-color: $blue-dark;
+}
+
+.btn-plus-group{
+  background-color: $white;
+}
