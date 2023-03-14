@@ -1,3 +1,4 @@
+require 'date'
 puts "Cleaning DB ..."
 
 Message.destroy_all
@@ -504,6 +505,8 @@ print "groups creation :"
 group1 = Group.new
 group1.activity = restaurant1
 group1.name = restaurant1.title
+group1.date = Date.new(2023, 2, 25)
+group1.done = true
 group1.save!
 
 print "."
@@ -511,6 +514,8 @@ print "."
 group2 = Group.new
 group2.activity = restaurant2
 group2.name = restaurant2.title
+group2.date = Date.new(2023, 3, 10)
+group2.done = true
 group2.save!
 
 print "."
@@ -518,6 +523,8 @@ print "."
 group3 = Group.new
 group3.activity = restaurant3
 group3.name = restaurant3.title
+group3.date = Date.new(2023, 3, 15)
+group2.done = true
 group3.save!
 
 print "."
@@ -535,6 +542,17 @@ group5.name = restaurant5.title
 group5.save!
 
 print "."
+
+group6 = Group.new
+group6.activity = restaurant6
+group6.name = restaurant6.title
+group6.date = Date.new(2023, 3, 12)
+group6.done = true
+group6.save!
+
+print "."
+
+
 puts "Done"
 puts "groups created !"
 

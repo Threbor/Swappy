@@ -47,18 +47,21 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     @group.update(group_params)
-    @group_users = GroupUser.all
-    @current_group_users = @group_users.where(group_id: params[:id])
 
     if @group.update(group_params) && !@group.done
       redirect_to @group
-
-    elsif @group.update(group_params) && @group.done
-      redirect_to groups_path
     else
       render :edit, status: :unprocessable_entity
     end
 
+  end
+
+  def done
+    @group = Group.find(params[:id])
+    @group.done = true
+    @group.date = Time.now
+    @group.save
+    redirect_to groups_path
   end
 
   def destroy
