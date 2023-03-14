@@ -552,6 +552,7 @@ group6 = Group.new
 group6.activity = restaurant6
 group6.name = restaurant6.title
 group6.date = Date.new(2023, 3, 12)
+group6.user = user2
 group6.done = true
 group6.save!
 
