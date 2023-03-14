@@ -1,29 +1,40 @@
 
   <div class="d-flex justify-content-center"><h2><strong>Group creation ...</strong></h2>
   </div>
-  <div class="wrapper d-flex">
-    <div class="card-product-group">
-      <%= cl_image_tag(@group.activity.photo.key) %>
-      <div class="card-product-infos-group">
-        <h2><%= @group.name %></h2>
-        <p><% if @group.activity.price <= 20 %>
+  <div class="img-edit-group sticky-top" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path @group.activity.photo.key %>);">
+    <div class="edit-group-infos">
+    <h3><%= if @group.activity.title.size > 20
+    then "#{@group.activity.title[0..20]...}"
+    else @group.activity.title
+    end %></h3>
+      <div class="card-group-activity-icon">
+        <div class="card-infos-subgroup">
+          <% if @group.activity.price <= 20 %>
             <i class="fas fa-euro-sign euro-index"></i>
           <% elsif  @group.activity.price.between?(20, 50) %>
             <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-          <% elsif  @group.activity.price >= 50 %>
+          <% else  @group.activity.price >= 50 %>
             <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
           <% end %>
-        </p>
-        <p>
-          <i class="far fa-clock"></i><%= (@group.activity.duration)/60 %> hours
-        </p>
+        </div>
+        <div class="card-infos-subgroup">
+          <i class="far fa-clock"></i>
+          <%= (@group.activity.duration)/60 %>h
+        </div>
+        <div class="card-infos-subgroup">
+          <i class="fa-solid fa-location-dot"></i>
+          <%= @group.activity.address.split.last%>
+        </div>
       </div>
     </div>
   </div>
-  <%= form_with model: @group do |f| %>
-    <%= f.text_field :name %>
-    <%= f.submit 'change the name'%>
-  <% end %>
 
   <%= render "/shared/display_users" %>
+
+  <div class="sticky-bottom">
+    <%= form_with model: @group do |f| %>
+      <% f.text_field :name %>
+      <%= f.submit 'Invite', class:"btn-invite"%>
+    <% end %>
+  </div>
 </div>

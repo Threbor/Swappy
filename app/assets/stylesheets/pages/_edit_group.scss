@@ -1,34 +1,43 @@
-
-.card-product-group {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.img-edit-group {
+  width: 100% !important;
+  height: 150px !important;
+  background-size: cover;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  position: sticky;
+  top: 58px;
+}
+.edit-group-infos {
+  color: white;
+  align-items: end;
+  justify-content: space-between;
+}
+.card-group-activity-icon {
   display: flex;
   align-items: center;
+  text-align: center;
+}
+.card-infos-subgroup {
+  margin-right: 30px;
+  .fa-location-dot, .fa-clock {
+    margin: 3px;
+  }
 }
 
-.card-product-group img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-  border-radius:0px;
+.btn-invite{
+  width:44vh;
+  background-color: $blue-dark;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding:10px;
+  margin-inline:10px;
+  position: sticky;
+  top: 450px;
 }
 
-.card-product-group h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product-group p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product-group .card-product-infos-group {
-  padding: 16px;
+.sticky-bottom{
+  position: sticky;
+  bottom: 64px;
 }
