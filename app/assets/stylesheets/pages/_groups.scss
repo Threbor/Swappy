@@ -1,11 +1,15 @@
+.cards-groups {
+  margin-inline: 20px;
+}
+
 .card-product-groups {
   overflow: hidden;
+  border-radius: 5px;
   background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-bottom: 42px;
-  padding: 0 20px 0px;
+  margin-bottom: 20px;
 }
 
 .subtile-groups{
@@ -17,10 +21,10 @@
 }
 
 .groups-img img {
-  height: 105px;
+  height: 130px;
   width: 120px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
 }
 
 .groups-title {
@@ -33,8 +37,9 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
 }
+
 
 .groups-description {
   font-size: 12px;
@@ -51,11 +56,16 @@
 
 .infos-groups-2 {
   margin-left: 10px;
+  font-size: 12px;
 }
 
 
 .card-text-infos-groups {
-  padding-left: 10px;
+  padding: 10px;
+
+  a {
+    color: $blue-dark;
+  }
 }
 
 .head-groups {
@@ -69,18 +79,21 @@
 .groups-duration {
   font-size: 10px;
   margin-top:20px;
-  color: $blue-pastel-fade;
+  color: $blue-pastel;
+  opacity: 0.8;
 }
 .groups-address {
   font-size: 10px;
-  color: $blue-pastel-fade;
+  color: $blue-pastel;
+  opacity: 0.8;
 }
 .groups-price {
-  font-size: 15px;
+  font-size: 12px;
+  color: $blue-dark;
 }
 
 .icon {
-  background: $blue-dark;
+  background: $blue-pastel-light;
   color: white;
   cursor: pointer;
   display: block;
@@ -100,7 +113,7 @@ label.icon {
   z-index: 200;
 }
 .menu-link {
-  background: lightgrey;
+  background: $blue-pastel-light;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
   height: 30px;
   padding-top: 0;
@@ -124,9 +137,15 @@ label.icon {
 .icon-link {
   margin: 1rem;
   text-align: center;
+  color: $blue-pastel;
 }
 .menu:checked ~ .menu-link {
   max-width: 204px;
+  transition: all ease .6s;
+}
+
+.menu:checked ~ .menu-link-invited {
+  max-width: 163px;
   transition: all ease .6s;
 }
 
@@ -139,11 +158,13 @@ label.icon {
 }
 
 .menu:checked ~ .icon {
-  background-color: lightgrey;
-
+  background-color: $blue-pastel-light;
 }
 
 .bottom-infos-groups {
   position: relative;
+}
 
+.thumbs-up-accepted {
+  color: green;
 }

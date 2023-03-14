@@ -17,4 +17,11 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    # mettre un message alerte "delete sucessfully"
+    redirect_to favorite_path
+  end
+
 end
