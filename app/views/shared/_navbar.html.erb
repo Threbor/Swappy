@@ -1,5 +1,4 @@
 <div class="bottom-bar">
-  <%# //CHANGER LES ROUTES (LOCALISATION + GROUPS + PROFILE PAGE )  %>
 
   <div class="nav-link <%='active' if current_page?(localisation_path)%>">
     <% if params[:activity].present? %>
@@ -47,10 +46,9 @@
         <i class="fa-solid fa-comment-dots nav-link-icon"></i>
       <% end %>
     <% end %>
-
   </div>
 
-  <div class="nav-link <%='active' if current_page?(favorites_path)%>">
+  <div class="nav-link <%='active' if current_page?(profile_index_path)%>">
     <% if params[:activity].present? %>
       <%= link_to profile_index_path(activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do  %>
         <i class="fa-solid fa-circle-user nav-link-icon"></i>

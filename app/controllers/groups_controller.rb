@@ -14,9 +14,9 @@ class GroupsController < ApplicationController
   def new
     @activity = Activity.find(params["activity_id"])
     @group = Group.new
-    @users = User.all
     @group_users = GroupUser.all
     @current_group_users = @group_users.where(group_id: params[:id])
+    @users = User.all
   end
 
   def create
@@ -37,13 +37,11 @@ class GroupsController < ApplicationController
     end
   end
 
-
   def edit
     @group = Group.find(params[:id])
-    @users = User.all
-    @group_users = GroupUser.all
-    @current_group_users = @group_users.where(group_id: params[:id])
+    @participants = @group.users
     @group_user = GroupUser.new
+    @users = User.all - @participants - [current_user]
   end
 
   def update
@@ -67,7 +65,13 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-
+    @group = Group.find(params[:id])
+    @group_users = GroupUser.where(group_id: @group)
+    @group_users.each do |group_user|
+      group_user.destroy
+    end
+    @group.destroy
+    redirect_to groups_path
   end
 
   private
@@ -77,7 +81,7 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:activity_id, :name, :done, :participate)
+    params.require(:group).permit(:id, :activity_id, :name, :done, :participate)
 
   end
 end

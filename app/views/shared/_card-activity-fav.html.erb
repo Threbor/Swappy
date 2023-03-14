@@ -1,7 +1,7 @@
-<div class="card-product-infos-groups d-flex align-items-center">
+<div class="card-product-infos-groups d-flex flex-grow-1 align-items-center">
   <div class="groups-img"><%= cl_image_tag favorite.activity.photo.key %></div>
 
-  <div class="card-text-infos-groups">
+  <div class="card-text-infos-groups flex-grow-1">
     <div class="right-element-groups">
       <div class="groups-name">
         <%= favorite.activity.title %>
@@ -39,6 +39,7 @@
           <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
           <%= button_to favorite_path(favorite), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' }  do%>
             <i class="icon-link fa-solid fa-heart"></i><% end %>
+
           <i class="icon-link fa-solid fa-ellipsis"></i>
       </div>
     </div>
