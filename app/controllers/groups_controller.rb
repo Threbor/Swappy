@@ -68,11 +68,19 @@ class GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
+
     @group_users = GroupUser.where(group_id: @group)
     @group_users.each do |group_user|
       group_user.destroy
     end
+
+    @messages = Message.where(group_id: @group)
+    @messages.each do |message|
+      message.destroy
+    end
+
     @group.destroy
+
     redirect_to groups_path
   end
 
