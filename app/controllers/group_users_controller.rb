@@ -36,6 +36,13 @@ class GroupUsersController < ApplicationController
     redirect_to edit_group_path(@current_group)
   end
 
+  def decline
+    @current_group_user = GroupUser.find(params[:id])
+    @current_group = @current_group_user.group
+    @current_group_user.destroy
+    redirect_to groups_path(@current_group)
+  end
+
   private
 
   def group_user_params
