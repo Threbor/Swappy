@@ -4,8 +4,10 @@
   <p class="subtile-groups">trier par : Date d'ajout</p>
 </div>
 
-<% @current_groups.each do |current_group| %>
-  <% if !current_group.group.done %>
-    <%= render "shared/card-activity-groupv2", group: current_group.group %>
+<div class="cards-groups">
+  <% @current_groups.each do |current_group| %>
+    <% if !current_group.group.done %>
+      <%= render "shared/card-activity-groupv2", group: current_group.group %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

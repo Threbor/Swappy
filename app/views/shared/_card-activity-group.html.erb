@@ -1,8 +1,8 @@
-<div class="card-product-infos-groups d-flex align-items-center">
+<div class="card-product-groups d-flex flex-grow-1 justify-content-center">
   <%= link_to activities_path(@activity) do %>
     <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
   <% end %>
-  
+
   <div class="card-text-infos-groups">
   <%= link_to group_path(group) do %>
     <div class="right-element-groups">
