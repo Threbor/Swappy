@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.user_id = current_user.id
     if @group.save && !@group.done
 
       @group_user = GroupUser.new(user_id: current_user.id, group_id: @group.id)
@@ -39,7 +40,8 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-    @participants = @group.users
+    @user_groups = @group.group_users
+    @participants = @user_groups.map {|user_group| user_group.user}
     @group_user = GroupUser.new
     @users = User.all - @participants - [current_user]
   end
@@ -78,7 +80,7 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:id, :activity_id, :name, :done, :participate)
+    params.require(:group).permit(:id, :activity_id, :name, :done, :participate, :user)
 
   end
 end
