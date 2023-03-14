@@ -33,7 +33,7 @@
 
   <div class="sticky-bottom">
     <%= form_with model: @group do |f| %>
-      <% f.text_field :name %>
+      <%= f.hidden_field :name %>
       <%= f.submit 'Invite', class:"btn-invite"%>
     <% end %>
   </div>

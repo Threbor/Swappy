@@ -30,9 +30,10 @@ class GroupUsersController < ApplicationController
   end
 
   def destroy
-    @current_group_user = GroupUser.find(params[:id])
+    @current_group_user = GroupUser.find_by(user_id: params[:user_id], group_id: params[:group_id])
+    @current_group = @current_group_user.group
     @current_group_user.destroy
-    redirect_to groups_path
+    redirect_to edit_group_path(@current_group)
   end
 
   private

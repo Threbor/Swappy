@@ -84,6 +84,8 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
+  
+
   private
 
   def set_group
