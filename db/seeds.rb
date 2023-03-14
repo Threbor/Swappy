@@ -505,6 +505,7 @@ print "groups creation :"
 group1 = Group.new
 group1.activity = restaurant1
 group1.name = restaurant1.title
+group1.user = user1
 group1.date = Date.new(2023, 2, 25)
 group1.done = true
 group1.save!
@@ -514,6 +515,7 @@ print "."
 group2 = Group.new
 group2.activity = restaurant2
 group2.name = restaurant2.title
+group2.user = user1
 group2.date = Date.new(2023, 3, 10)
 group2.done = true
 group2.save!
@@ -523,6 +525,7 @@ print "."
 group3 = Group.new
 group3.activity = restaurant3
 group3.name = restaurant3.title
+group3.user = user3
 group3.date = Date.new(2023, 3, 15)
 group2.done = true
 group3.save!
@@ -532,6 +535,7 @@ print "."
 group4 = Group.new
 group4.activity = restaurant4
 group4.name = restaurant4.title
+group4.user = user1
 group4.save!
 
 print "."
@@ -539,6 +543,7 @@ print "."
 group5 = Group.new({name: "5eme groupe"})
 group5.activity = restaurant5
 group5.name = restaurant5.title
+group5.user = user1
 group5.save!
 
 print "."
