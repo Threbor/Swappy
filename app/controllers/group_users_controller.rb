@@ -20,20 +20,28 @@ class GroupUsersController < ApplicationController
     end
   end
 
+  def participate
+    @group_user = GroupUser.find(params[:id])
+    if @group_user.update(participation: "accepted")
+      redirect_to groups_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
-    @current_group_user = GroupUser.find_by(user_id: params[:user_id], group_id: params[:group_id])
-    @current_group = @current_group_user.group
+    @current_group_user = GroupUser.find(params[:id])
     @current_group_user.destroy
-    redirect_to edit_group_path(@current_group)
+    redirect_to groups_path
   end
 
   private
 
   def group_user_params
-    params.require(:group_user).permit(:group_id, :user_id)
+    params.require(:group_user).permit(:id, :group_id, :user_id, :participation)
   end
 
   def current_group_user_params
-    params.require(:current_group_user).permit(:user_group_id, :group_id, :user_id)
+    params.require(:current_group_user).permit(:id, :user_group_id, :group_id, :user_id, :participation)
   end
 end

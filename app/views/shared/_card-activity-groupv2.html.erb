@@ -1,30 +1,34 @@
-<%= button_to 'DONE!', done_group_path(id: group.id) %>
-<div class="card-product-groups d-flex flex-grow-1 justify-content-center">
 
+<div class="card-product-groups d-flex flex-grow-1 justify-content-center">
   <%# IMG %>
-  <%= link_to activity_path(group.activity) do%>
-    <div class="groups-img"><%= cl_image_tag group.activity.photo.key %></div>
+  <%= link_to activity_path(current_group.group.activity) do%>
+    <div class="groups-img"><%= cl_image_tag current_group.group.activity.photo.key %></div>
+
+
   <% end %>
 
   <%# INFOS %>
   <div class="card-text-infos-groups flex-grow-1">
-    <%= link_to group_path(group) do %>
+    <%= link_to group_path(current_group.group) do %>
       <div class="right-element-groups">
+
+        <%= current_group.group.name %>
         <div class="groups-name">
-          <%= group.name %>
+          <%= if current_group.group.activity.title.size > 20 then "#{current_group.group.activity.title[0..20]...}" else current_group.group.activity.title end %>
+
           <div class= "icon-groups">
-            <i class="fa-solid fa-user-group"><%= group.users.count %></i>
+            <i class="fa-solid fa-user-group"><%= current_group.group.users.count %></i>
           </div>
         </div>
         <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
       </div>
 
       <div>
-        <% if group.activity.price <= 20 %>
+        <% if current_group.group.activity.price <= 20 %>
           <i class="fas fa-euro-sign euro-index"></i>
-        <% elsif  group.activity.price.between?(20, 50) %>
+        <% elsif  current_group.group.activity.price.between?(20, 50) %>
           <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-        <% elsif  group.activity.price >= 50 %>
+        <% elsif  current_group.group.activity.price >= 50 %>
           <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
         <% end %>
       </div>
@@ -32,35 +36,60 @@
 
     <div class="bottom-infos-groups d-flex">
       <div class="infos-groups d-flex">
-        <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= group.activity.duration %>min</div>
+        <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= current_group.group.activity.duration %>min</div>
       </div>
 
       <div class="infos-groups-2 align-items-end d-flex">
         <div class="groups-address">
           <i class="fa-solid fa-location-dot"></i>
-          <%= if group.activity.address.size > 18 then "#{group.activity.address[0..18]...}" else group.activity.address end %>
+          <%= if current_group.group.activity.address.size > 18 then "#{current_group.group.activity.address[0..18]...}" else current_group.group.activity.address end %>
         </div>
       </div>
 
-      <div class="menu-bar">
-        <input type="checkbox" class="menu" id="menu-<%= group.activity.id%>" style="display:none">
-        <label for="menu-<%= group.activity.id%>" class="icon">
-          <i class="icon-link fa-solid fa-ellipsis"></i>
-        </label>
+      <% if current_group.group.user_id == current_user.id %>
+        <div class="menu-bar">
+          <input type="checkbox" class="menu" id="menu-<%= current_group.group.activity.id%>" style="display:none">
+          <label for="menu-<%= current_group.group.activity.id%>" class="icon">
+            <i class="icon-link fa-solid fa-ellipsis"></i>
+          </label>
 
-        <div class="menu-link">
-          <%= button_to group_path(group), method: :delete, class:"icon-link btn-done",  data: { turbo_confirm: 'Are you sure?' }  do%>
-            <i class="fa-regular fa-calendar-xmark"></i>
-          <% end %>
-          <%= button_to group_path(group), method: :patch, params: { group: { done: true } }, class:"icon-link btn-done" do%>
-            <i class="fa-solid fa-calendar-check"></i>
-          <% end %>
-          <%= link_to new_group_path(activity_id: group.activity.id) do %>
-            <i class="icon-link fa-solid fa-users user-menu-deroulant"></i>
-          <% end %>
-          <i class="icon-link fa-solid fa-ellipsis"></i>
+          <div class="menu-link">
+            <%= button_to group_path(current_group.group), method: :delete, class:"icon-link btn-done",  data: { turbo_confirm: 'Are you sure?' }  do%>
+              <i class="fa-regular fa-calendar-xmark"></i>
+            <% end %>
+            <%= link_to done_group_path(current_group.group), data: {turbo_method: :post}, class:"icon-link btn-done" do%>
+              <i class="fa-solid fa-calendar-check"></i>
+            <% end %>
+            <%= link_to edit_group_path(current_group.group) do %>
+              <i class="icon-link fa-solid fa-users user-menu-deroulant"></i>
+            <% end %>
+            <i class="icon-link fa-solid fa-ellipsis"></i>
+          </div>
+
         </div>
-      </div>
+      <% else %>
+        <div class="menu-bar">
+          <input type="checkbox" class="menu" id="menu-<%= current_group.group.activity.id%>" style="display:none">
+          <label for="menu-<%= current_group.group.activity.id%>" class="icon">
+            <% case current_group.participation %>
+            <% when "pending" %>
+              <i class="fa-solid fa-question"></i>
+            <% when "accepted" %>
+              <i class="fa-regular fa-thumbs-up thumbs-up-accepted"></i>
+            <% end %>
+          </label>
+
+          <div class="menu-link">
+            <%= link_to group_user_path(current_group), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"icon-link btn-done"  do%>
+              <i class="fa-regular fa-thumbs-down"></i>
+            <% end %>
+            <%= link_to participate_group_user_path(current_group), data: { turbo_method: :patch}, class:"icon-link btn-done" do%>
+              <i class="fa-regular fa-thumbs-up"></i>
+            <% end %>
+              <i class="fa-solid fa-question"></i>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

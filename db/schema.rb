@@ -76,6 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_152705) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "participation", default: "pending"
     t.index ["group_id"], name: "index_group_users_on_group_id"
     t.index ["user_id"], name: "index_group_users_on_user_id"
   end
@@ -86,8 +87,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_152705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "done", default: false
+    t.bigint "user_id"
     t.date "date"
     t.index ["activity_id"], name: "index_groups_on_activity_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -132,6 +135,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_152705) do
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
   add_foreign_key "groups", "activities"
+  add_foreign_key "groups", "users"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
   add_foreign_key "rejects", "activities"

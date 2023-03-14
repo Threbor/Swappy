@@ -1,13 +1,13 @@
 
 <div class="head-groups">
   <p class="title-groups"><strong>Groups</strong></p>
-  <p class="subtile-groups">trier par : Date d'ajout</p>
+  <p class="subtile-groups">sort by : Date added</p>
 </div>
+
 
 <div class="cards-groups">
   <% @current_groups.each do |current_group| %>
     <% if !current_group.group.done %>
-      <%= render "shared/card-activity-groupv2", group: current_group.group %>
-    <% end %>
+      <%= render "shared/card-activity-groupv2", current_group: current_group %>
   <% end %>
 </div>

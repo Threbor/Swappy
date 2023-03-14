@@ -144,6 +144,11 @@ label.icon {
   transition: all ease .6s;
 }
 
+.menu:checked ~ .menu-link-invited {
+  max-width: 163px;
+  transition: all ease .6s;
+}
+
 .user-menu-deroulant {
   color: $blue-pastel;
   padding: 0px;
@@ -158,4 +163,8 @@ label.icon {
 
 .bottom-infos-groups {
   position: relative;
+}
+
+.thumbs-up-accepted {
+  color: green;
 }
