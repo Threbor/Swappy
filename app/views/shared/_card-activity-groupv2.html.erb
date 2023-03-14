@@ -20,7 +20,7 @@
             <i class="fa-solid fa-user-group"><%= current_group.group.users.count %></i>
           </div>
         </div>
-        <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
+        <%= if current_group.group.activity.title.size > 20 then "#{current_group.group.activity.title[0..20]...}" else current_group.group.activity.title end %>
       </div>
 
       <div>
