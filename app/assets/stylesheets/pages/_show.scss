@@ -1,9 +1,7 @@
 .card-activity-title {
   font-family: $headers-font;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
+  margin-block:30px;
 }
 
 .button-show {
@@ -16,7 +14,8 @@
 }
 
 .card-activity-icon {
-  margin: 10px 0px 15px 0px;
+  margin-block:30px;
+  margin: 10px 10px 15px 0px;
   opacity: 0.8;
   i{
     margin-right: 1px;
@@ -24,13 +23,27 @@
 }
 
 .card-activity-title-category {
-  font-size: 12px;
-  opacity: 0.5;
+  font-size: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i{
+    opacity: 0.5;
+  }
+  h1{
+    margin-bottom: 0;
+  }
 }
 
-.card-activity-description p{
-  font-size: 12px ;
-  text-align: justify;
+.card-activity-description{
+  p{
+    color: black;
+    font-size: 12px ;
+    text-align: justify;
+  }
+  margin-block: 30px;
 }
 
 .background-img-show {
