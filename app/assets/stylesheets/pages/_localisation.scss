@@ -1,8 +1,6 @@
 .localisation-components {
   width: 100%;
-  padding: 10px;
-  height: 72vh !important;
-  margin-top: 110px;
+  margin-top: 132px;
 }
 
 .localisation-city {
@@ -69,7 +67,6 @@
 
 .tag-selector + label {
   cursor: pointer;
-  display: inline-block;
   font-size: 1rem;
   width: 100%;
   height: 90px;
@@ -77,62 +74,181 @@
   padding: 0.1rem 0.5rem;
   background-position: center;
   background-size: cover;
-  color: white;
+  color: transparent;
   border: 1px solid lightgrey;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 .tag-selector:checked + label {
+  border: 2px solid $blue-dark;
+  color: transparent;
+  box-shadow: 4px 4px 10px lightgrey;
+}
+.tag-selector + label:after {
   color: white;
-  font-weight: bolder;
+  position: absolute;
+}
+.tag-selector:checked + label:after {
+  color: $blue-dark;
 }
 
 .button-confirm-selection {
   display: flex;
-  justify-content: center ;
+  justify-content: center;
+
+  .submit-btn {
+    border: none;
+  }
 }
 
 #activity_category_restaurant + label {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+  background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
 }
-
+#activity_category_restaurant:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
 #activity_category_restaurant + label:after {
-  background-image: url("../../images/restaurant.svg");
+  content: "";
+  background-image: image-url("restaurant.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_culture + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://api-www.louvre.fr/sites/default/files/2021-03/la-grande-galerie.jpg");
+}
+#activity_category_culture:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_culture + label:after {
+  content: "";
+  background-image: image-url("culture.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_sport + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://www.runtastic.com/blog/wp-content/uploads/2019/09/Copy-of-thumbnail_blog_1200x800-5-1-1024x683.jpg");
+}
+#activity_category_sport:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_sport + label:after {
+  content: "";
+  background-image: image-url("sport.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_cinema + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://fr.web.img3.acsta.net/newsv7/17/04/11/11/30/048553.jpg");
+}
+#activity_category_cinema:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_cinema + label:after {
+  content: "";
+  background-image: image-url("cinema.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_party + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://cdn.sortiraparis.com/images/80/77153/554223-fete-anniversaire-pique-nique-rassemblement-ce-qu-on-aura-le-droit-de-faire-a-partir-du-11-mai.jpg");
+}
+#activity_category_party:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_party + label:after {
+  content: "";
+  background-image: image-url("party.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_family + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://www.ma-naissance.com/wp-content/uploads/2020/08/activites-sorties-famille-dax-1200x620-300x155.png");
+}
+#activity_category_family:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_family + label:after {
+  content: "";
+  background-image: image-url("family.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_food + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://woody.cloudly.space/app/uploads/crt-paca/2020/07/thumbs/ateliers-cuisine-f102082575-1920x960.jpg");
+}
+#activity_category_food:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_food + label:after {
+  content: "";
+  background-image: image-url("food.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_creativity + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://img.freepik.com/photos-gratuite/palette-peinture-couleur-sale_23-2148660898.jpg");
+}
+#activity_category_creativity:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_creativity + label:after {
+  content: "";
+  background-image: image-url("creativity.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #activity_category_book + label {
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://i.la-croix.com/1400x933/smart/2021/03/05/1201143937/monde-contenu-livres_0.jpg");
+}
+#activity_category_book:checked + label {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+}
+#activity_category_book + label:after {
+  content: "";
+  background-image: image-url("book.svg");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 input[type='range']::-webkit-slider-thumb {
