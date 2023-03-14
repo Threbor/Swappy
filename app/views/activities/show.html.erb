@@ -4,7 +4,7 @@
     <%= link_to activities_path(activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="fa-solid fa-arrow-down"></i><% end %>
     <%= link_to reject_path( id: @activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
     <%= link_to favorites_path( id: @activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
-    <%= link_to new_group_path(activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="fa-solid fa-users"></i><% end %>
+    <%= link_to new_group_path(activity_id: @activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="fa-solid fa-users"></i><% end %>
     <% else %>
     <%= link_to activities_path do %><i class="fa-solid fa-arrow-down"></i><% end %>
     <%= link_to reject_path( id: @activity.id), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
@@ -16,28 +16,45 @@
 <div class="card-activity">
   <div class="card-activity-info">
     <div class="card-activity-title">
-      <h1><strong><%= @activity.title %></strong></h1>
-      <div class="card-activity-title-category"><%= @activity.category.upcase %></div>
+      <div class="card-activity-title-category">
+        <h1><strong><%= @activity.title %></strong></h1>
+          <% if @activity.category == "Restaurant" %>
+            <i class="fas fa-utensils"></i>
+          <% elsif @activity.category == "Culture" %>
+            <i class="fas fa-university"></i>
+          <% elsif @activity.category == "Sport" %>
+            <i class="fas fa-football-ball"></i>
+          <% elsif @activity.category == "Cinema" %>
+            <i class="fas fa-film"></i>
+          <% elsif @activity.category == "Party" %>
+            <i class="fas fa-glass-cheers"></i>
+          <% elsif @activity.category == "Family" %>
+            <i class="fas fa-user-friends"></i>
+          <% elsif @activity.category == "Food" %>
+            <i class="fas fa-cookie-bite"></i>
+          <% elsif @activity.category == "Creativity" %>
+            <i class="fas fa-palette"></i>
+          <% elsif @activity.category == "Book" %>
+            <i class="fas fa-book"></i>
+          <% end %>
+      </div>
     </div>
-    <div class="card-activity-icon">
-      <% if @activity.price <= 20 %>
-        <i class="fas fa-euro-sign euro-index"></i>
-      <% elsif  @activity.price.between?(20, 50) %>
-        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-      <% elsif  @activity.price >= 50 %>
-        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-      <% end %>
-      <br>
-        <i class="far fa-clock"></i>&ensp;<%= (@activity.duration)/60 %> hours
-      <br>
-        <i class="fas fa-child"></i>&ensp;<%= @activity.ages%>
-      <br>
-      <i class="fa-solid fa-location-dot"></i>&ensp;<%= @activity.address%>
-    </div>
+      <div class="card-activity-icon">
+        <% if @activity.price <= 20 %>
+          <i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  @activity.price.between?(20, 50) %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  @activity.price >= 50 %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% end %>
+        <br>
+          <i class="far fa-clock"></i>&ensp;<%= (@activity.duration)/60 %> hours
+        <br>
+          <i class="fas fa-child"></i>&ensp;<%= @activity.ages%>
+        <br>
+        <i class="fa-solid fa-location-dot"></i>&ensp;<%= @activity.address%>
+      </div>
     <div class="card-activity-description">
       <p><%= @activity.description %></p>
     </div>
-    <div class="card-activity-button">
-    </div>
-  </div>
 </div>

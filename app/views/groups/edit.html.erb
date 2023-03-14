@@ -1,6 +1,4 @@
-
-  <div class="d-flex justify-content-center"><h2><strong>Group creation ...</strong></h2>
-  </div>
+<div>
   <div class="img-edit-group sticky-top" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path @group.activity.photo.key %>);">
     <div class="edit-group-infos">
     <h3><%= if @group.activity.title.size > 20
@@ -27,6 +25,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="group-name"><h2><strong><%= @group.name %></strong></h2>
   </div>
 
   <%= render "/shared/display_users" %>

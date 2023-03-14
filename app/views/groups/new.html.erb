@@ -1,10 +1,35 @@
-
-<h1>
-<%= @activity.title %>
-</h1>
-<%= form_with model: @group do |f| %>
-  <%= f.hidden_field :activity_id, value:@activity.id %>
-  <p>First, choose a name for your event</p>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="img-new-group" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path @activity.photo.key %>);">
+  <div class="new-group-infos">
+    <h3><%= if @activity.title.size > 20
+            then "#{@activity.title[0..20]...}"
+            else @activity.title
+            end %></h3>
+    <div class="card-group-activity-icon">
+      <div class="card-infos-subgroup">
+        <% if @activity.price <= 20 %>
+          <i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  @activity.price.between?(20, 50) %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% else  @activity.price >= 50 %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% end %>
+      </div>
+      <div class="card-infos-subgroup">
+        <i class="far fa-clock"></i>
+        <%= (@activity.duration)/60 %>h
+      </div>
+      <div class="card-infos-subgroup">
+        <i class="fa-solid fa-location-dot"></i>
+        <%= @activity.address.split.last%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="input-new-group">
+  <%= form_with model: @group, class:"d-flex flex-column" do |f| %>
+    <%= f.hidden_field :activity_id, value:@activity.id %>
+    <p>Choose a name for your new group</p>
+    <%= f.text_field :name %>
+    <%= f.submit "Invite your friends", class:"btn-new-group"%>
+  <% end %>
+</div>
