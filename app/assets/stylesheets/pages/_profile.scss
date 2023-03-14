@@ -1,0 +1,36 @@
+
+.top-elements {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 58px;
+  padding-right: 53px;
+  align-items: center;
+  margin-left: 91px;
+  margin-top: 90px;
+}
+
+.avatar-profile img {
+  height: 122px ;
+  width: 122px ;
+  border-radius: 50% ;
+  object-fit: cover;
+}
+
+.profile-name {
+  margin-left: 24px;
+  font-size: 23px;
+}
+
+.profile-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 25px;
+}
+
+.title-profile {
+  font-size: 20px;
+}

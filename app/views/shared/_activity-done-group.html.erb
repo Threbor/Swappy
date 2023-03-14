@@ -16,32 +16,18 @@
       </div>
     </div>
 
-    <div>
-      <% if group.activity.price <= 20 %>
-        <i class="fas fa-euro-sign euro-index"></i>
-      <% elsif  group.activity.price.between?(20, 50) %>
-        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-      <% elsif  group.activity.price >= 50 %>
-        <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
-      <% end %>
-    </div>
-
     <div class="infos-groups d-flex">
-      <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= group.activity.duration %>min</div>
+      <div class="groups-duration">
+      <i class="icon-link fa-regular fa-calendar-check"></i>
+        <%= group.date&.strftime("%d/%m/%Y") %>
+      </div>
     </div>
     <% end %>
-
-    <div class="infos-groups-2 align-items-end d-flex">
-      <div class="groups-address">
-        <i class="fa-solid fa-location-dot"></i>
-        <%= if group.activity.address.size > 35 then "#{group.activity.address[0..35]...}" else group.activity.address end %>
-      </div>
 
       <input type="checkbox" id="menu">
       <label for="menu" class="icon">
           <i class="icon-link fa-solid fa-ellipsis"></i>
       </label>
-
       <div class="menu-link">
           <i class="icon-link fa-solid fa-ellipsis"></i>
           <i class="icon-link fa-solid fa-users"></i>
