@@ -100,7 +100,7 @@ label.icon {
   z-index: 200;
 }
 .menu-link {
-  background: lightgrey;
+  background: $blue-pastel-light;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
   height: 30px;
   padding-top: 0;
@@ -124,6 +124,7 @@ label.icon {
 .icon-link {
   margin: 1rem;
   text-align: center;
+  color: $blue-pastel;
 }
 .menu:checked ~ .menu-link {
   max-width: 204px;

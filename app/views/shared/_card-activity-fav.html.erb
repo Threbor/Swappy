@@ -27,6 +27,8 @@
         <%= favorite.activity.address %>
       </div>
 
+
+
     <div class="menu-bar">
       <input type="checkbox" class="menu" id="menu-<%= favorite.activity.id%>" style="display:none">
       <label for="menu-<%= favorite.activity.id%>" class="icon">
@@ -34,8 +36,10 @@
       </label>
 
       <div class="menu-link">
-          <i class="icon-link fa-solid fa-heart"></i>
           <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
+          <%= button_to favorite_path(favorite), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' }  do%>
+            <i class="icon-link fa-solid fa-heart"></i><% end %>
+
           <i class="icon-link fa-solid fa-ellipsis"></i>
       </div>
     </div>
