@@ -5,10 +5,6 @@
 
 <div class="cards-favorites">
   <% @favorites.sort.reverse.each do |favorite| %>
-    <div class="card-fav">
-      <div class="card-product-favorites">
-        <%= render "shared/card-activity-fav", favorite: favorite %>
-      </div>
-    </div>
+    <%= render "shared/card-activity-fav", favorite: favorite %>
   <% end %>
 </div>

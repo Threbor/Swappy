@@ -1,20 +1,26 @@
 
 <div class="card-product-groups d-flex flex-grow-1 justify-content-center">
-
+  <%# IMG %>
   <%= link_to activity_path(current_group.group.activity) do%>
     <div class="groups-img"><%= cl_image_tag current_group.group.activity.photo.key %></div>
 
+
   <% end %>
+
+  <%# INFOS %>
   <div class="card-text-infos-groups flex-grow-1">
     <%= link_to group_path(current_group.group) do %>
       <div class="right-element-groups">
+
         <%= current_group.group.name %>
         <div class="groups-name">
           <%= if current_group.group.activity.title.size > 20 then "#{current_group.group.activity.title[0..20]...}" else current_group.group.activity.title end %>
+
           <div class= "icon-groups">
             <i class="fa-solid fa-user-group"><%= current_group.group.users.count %></i>
           </div>
         </div>
+        <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
       </div>
 
       <div>
@@ -59,6 +65,7 @@
             <% end %>
             <i class="icon-link fa-solid fa-ellipsis"></i>
           </div>
+
         </div>
       <% else %>
         <div class="menu-bar">
