@@ -51,7 +51,7 @@
             <%= button_to group_path(current_group.group), method: :delete, class:"icon-link btn-done",  data: { turbo_confirm: 'Are you sure?' }  do%>
               <i class="fa-regular fa-calendar-xmark"></i>
             <% end %>
-            <%= button_to group_path(current_group.group), method: :patch, params: { group: { done: true } }, class:"icon-link btn-done" do%>
+            <%= link_to done_group_path(current_group.group), data: {turbo_method: :post}, class:"icon-link btn-done" do%>
               <i class="fa-solid fa-calendar-check"></i>
             <% end %>
             <%= link_to edit_group_path(current_group.group) do %>
