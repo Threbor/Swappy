@@ -1,5 +1,5 @@
 <div class="localisation-components">
-  <h5 class="localisation-text-title">Find activities you likes around you and propose your friends to join you ! </h5>
+  <h5 class="localisation-text-title">Find activities you likes around you and propose your friends to join you !</h5>
   <%= simple_form_for :activity, url: activities_path, method: :get, class: "d-flex" do |f| %>
     <div class="localisation-city-km">
       <div class="localisation-city">
@@ -29,9 +29,10 @@
         input_html: { class: "tag-selector" },
         item_wrapper_class: 'tag-item',
         legend_tag: false,
-        collection: Activity::CATEGORIES%>
+        collection: Activity::CATEGORIES
+      %>
     <div class="button-confirm-selection">
-    <%= f.submit "Confirm my selection", class: "btn-blue-dark" %>
+    <%= f.submit "Confirm my selection", class: "submit-btn btn-blue-dark" %>
     </div>
   <% end %>
 </div>
