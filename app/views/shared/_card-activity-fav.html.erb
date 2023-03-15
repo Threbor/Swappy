@@ -7,7 +7,8 @@
 
   <%# INFOS %>
   <div class="card-text-infos-groups flex-grow-1">
-    <%= link_to activity_path(favorite.activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %>
+    <% if params[:activity].present? %>
+      <%= link_to activity_path(favorite.activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %>
       <div class="right-element-groups">
         <div class="groups-name">
           <%= if favorite.activity.title.size > 20 then "#{favorite.activity.title[0..20]...}" else favorite.activity.title end %>
@@ -46,6 +47,47 @@
       </div>
     <% end %>
 
+    <% else %>
+      <%= link_to activity_path(favorite.activity) do %>
+      <div class="right-element-groups">
+        <div class="groups-name">
+          <%= if favorite.activity.title.size > 20 then "#{favorite.activity.title[0..20]...}" else favorite.activity.title end %>
+          <div class="category-activity">
+            <% if favorite.activity.category == "Restaurant" %>
+              <i class="fas fa-utensils"></i>
+            <% elsif favorite.activity.category == "Culture" %>
+              <i class="fas fa-university"></i>
+            <% elsif favorite.activity.category == "Sport" %>
+              <i class="fas fa-football-ball"></i>
+            <% elsif favorite.activity.category == "Cinema" %>
+              <i class="fas fa-film"></i>
+            <% elsif favorite.activity.category == "Party" %>
+              <i class="fas fa-glass-cheers"></i>
+            <% elsif favorite.activity.category == "Family" %>
+              <i class="fas fa-user-friends"></i>
+            <% elsif favorite.activity.category == "Food" %>
+              <i class="fas fa-cookie-bite"></i>
+            <% elsif favorite.activity.category == "Creativity" %>
+              <i class="fas fa-palette"></i>
+            <% elsif favorite.activity.category == "Book" %>
+              <i class="fas fa-book"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="groups-price">
+        <% if favorite.activity.price <= 20 %>
+          <i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  favorite.activity.price.between?(20, 50) %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% elsif  favorite.activity.price >= 50 %>
+          <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+        <% end %>
+      </div>
+    <% end %>
+    <% end %>
+
     <div class="bottom-infos-groups d-flex">
       <div class="infos-groups d-flex">
         <div class="groups-duration"><i class="fa-solid fa-clock"></i><%= favorite.activity.duration %>min</div>
@@ -65,11 +107,17 @@
         </label>
 
         <div class="menu-link">
+        <% if params[:activity].present? %>
           <%= link_to new_group_path(activity_id: favorite.activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' }  do%>
-            <i class="icon-link fa-solid fa-heart"></i
-          ><% end %>
+          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
+            <i class="icon-link fa-solid fa-heart"></i><% end %>
+        <% else %>
+        <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
+          <%= button_to favorite_path(favorite), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
+            <i class="icon-link fa-solid fa-heart"></i><% end %>
+        <% end %>
           <i class="icon-link fa-solid fa-ellipsis"></i>
+
         </div>
       </div>
     </div>
