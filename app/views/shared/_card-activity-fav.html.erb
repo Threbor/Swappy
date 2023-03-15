@@ -7,7 +7,7 @@
 
   <%# INFOS %>
   <div class="card-text-infos-groups flex-grow-1">
-    <%= link_to activity_path(favorite.activity) do %>
+    <%= link_to activity_path(favorite.activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %>
       <div class="right-element-groups">
         <div class="groups-name">
           <%= if favorite.activity.title.size > 20 then "#{favorite.activity.title[0..20]...}" else favorite.activity.title end %>
@@ -65,8 +65,8 @@
         </label>
 
         <div class="menu-link">
-          <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <%= button_to favorite_path(favorite), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' }  do%>
+          <%= link_to new_group_path(activity_id: favorite.activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
+          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' }  do%>
             <i class="icon-link fa-solid fa-heart"></i
           ><% end %>
           <i class="icon-link fa-solid fa-ellipsis"></i>
