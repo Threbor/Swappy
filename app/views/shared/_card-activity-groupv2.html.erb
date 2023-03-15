@@ -71,8 +71,8 @@
 
       <% if current_group.group.user_id == current_user.id %>
         <div class="menu-bar">
-          <input type="checkbox" class="menu" id="menu-<%= current_group.group.activity.id%>" style="display:none">
-          <label for="menu-<%= current_group.group.activity.id%>" class="icon">
+          <input type="checkbox" class="menu" id="menu-<%= current_group.group.name%>" style="display:none">
+          <label for="menu-<%= current_group.group.name%>" class="icon">
             <i class="icon-link fa-solid fa-ellipsis"></i>
           </label>
           <div class="menu-link">
@@ -90,8 +90,8 @@
         </div>
       <% else %>
         <div class="menu-bar">
-          <input type="checkbox" class="menu" id="menu-<%= current_group.group.activity.id%>" style="display:none">
-          <label for="menu-<%= current_group.group.activity.id%>" class="icon">
+          <input type="checkbox" class="menu" id="menu-<%= current_group.group.name%>" style="display:none">
+          <label for="menu-<%= current_group.group.name%>" class="icon">
             <% case current_group.participation %>
             <% when "pending" %>
               <i class="fa-solid fa-question"></i>
