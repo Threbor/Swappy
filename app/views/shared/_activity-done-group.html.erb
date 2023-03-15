@@ -20,7 +20,7 @@
           <div class="profile-cancel">
             <% if group.user_id == current_user.id %>
               <%= button_to profile_path(group), method: :patch, params: { group: { done: false } } do %>
-                <i class="fa-solid fa-calendar-xmark icon-profile-cancel"></i>
+                <i class="fa-solid fa-rotate-left icon-profile-cancel"></i>
               <% end %>
             <% end %>
           </div>
