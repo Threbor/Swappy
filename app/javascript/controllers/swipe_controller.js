@@ -6,6 +6,7 @@ export default class extends Controller {
   static targets = [ "refuseButton", "acceptButton"]
 
   connect() {
+    console.log("test");
     console.log(this.refuseButtonTarget)
     console.log(this.acceptButtonTarget)
     let activities = document.querySelectorAll('.activity');
