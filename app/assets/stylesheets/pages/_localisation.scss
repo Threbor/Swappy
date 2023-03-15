@@ -112,7 +112,7 @@
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
 }
 #activity_category_restaurant:checked + label {
-  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg");
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("https://restaurant-lasiesta.fr/wp-content/uploads/2022/12/la-siesta-restaurant-canet-en-roussillon-2-570x855.jpeg")
 }
 #activity_category_restaurant + label:after {
   content: "";
@@ -121,6 +121,9 @@
   width: 30px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#activity_category_restaurant:checked + label:after {
+  background-image: image-url("restaurant-blue.svg");
 }
 
 #activity_category_culture + label {
@@ -138,6 +141,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+#activity_category_culture:checked + label:after {
+  background-image: image-url("culture-blue.svg");
+}
 
 #activity_category_sport + label {
   background-size: cover;
@@ -153,6 +159,9 @@
   width: 30px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#activity_category_sport:checked + label:after {
+  background-image: image-url("sport-blue.svg");
 }
 
 #activity_category_cinema + label {
@@ -170,6 +179,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+#activity_category_cinema:checked + label:after {
+  background-image: image-url("cinema-blue.svg");
+}
 
 #activity_category_party + label {
   background-size: cover;
@@ -185,6 +197,9 @@
   width: 30px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#activity_category_party:checked + label:after {
+  background-image: image-url("party-blue.svg");
 }
 
 #activity_category_family + label {
@@ -202,6 +217,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+#activity_category_family:checked + label:after {
+  background-image: image-url("family-blue.svg");
+}
 
 #activity_category_food + label {
   background-size: cover;
@@ -217,6 +235,9 @@
   width: 30px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#activity_category_food:checked + label:after {
+  background-image: image-url("food-blue.svg");
 }
 
 #activity_category_creativity + label {
@@ -234,6 +255,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+#activity_category_creativity:checked + label:after {
+  background-image: image-url("creativity-blue.svg");
+}
 
 #activity_category_book + label {
   background-size: cover;
@@ -249,6 +273,9 @@
   width: 30px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#activity_category_book:checked + label:after {
+  background-image: image-url("book-blue.svg");
 }
 
 input[type='range']::-webkit-slider-thumb {
