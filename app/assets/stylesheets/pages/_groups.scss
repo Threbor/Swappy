@@ -4,12 +4,22 @@
 
 .card-product-groups {
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.icon-groups {
+  font-size: 13px;
+
+  p {
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: 1px;
+  }
 }
 
 .subtile-groups{
@@ -20,10 +30,12 @@
   font-size: 20px;
 }
 
-.groups-img img {
-  height: 130px;
+.groups-img {
+  height: 131px;
+  margin: 0;
+  padding: 10px;
   width: 120px;
-  object-fit: cover;
+  background-size: cover;
   border-radius: 10px 0 0 10px;
 }
 
@@ -32,14 +44,42 @@
   margin: 0;
 }
 
-.groups-name {
+.groups-name  {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
+
+.size-groupe {
+  font-size: 15px;
+}
+
+.name-grpe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-size: 20px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.icon-card-group {
+  margin-right: 10px;
+  font-size: 10px;
+  color: white;
+}
+
+.icon-card-group:before {
+  margin-right: 5px;
+  font-size: 13px;
+}
 
 .groups-description {
   font-size: 12px;
@@ -79,13 +119,12 @@
 .groups-duration {
   font-size: 10px;
   margin-top:20px;
-  color: $blue-pastel;
-  opacity: 0.8;
+  color: $blue-pastel-fade;
 }
+
 .groups-address {
   font-size: 10px;
-  color: $blue-pastel;
-  opacity: 0.8;
+  color: $blue-pastel-fade;
 }
 .groups-price {
   font-size: 12px;
@@ -167,4 +206,10 @@ label.icon {
 
 .thumbs-up-accepted {
   color: green;
+}
+
+
+.fa-euro-sign {
+  font-size: 13px;
+  color: $blue-pastel-fade;
 }
