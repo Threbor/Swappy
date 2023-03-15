@@ -100,7 +100,7 @@
             <% end %>
           </label>
           <div class="menu-link">
-            <%= link_to group_user_path(current_group), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"icon-link btn-done"  do%>
+            <%= link_to decline_group_user_path(current_group), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"icon-link btn-done"  do%>
               <i class="fa-regular fa-thumbs-down"></i>
             <% end %>
             <%= link_to participate_group_user_path(current_group), data: { turbo_method: :patch}, class:"icon-link btn-done" do%>

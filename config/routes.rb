@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :group_users, only: %i[index new create edit update] do
     member do
       patch :participate
+      delete :decline
     end
   end
   delete '/group_users/:id', to: 'group_users#destroy', as: 'delete_group_user'
