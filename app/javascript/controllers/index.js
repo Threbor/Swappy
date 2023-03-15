@@ -10,5 +10,8 @@ application.register("hello", HelloController)
 import RangeController from "./range_controller"
 application.register("range", RangeController)
 
+import SwipeController from "./swipe_controller"
+application.register("swipe", SwipeController)
+
 import SwypeIndexController from "./swype_index_controller"
 application.register("swype-index", SwypeIndexController)

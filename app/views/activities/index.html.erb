@@ -1,15 +1,19 @@
-<div data-controller = "swype-index">
+<div class="swipe-icons">
+  <div class="heart"><i class="heart-logo fa-solid fa-heart"></i></div>
+  <div class="cross"><i class="fa-solid fa-xmark cross-logo"></i></div>
+</div>
+<div data-controller = "swype-index swipe" class="activity">
   <% @activities.each do |activity| %>
     <div class="d-none activity" data-swype-index-target="activity">
       <div class="background-img-index d-flex align-items-end" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path activity.photo.key %>);">
         <div class="index">
           <h3 class="activity-title"> <%= activity.title %> </h3>
           <div class="index-infos">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex mb-1">
               <div>
                 <i class="far fa-clock"></i><%= (activity.duration)/60 %> hours
               </div>
-              <div>
+              <div class="icon-price-swipe">
                 <% if activity.price <= 20 %>
                   <i class="fas fa-euro-sign euro-index"></i>
                 <% elsif  activity.price.between?(20, 50) %>
@@ -25,8 +29,8 @@
             </div>
             <div class="button-index d-flex justify-content-between" >
               <%= link_to activity_path(activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %><i class="fa-solid fa-arrow-up"></i><% end %>
-              <%= link_to reject_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post} do %><i class="fa-solid fa-xmark"></i><% end %>
-              <%= link_to favorites_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
+              <%= button_to reject_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post, swipe_target: "refuseButton"}  do %><i class="fa-solid fa-xmark cross-index"></i><% end %>
+              <%= button_to favorites_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post, swipe_target: "acceptButton"} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
               <%= link_to new_group_path(activity_id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="fa-solid fa-users"></i><% end %>
             </div>
         </div>
