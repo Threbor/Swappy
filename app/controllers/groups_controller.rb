@@ -22,16 +22,16 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.user_id = current_user.id
-    if @group.save && !@group.done
+    if @group.save! && !@group.done
 
       @group_user = GroupUser.new(user_id: current_user.id, group_id: @group.id)
-        if @group_user.save
+        if @group_user.save!
           redirect_to edit_group_path(@group)
         else
           render :edit, status: :unprocessable_entity
         end
 
-    elsif @group.save && @group.done
+    elsif @group.save! && @group.done
       redirect_to groups_path
     else
       render :edit, status: :unprocessable_entity
@@ -84,7 +84,7 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
-  
+
 
   private
 
