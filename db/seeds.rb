@@ -101,6 +101,8 @@ user20 = User.create({first_name: "David", last_name: "Brosseau", email: "david.
 
 puts "Creating activities ..."
 
+# RESTAURANT ///////////////////////
+
 restaurant1 = Activity.create!({
   user: user1,
   title: "La Mandale",
@@ -119,7 +121,7 @@ restaurant2 = Activity.create!({
   description: "In the heart of the Passage Pommeraye, one of the most beautiful covered passages of the 19th century, La Passagère welcomes you all day long for a sweet or savoury break.",
   price: 30,
   duration: 120,
-  address: "Passage Pommeraye 1 Rue du Puits d'Argent, 44000, Nantes France",
+  address: "Passage Pommeraye 1 Rue du Puits d'Argent, 44000, Nantes",
   ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/passagere.jpg"))
@@ -131,7 +133,7 @@ restaurant3 = Activity.create!({
   description: "Intimate restaurant with regularly renewed creative formulas, accompanied by wine and composed of seasonal products.",
   price: 26,
   duration: 120,
-  address: "10 rue Léon Blum, 44000, Nantes France",
+  address: "10 rue Léon Blum, 44000, Nantes",
   ages: "For children and adults",
   category: :Restaurant})
   file = File.open(Rails.root.join("db/seeds/images/activities/artnblum.jpg"))
@@ -221,7 +223,7 @@ restaurant10 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/le-lion-et-l-agneau.jpg"))
   restaurant10.photo.attach(io: file, filename: "le-lion-et-l-agneau.jpg", content_type: "image/jpeg")
 
-# /////////////////////////
+# CULTURE /////////////////////////
 
 culture1 = Activity.create!({
   user: user1,
@@ -275,8 +277,8 @@ culture4 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/machineile.jpg"))
   culture4.photo.attach(io: file, filename: "machineile.jpg", content_type: "image/jpeg")
 
-culture5 = Activity.create!({
-  user: user5,
+  culture5 = Activity.create!({
+    user: user5,
   title: "Graslin Theater",
   description: "Discover the upper and lower parts of a theater with a rich and unique history! From the backstage to the underside of the stage, discover the secrets of the production of the shows.",
   price: 15,
@@ -288,9 +290,9 @@ culture5 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/graslin.png"))
   culture5.photo.attach(io: file, filename: "graslin.png", content_type: "image/jpeg")
 
-culture6 = Activity.create!({
-  user: user6,
-  title: "The LU Tower & Le Lieu Unique",
+  culture6 = Activity.create!({
+    user: user6,
+    title: "The LU Tower & Le Lieu Unique",
   description: "Part of the emblems of Nantes. A monument not to be missed. Once a cookie factory, today a cultural Mecca, with its national art scene, etc. Discover its past, as rich industrially as culturally.",
   price: 9,
   duration: 60,
@@ -301,7 +303,23 @@ culture6 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/tourlu.png"))
   culture6.photo.attach(io: file, filename: "tourlu.png", content_type: "image/jpeg")
 
-# /////////////////////////
+  culture7 = Activity.create!({
+    user: user1,
+    title: "Workshop Vincent Guerlais",
+  description: "Come and learn how to work with chocolate or pastry in all its forms! The recipes can vary according to the imagination of the pastry chef.",
+  price: 65,
+  duration: 160,
+  address: "4 Rue de Lorraine, 44000 Nantes",
+  ages: "16 years and older",
+  category: :Culture})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
+  food1.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
+
+
+
+
+  # SPORT /////////////////////////
 
 sport1 = Activity.create!({
   user: user1,
@@ -335,7 +353,7 @@ sport3 = Activity.create!({
   description: "Ile Forget is a small island in the Loire. It is separated in two by the railway line that links Nantes to La Roche-sur-Yon. On the western part of the island, there are 5 hectares of late mowing (typology: natural area). The eastern part has long been developed for sports and leisure activities (playground, fitness facilities, green theatre, etc. .... - typology: developed natural space).",
   price: 0,
   duration: 60,
-  address: "Ile forget, 44230 Saint-Sébastien-sur-Loire",
+  address: "Ile forget, 44000, Nantes",
   ages: "For children and adults",
   category: :Sport})
 
@@ -361,7 +379,7 @@ sport5 = Activity.create!({
   description: "From the Ile de Versailles in Nantes, sail on the Erdre river in an electric boat, stand-up paddle or canoe to discover the magnificent river. The perfect activity to let go totally, try the innovative leisure activities.",
   price: 10,
   duration: 120,
-  address: "Ile de Versailles, Nantes 44000",
+  address: "Ile de Versailles, 44000, Nantes",
   ages: "For children and adults",
   category: :Sport})
 
@@ -374,7 +392,7 @@ sport6 = Activity.create!({
   description: "Léo Lagrange is a swimming pool with its 50m Olympic pool and 8 swimming lanes as well as its 21m training pool. It is the perfect place to let off steam and enjoy a great infrastructure.",
   price: 6,
   duration: 60,
-  address: "Allée de l'Île Gloriette, 44000 Nantes",
+  address: "Allée de l'Île Gloriette, 44000, Nantes",
   ages: "For children and adults",
   category: :Sport})
 
@@ -389,7 +407,7 @@ cinema1 = Activity.create!({
   description: "On the lush alien world of Pandora live the Na'vi, beings who appear primitive, but are highly evolved. Jake Sully, a paralyzed former Marine, becomes mobile again thanks to such an Avatar and falls in love with a Na'vi woman. As a bond with her grows, he is drawn into a battle for the survival of his world.",
   price: 4,
   duration: 162,
-  address: "From your TV with VOD",
+  address: "From your TV",
   ages: "12 years and older",
   category: :Cinema})
 
@@ -402,14 +420,84 @@ cinema2 = Activity.create!({
   description: "On a bench in Savannah, Georgia, Forrest Gump waits for the bus. As it is late in coming, the young man tells his life story to his bored companions. At first sight, his rather limited intellectual capacities did not destined him to great things. No matter. Forrest Gump, without ever understanding anything, became associated with all the great events of his country's history.",
   price: 0,
   duration: 140,
-  address: "From your TV with VOD",
+  address: "From your TV",
   ages: "12 years and older",
   category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/forestgump.jpg"))
   cinema2.photo.attach(io: file, filename: "forestgump.jpg", content_type: "image/jpeg")
 
-# /////////////////////////
+
+cinema3 = Activity.create!({
+    user: user3,
+    title: "Pulp Fiction (1994)",
+    description: "Two mobsters, Jules Winnfield (Samuel L. Jackson) and his friend Vincent Vega (John Travolta), who has just returned from Amsterdam, are tasked with recovering a briefcase with mysterious contents and returning it to Marsellus Wallace (Ving Rhames), their boss.",
+    price: 0,
+    duration: 150,
+    address: "From your TV",
+    ages: "12 years and older",
+    category: :Cinema})
+
+    file = File.open(Rails.root.join("db/seeds/images/activities/pulpfiction.jpg"))
+    cinema2.photo.attach(io: file, filename: "pulpfiction.jpg", content_type: "image/jpeg")
+
+cinema4 = Activity.create!({
+  user: user4,
+  title: "Asterix & Obelix (2002)",
+  description: "Cleopatra, the queen of Egypt, decides, in order to defy the Roman Emperor Julius Caesar, to build in three months a sumptuous palace in the middle of the desert. If she succeeds, he will have to concede publicly that the Egyptian people are the greatest of all peoples.",
+  price: 0,
+  duration: 110,
+  address: "From your TV",
+  ages: "12 years and older",
+  category: :Cinema})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/asterix.jpg"))
+  cinema2.photo.attach(io: file, filename: "asterix.jpg", content_type: "image/jpeg")
+
+cinema5 = Activity.create!({
+  user: user5,
+  title: "The Dark Knight (2008)",
+  description: "In this new installment, Batman ups the ante in his war on crime. With the support of police lieutenant Jim Gordon and Gotham's district attorney, Harvey Dent, Batman aims to eradicate the organized crime that plagues the city.",
+  price: 0,
+  duration: 160,
+  address: "From your TV",
+  ages: "12 years and older",
+  category: :Cinema})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/batman.jpg"))
+  cinema2.photo.attach(io: file, filename: "batman.jpg", content_type: "image/jpeg")
+
+
+cinema6 = Activity.create!({
+  user: user6,
+  title: "Spirited Away (2001)",
+  description: "On a road trip, 10-year-old Chihiro's family stops at a seemingly abandoned theme park. Her parents discover delicious food in a restaurant and start eating. They find themselves transformed into pigs. Panicking, Chihiro runs away and meets the enigmatic Haku, who explains to her how the world she has just entered works. To save her parents, the little girl will have to face the terrible witch Yubaba.",
+  price: 0,
+  duration: 210,
+  address: "From your TV",
+  ages: "12 years and older",
+  category: :Cinema})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/batman.jpg"))
+  cinema2.photo.attach(io: file, filename: "batman.jpg", content_type: "image/jpeg")
+
+cinema7 = Activity.create!({
+  user: user7,
+  title: "Call me by your name (2017)",
+  description: "Set in 1983 in northern Italy, Call Me by Your Name chronicles the romantic relationship between a 17-year-old, Elio Perlman, and Oliver, a 24-year-old graduate-student assistant to Elio's father Samuel, an archaeology professor.",
+  price: 0,
+  duration: 180,
+  address: "From your TV",
+  ages: "12 years and older",
+  category: :Cinema})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/callme.jpg"))
+  cinema2.photo.attach(io: file, filename: "callme.jpg", content_type: "image/jpeg")
+
+
+
+
+    #   PARTY /////////////////////////
 
 party1 = Activity.create!({
   user: user1,
@@ -424,7 +512,35 @@ party1 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/lemolière.jpg"))
   party1.photo.attach(io: file, filename: "lemolière.jpg", content_type: "image/jpeg")
 
-# /////////////////////////
+
+party2 = Activity.create!({
+  user: user1,
+  title: "Warehouse",
+  description: "The most famous club in Nantes",
+  price: 7,
+  duration: 120,
+  address: "2 Rue Racine, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Party})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/party2.jpg"))
+  party1.photo.attach(io: file, filename: "party2.jpg", content_type: "image/jpeg")
+
+
+party3 = Activity.create!({
+  user: user1,
+  title: "Festival La Cantine",
+  description: "Summer Festival every year; unique and full of memories",
+  price: 7,
+  duration: 120,
+  address: "2 Rue Racine, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Party})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/party3.jpg"))
+  party1.photo.attach(io: file, filename: "party3.jpg", content_type: "image/jpeg")
+
+#  FAMILY /////////////////////////
 
 family1 = Activity.create!({
   user: user1,
@@ -452,22 +568,204 @@ family2 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/piscinepetitport.jpg"))
   family2.photo.attach(io: file, filename: "piscinepetitport.jpg", content_type: "image/jpeg")
 
-# /////////////////////////
+
+family3 = Activity.create!({
+  user: user2,
+  title: "Board the Elephant",
+  description: "On board, you discover the gears and legs in action from the inside. A machinist informs you about the life of the animal and sets off, in front of your eyes, the roar. From the back of the Great Elephant, you are as if you were on the 4th floor of a moving house, with a view of the former shipyard site.",
+  price: 6,
+  duration: 60,
+  address: "Les Machines de lîle Parc des Chantiers Boulevard Léon Bureau 44200, Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/elephant.jpg"))
+  family2.photo.attach(io: file, filename: "elephant.jpg", content_type: "image/jpeg")
+
+family4 = Activity.create!({
+  user: user4,
+  title: "Maillé-Brézé",
+  description: "The Maillé-Brézé is thus the symbol of the know-how of the engineers and workers of the former Nantes shipyards (although it was not launched in Nantes). She was admitted to active service on March 4, 1957 and took part in numerous missions in the Mediterranean and North Atlantic during the cold war with the USSR.",
+  price: 6,
+  duration: 60,
+  address: "Quai de la Fosse, 44000, Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/elephant.jpg"))
+  family2.photo.attach(io: file, filename: "elephant.jpg", content_type: "image/jpeg")
+
+family5 = Activity.create!({
+  user: user5,
+  title: "Planetarium",
+  description: "The planetarium is an immersive room where the Universe is presented in 3 dimensions, from the observation of the starry sky from the Earth, to the confines of the observable Universe, passing by the planets of the Solar System. The planetarium team also offers various other activities, always related to astronomy.",
+  price: 30,
+  duration: 180,
+  address: "8 rue des Acadiens, 44100, Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/planete.jpg"))
+  family2.photo.attach(io: file, filename: "planete.jpg", content_type: "image/jpeg")
+
+
+family6 = Activity.create!({
+  user: user6,
+  title: "Japanese Garden",
+  description: "Very nice garden, relaxing in Japanese style, nice little walk, very nice discovery in the middle of the city ....",
+  price: 0,
+  duration: 180,
+  address: "Quai de Versailles, 44000, Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/versailles.jpg"))
+  family2.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
+
+
+family7 = Activity.create!({
+  user: user7,
+  title: "Trentemoult Village",
+  description: "Small pleasant stroll in Trentemoult by taking the navibus from the maritime station. Old small village of fishermen.",
+  price: 0,
+  duration: 180,
+  address: "Quai de Versailles, 44000, Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/versailles.jpg"))
+  family2.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
+
+
+family8 = Activity.create!({
+  user: user8,
+  title: "Parc of Procé",
+  description: "A la limite du centre ville, ce parc offre un repos très apprécié et qui permet de décompresser dans un parc.",
+  price: 0,
+  duration: 180,
+  address: "44 Rue des Dervallières, 44000 Nantes",
+  ages: "For children and adults",
+  category: :Family})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/proces.jpg"))
+  family2.photo.attach(io: file, filename: "proces.jpg", content_type: "image/jpeg")
+
+
+
+  # FOOD HOME /////////////////////////
+
 
 food1 = Activity.create!({
   user: user1,
-  title: "Workshop Vincent Guerlais",
-  description: "Come and learn how to work with chocolate or pastry in all its forms! The recipes can vary according to the imagination of the pastry chef.",
-  price: 65,
+  title: "Sushi home-made",
+  description: "( 500g de rice - 650g water - 60g rice vinegar - 25g sugar - 6g salt - salmon - tuna - avocado )",
+  price: 30,
   duration: 160,
-  address: "4 Rue de Lorraine, 44240 La Chapelle-sur-Erdre",
+  address: "At Home",
   ages: "16 years and older",
   category: :Food})
 
-  file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
-  food1.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
+  file = File.open(Rails.root.join("db/seeds/images/activities/sushi2.jpg"))
+  food1.photo.attach(io: file, filename: "sushi2.jpg", content_type: "image/jpeg")
 
-# /////////////////////////
+
+
+food2 = Activity.create!({
+  user: user2,
+  title: "Triple chocolate Cake",
+  description: "( FlourNatural - Cocoa Powder - Baking Soda - Baking Powder - Salt - Espresso Powder - Oil - Eggs - Butter - Milk - Vanilla Extract - Hot Coffee )",
+  price: 15,
+  duration: 160,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/triple-chocolate.jpg"))
+  food1.photo.attach(io: file, filename: "sushi2.jpg", content_type: "image/jpeg")
+
+
+food3 = Activity.create!({
+  user: user3,
+  title: "Mac & Cheese",
+  description: "( 8 ounces wholewheat - Elbow noodles - 4 cups chopped collard greens - 1 cups low-fat milk - 3 tablespoons - Flour - 1 cup shredded - Cheddar Cheese - 2 ounces reduced-fat - Cream - Extra virgin olive oil - Paprika )",
+  price: 15,
+  duration: 160,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/pasta.jpg"))
+  food1.photo.attach(io: file, filename: "pasta.jpg", content_type: "image/jpeg")
+
+food4 = Activity.create!({
+  user: user4,
+  title: "Chinese Noodles",
+  description: "( Leafy greens - Chopped peanuts - Scallions - White noodles - Meat mixture)",
+  price: 18,
+  duration: 60,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/chinese.jpg"))
+  food1.photo.attach(io: file, filename: "chinese.jpg", content_type: "image/jpeg")
+
+food5 = Activity.create!({
+  user: user5,
+  title: "Crepes",
+  description: "( Flour - Eggs - Milk - Water - Salt - Butter )",
+  price: 6,
+  duration: 20,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/crepes.jpg"))
+  food1.photo.attach(io: file, filename: "crepes.jpg", content_type: "image/jpeg")
+
+food6 = Activity.create!({
+  user: user6,
+  title: "Pierogi",
+  description: "( 5 cups Flour - 1 teaspoon Salt - 1 cup Water - 3 large Eggs - 2 cup Butter - 2 tablespoons Butter - 5 ounces Cream Cheese - 2 teaspoon Salt - 2 teaspoon Pepper )",
+  price: 12,
+  duration: 40,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/pierogi.jpg"))
+  food1.photo.attach(io: file, filename: "pierogi.jpg", content_type: "image/jpeg")
+
+food7 = Activity.create!({
+  user: user7,
+  title: "Pizza",
+  description: "(  Extra-virgin oil - Olive - Garlic - Clove - 8 ounces fresh Bocconcini - Mozzarella - 2 ripe Peaches - 10 basil leaves - Red pepper flakes )",
+  price: 10,
+  duration: 50,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/pizza.jpg"))
+  food1.photo.attach(io: file, filename: "pizza.jpg", content_type: "image/jpeg")
+
+food8 = Activity.create!({
+  user: user8,
+  title: "Vanilla Cake",
+  description: "(  3 cups all purpose flour - 1  teaspoons  Baking powder - 1/2 teaspoon Baking soda - 1/2 teaspoon Salt - 1 cups milk - 1 tablespoon real Vanilla Extract - 1 salted butter softened - 1 cup vegetable oil - 2 cups granulated Sugar - 2 whole large eggs - 2 whole egg whites )",
+  price: 25,
+  duration: 110,
+  address: "At Home",
+  ages: "16 years and older",
+  category: :Food})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/vanilla.jpg"))
+  food1.photo.attach(io: file, filename: "vanilla.jpg", content_type: "image/jpeg")
+
+
+
+
+  #  CREATIVITY /////////////////////////
 
 creativity1 = Activity.create!({
   user: user1,
@@ -475,22 +773,119 @@ creativity1 = Activity.create!({
   description: "Make your most beautiful painting, and let your emotions flow.",
   price: 5,
   duration: 120,
-  address: "At home",
+  address: "At Home",
   ages: "For children and adults",
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/peinture.jpg"))
   creativity1.photo.attach(io: file, filename: "peinture.jpg", content_type: "image/jpeg")
 
-# /////////////////////////
+creativity2 = Activity.create!({
+  user: user2,
+  title: "Modelling Clay",
+  description: "Express your creativity, and create your own.",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/modeler.jpg"))
+  creativity1.photo.attach(io: file, filename: "modeler.jpg", content_type: "image/jpeg")
+
+creativity3 = Activity.create!({
+  user: user3,
+  title: "Knitting",
+  description: "Create your own clothes and even more.",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/tricot.jpg"))
+  creativity1.photo.attach(io: file, filename: "tricot.jpg", content_type: "image/jpeg")
+
+
+creativity4 = Activity.create!({
+  user: user4,
+  title: "Gardening",
+  description: "Get clother to nature and feel the element",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/jardin.jpg"))
+  creativity1.photo.attach(io: file, filename: "jardin.jpg", content_type: "image/jpeg")
+
+
+creativity5 = Activity.create!({
+  user: user5,
+  title: "Beads",
+  description: "Create your own accessories and express your uniqueness",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/perles.jpg"))
+  creativity1.photo.attach(io: file, filename: "perles.jpg", content_type: "image/jpeg")
+
+
+creativity6 = Activity.create!({
+  user: user6,
+  title: "Drawing",
+  description: "Express your creativity",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/dessin.jpg"))
+  creativity1.photo.attach(io: file, filename: "dessin.jpg", content_type: "image/jpeg")
+
+
+creativity7 = Activity.create!({
+  user: user7,
+  title: "Learn to play an Instrument",
+  description: "Learn the passion of music",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/musique.jpg"))
+  creativity1.photo.attach(io: file, filename: "musique.jpg", content_type: "image/jpeg")
+
+creativity8 = Activity.create!({
+  user: user8,
+  title: "Origami",
+  description: "Express your creativity and express yourself",
+  price: 0,
+  duration: 120,
+  address: "At Home",
+  ages: "For children and adults",
+  category: :Creativity})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/origami.jpg"))
+  creativity1.photo.attach(io: file, filename: "origami.jpg", content_type: "image/jpeg")
+
+
+
+  #  BOOKS /////////////////////////
 
 book1 = Activity.create!({
   user: user1,
   title: "Le Monde sans fin",
   description: "Le monde sans fin is a French comic book by Christophe Blain and Jean-Marc Jancovici published in October 2021 by Dargaud. A bestseller, it is the best-selling book in France in 2022.",
-  price: 28,
+  price: 0,
   duration: 160,
-  address: "At home or in the library",
+  address: "At home or in the Library",
   ages: "15 years and older",
   category: :Book})
 
@@ -498,7 +893,77 @@ book1 = Activity.create!({
   book1.photo.attach(io: file, filename: "lemondesansfin.jpg", content_type: "image/jpeg")
 
 
-  # /////////////////////////
+
+book2 = Activity.create!({
+  user: user2,
+  title: "The Great Gatsby",
+  description: "The novel is told from the perspective of a young man named Nick Carraway who has recently moved to New York City and is befriended by his eccentric nouveau riche neighbor with mysterious origins, Jay Gatsby. The Great Gatsby provides an insider’s look into the Jazz Age of the 1920s in United States history while at the same time critiquing the idea of the “American Dream.” Perhaps the most famous aspect of the novel is its cover art—a piercing face projected onto a dark blue night sky and lights from a cityscape—an image that is also found, in a slightly different configuration, within the text itself as a key symbol.",
+  price: 0,
+  duration: 160,
+  address: "At home or in the Library",
+  ages: "15 years and older",
+  category: :Book})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/gatsby.jpg"))
+  book1.photo.attach(io: file, filename: "gatsby.jpg", content_type: "image/jpeg")
+
+
+
+book3 = Activity.create!({
+  user: user3,
+  title: "To Kill a Mockingbird",
+  description: "The novel examines racism in the American South through the innocent wide eyes of a clever young girl named Jean Louise (“Scout”) Finch. Its iconic characters, most notably the sympathetic and just lawyer and father Atticus Finch, served as role models and changed perspectives in the United States at a time when tensions regarding race were high",
+  price: 0,
+  duration: 160,
+  address: "At home or in the Library",
+  ages: "15 years and older",
+  category: :Book})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/bookkill.jpg"))
+  book1.photo.attach(io: file, filename: "bookkill.jpg", content_type: "image/jpeg")
+
+book4 = Activity.create!({
+  user: user4,
+  title: "One Hundred Years of Solitude",
+  description: "The novel explores the genre of magic realism by emphasizing the extraordinary nature of commonplace things while mystical things are shown to be common. Márquez highlights the prevalence and power of myth and folktale in relating history and Latin American culture.",
+  price: 0,
+  duration: 160,
+  address: "At home or in the Library",
+  ages: "15 years and older",
+  category: :Book})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/hundred.jpg"))
+  book1.photo.attach(io: file, filename: "hundred.jpg", content_type: "image/jpeg")
+
+book5 = Activity.create!({
+  user: user5,
+  title: "A Passage to India",
+  description: "It follows a Muslim Indian doctor named Aziz and his relationships with an English professor, Cyril Fielding, and a visiting English schoolteacher named Adela Quested.",
+  price: 0,
+  duration: 160,
+  address: "At home or in the Library",
+  ages: "15 years and older",
+  category: :Book})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/india.jpg"))
+  book1.photo.attach(io: file, filename: "india.jpg", content_type: "image/jpeg")
+
+
+book6 = Activity.create!({
+  user: user6,
+  title: "In Search of Lost Time",
+  description: "In it, Proust introduces the themes that run through the entire work. The narrator recalls his childhood, aided by the famous madeleine; and describes M. Swann's passion for Odette. The work is incomparable.",
+  price: 0,
+  duration: 160,
+  address: "At home or in the Library",
+  ages: "15 years and older",
+  category: :Book})
+
+  file = File.open(Rails.root.join("db/seeds/images/activities/proust.jpg"))
+  book1.photo.attach(io: file, filename: "proust.jpg", content_type: "image/jpeg")
+
+
+# /////////////////////////
 
 print "groups creation :"
 
