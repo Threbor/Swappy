@@ -72,7 +72,7 @@
 }
 
 .fa-users {
-  color: white;
+  color: $blue-pastel;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,7 +84,6 @@
   height: 40px;
 
   /* Blue Pastel */
-  background: $blue-pastel;
+  background:white;
   border-radius: 50px;
 }
-
