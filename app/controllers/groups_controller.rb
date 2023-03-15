@@ -25,11 +25,11 @@ class GroupsController < ApplicationController
     if @group.save! && !@group.done
 
       @group_user = GroupUser.new(user_id: current_user.id, group_id: @group.id)
-        if @group_user.save!
-          redirect_to edit_group_path(@group)
-        else
-          render :edit, status: :unprocessable_entity
-        end
+      if @group_user.save!
+        redirect_to edit_group_path(@group)
+      else
+        render :edit, status: :unprocessable_entity
+      end
 
     elsif @group.save! && @group.done
       redirect_to groups_path
@@ -51,7 +51,7 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     if @group.update(group_params) && !@group.done
-      redirect_to @group
+      redirect_to group_path(@group)
     else
       render :edit, status: :unprocessable_entity
     end
