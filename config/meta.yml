@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Swappy"
+meta_title: "Swappy -  Easily choose an activity to do with friends. "
+meta_description: "Experience unique adventures with your friends thanks to our original activities"
+meta_image: "home-image/og_image1200x630.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
