@@ -7,7 +7,6 @@ export default class extends Controller {
 
   connect() {
     console.log("controlleur connecté");
-    console.log(this.activityTarget);
     this.activityTarget.classList.remove("d-none");
   }
 

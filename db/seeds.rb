@@ -248,8 +248,8 @@ culture2 = Activity.create!({
   ages: "For children and adults",
   category: :Culture})
 
-  file = File.open(Rails.root.join("db/seeds/images/activities/Musee-d-arts-de-Nantes.jpg"))
-  culture2.photo.attach(io: file, filename: "Musee-d-arts-de-Nantes.jpg", content_type: "image/jpeg")
+  file = File.open(Rails.root.join("db/seeds/images/activities/museeart.jpg"))
+  culture2.photo.attach(io: file, filename: "museeart.jpg", content_type: "image/jpeg")
 
 culture3 = Activity.create!({
   user: user3,
@@ -314,7 +314,7 @@ culture4 = Activity.create!({
   category: :Culture})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/vincentguerlais.jpg"))
-  food1.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
+  culture7.photo.attach(io: file, filename: "vincentguerlais.jpg", content_type: "image/jpeg")
 
 
 
@@ -439,7 +439,7 @@ cinema3 = Activity.create!({
     category: :Cinema})
 
     file = File.open(Rails.root.join("db/seeds/images/activities/pulpfiction.jpg"))
-    cinema2.photo.attach(io: file, filename: "pulpfiction.jpg", content_type: "image/jpeg")
+    cinema3.photo.attach(io: file, filename: "pulpfiction.jpg", content_type: "image/jpeg")
 
 cinema4 = Activity.create!({
   user: user4,
@@ -452,7 +452,7 @@ cinema4 = Activity.create!({
   category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/asterix.jpg"))
-  cinema2.photo.attach(io: file, filename: "asterix.jpg", content_type: "image/jpeg")
+  cinema4.photo.attach(io: file, filename: "asterix.jpg", content_type: "image/jpeg")
 
 cinema5 = Activity.create!({
   user: user5,
@@ -465,7 +465,7 @@ cinema5 = Activity.create!({
   category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/batman.jpg"))
-  cinema2.photo.attach(io: file, filename: "batman.jpg", content_type: "image/jpeg")
+  cinema5.photo.attach(io: file, filename: "batman.jpg", content_type: "image/jpeg")
 
 
 cinema6 = Activity.create!({
@@ -479,7 +479,7 @@ cinema6 = Activity.create!({
   category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/batman.jpg"))
-  cinema2.photo.attach(io: file, filename: "batman.jpg", content_type: "image/jpeg")
+  cinema6.photo.attach(io: file, filename: "batman.jpg", content_type: "image/jpeg")
 
 cinema7 = Activity.create!({
   user: user7,
@@ -492,7 +492,7 @@ cinema7 = Activity.create!({
   category: :Cinema})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/callme.jpg"))
-  cinema2.photo.attach(io: file, filename: "callme.jpg", content_type: "image/jpeg")
+  cinema7.photo.attach(io: file, filename: "callme.jpg", content_type: "image/jpeg")
 
 
 
@@ -524,7 +524,7 @@ party2 = Activity.create!({
   category: :Party})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/party2.jpg"))
-  party1.photo.attach(io: file, filename: "party2.jpg", content_type: "image/jpeg")
+  party2.photo.attach(io: file, filename: "party2.jpg", content_type: "image/jpeg")
 
 
 party3 = Activity.create!({
@@ -538,7 +538,7 @@ party3 = Activity.create!({
   category: :Party})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/party3.jpg"))
-  party1.photo.attach(io: file, filename: "party3.jpg", content_type: "image/jpeg")
+  party3.photo.attach(io: file, filename: "party3.jpg", content_type: "image/jpeg")
 
 #  FAMILY /////////////////////////
 
@@ -580,7 +580,7 @@ family3 = Activity.create!({
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/elephant.jpg"))
-  family2.photo.attach(io: file, filename: "elephant.jpg", content_type: "image/jpeg")
+  family3.photo.attach(io: file, filename: "elephant.jpg", content_type: "image/jpeg")
 
 family4 = Activity.create!({
   user: user4,
@@ -593,7 +593,7 @@ family4 = Activity.create!({
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/elephant.jpg"))
-  family2.photo.attach(io: file, filename: "elephant.jpg", content_type: "image/jpeg")
+  family4.photo.attach(io: file, filename: "elephant.jpg", content_type: "image/jpeg")
 
 family5 = Activity.create!({
   user: user5,
@@ -606,7 +606,7 @@ family5 = Activity.create!({
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/planete.jpg"))
-  family2.photo.attach(io: file, filename: "planete.jpg", content_type: "image/jpeg")
+  family5.photo.attach(io: file, filename: "planete.jpg", content_type: "image/jpeg")
 
 
 family6 = Activity.create!({
@@ -620,7 +620,7 @@ family6 = Activity.create!({
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/versailles.jpg"))
-  family2.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
+  family6.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
 
 
 family7 = Activity.create!({
@@ -634,7 +634,7 @@ family7 = Activity.create!({
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/versailles.jpg"))
-  family2.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
+  family7.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
 
 
 family8 = Activity.create!({
@@ -648,7 +648,7 @@ family8 = Activity.create!({
   category: :Family})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/proces.jpg"))
-  family2.photo.attach(io: file, filename: "proces.jpg", content_type: "image/jpeg")
+  family8.photo.attach(io: file, filename: "proces.jpg", content_type: "image/jpeg")
 
 
 
@@ -681,7 +681,7 @@ food2 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/triple-chocolate.jpg"))
-  food1.photo.attach(io: file, filename: "sushi2.jpg", content_type: "image/jpeg")
+  food2.photo.attach(io: file, filename: "sushi2.jpg", content_type: "image/jpeg")
 
 
 food3 = Activity.create!({
@@ -695,7 +695,7 @@ food3 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/pasta.jpg"))
-  food1.photo.attach(io: file, filename: "pasta.jpg", content_type: "image/jpeg")
+  food3.photo.attach(io: file, filename: "pasta.jpg", content_type: "image/jpeg")
 
 food4 = Activity.create!({
   user: user4,
@@ -708,7 +708,7 @@ food4 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/chinese.jpg"))
-  food1.photo.attach(io: file, filename: "chinese.jpg", content_type: "image/jpeg")
+  food4.photo.attach(io: file, filename: "chinese.jpg", content_type: "image/jpeg")
 
 food5 = Activity.create!({
   user: user5,
@@ -721,7 +721,7 @@ food5 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/crepes.jpg"))
-  food1.photo.attach(io: file, filename: "crepes.jpg", content_type: "image/jpeg")
+  food5.photo.attach(io: file, filename: "crepes.jpg", content_type: "image/jpeg")
 
 food6 = Activity.create!({
   user: user6,
@@ -734,7 +734,7 @@ food6 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/pierogi.jpg"))
-  food1.photo.attach(io: file, filename: "pierogi.jpg", content_type: "image/jpeg")
+  food6.photo.attach(io: file, filename: "pierogi.jpg", content_type: "image/jpeg")
 
 food7 = Activity.create!({
   user: user7,
@@ -747,7 +747,7 @@ food7 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/pizza.jpg"))
-  food1.photo.attach(io: file, filename: "pizza.jpg", content_type: "image/jpeg")
+  food7.photo.attach(io: file, filename: "pizza.jpg", content_type: "image/jpeg")
 
 food8 = Activity.create!({
   user: user8,
@@ -760,7 +760,7 @@ food8 = Activity.create!({
   category: :Food})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/vanilla.jpg"))
-  food1.photo.attach(io: file, filename: "vanilla.jpg", content_type: "image/jpeg")
+  food8.photo.attach(io: file, filename: "vanilla.jpg", content_type: "image/jpeg")
 
 
 
@@ -791,7 +791,7 @@ creativity2 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/modeler.jpg"))
-  creativity1.photo.attach(io: file, filename: "modeler.jpg", content_type: "image/jpeg")
+  creativity2.photo.attach(io: file, filename: "modeler.jpg", content_type: "image/jpeg")
 
 creativity3 = Activity.create!({
   user: user3,
@@ -804,7 +804,7 @@ creativity3 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/tricot.jpg"))
-  creativity1.photo.attach(io: file, filename: "tricot.jpg", content_type: "image/jpeg")
+  creativity3.photo.attach(io: file, filename: "tricot.jpg", content_type: "image/jpeg")
 
 
 creativity4 = Activity.create!({
@@ -818,7 +818,7 @@ creativity4 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/jardin.jpg"))
-  creativity1.photo.attach(io: file, filename: "jardin.jpg", content_type: "image/jpeg")
+  creativity4.photo.attach(io: file, filename: "jardin.jpg", content_type: "image/jpeg")
 
 
 creativity5 = Activity.create!({
@@ -832,7 +832,7 @@ creativity5 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/perles.jpg"))
-  creativity1.photo.attach(io: file, filename: "perles.jpg", content_type: "image/jpeg")
+  creativity5.photo.attach(io: file, filename: "perles.jpg", content_type: "image/jpeg")
 
 
 creativity6 = Activity.create!({
@@ -846,7 +846,7 @@ creativity6 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/dessin.jpg"))
-  creativity1.photo.attach(io: file, filename: "dessin.jpg", content_type: "image/jpeg")
+  creativity6.photo.attach(io: file, filename: "dessin.jpg", content_type: "image/jpeg")
 
 
 creativity7 = Activity.create!({
@@ -860,7 +860,7 @@ creativity7 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/musique.jpg"))
-  creativity1.photo.attach(io: file, filename: "musique.jpg", content_type: "image/jpeg")
+  creativity7.photo.attach(io: file, filename: "musique.jpg", content_type: "image/jpeg")
 
 creativity8 = Activity.create!({
   user: user8,
@@ -873,7 +873,7 @@ creativity8 = Activity.create!({
   category: :Creativity})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/origami.jpg"))
-  creativity1.photo.attach(io: file, filename: "origami.jpg", content_type: "image/jpeg")
+  creativity8.photo.attach(io: file, filename: "origami.jpg", content_type: "image/jpeg")
 
 
 
@@ -905,7 +905,7 @@ book2 = Activity.create!({
   category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/gatsby.jpg"))
-  book1.photo.attach(io: file, filename: "gatsby.jpg", content_type: "image/jpeg")
+  book2.photo.attach(io: file, filename: "gatsby.jpg", content_type: "image/jpeg")
 
 
 
@@ -920,7 +920,7 @@ book3 = Activity.create!({
   category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/bookkill.jpg"))
-  book1.photo.attach(io: file, filename: "bookkill.jpg", content_type: "image/jpeg")
+  book3.photo.attach(io: file, filename: "bookkill.jpg", content_type: "image/jpeg")
 
 book4 = Activity.create!({
   user: user4,
@@ -933,7 +933,7 @@ book4 = Activity.create!({
   category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/hundred.jpg"))
-  book1.photo.attach(io: file, filename: "hundred.jpg", content_type: "image/jpeg")
+  book4.photo.attach(io: file, filename: "hundred.jpg", content_type: "image/jpeg")
 
 book5 = Activity.create!({
   user: user5,
@@ -946,7 +946,7 @@ book5 = Activity.create!({
   category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/india.jpg"))
-  book1.photo.attach(io: file, filename: "india.jpg", content_type: "image/jpeg")
+  book5.photo.attach(io: file, filename: "india.jpg", content_type: "image/jpeg")
 
 
 book6 = Activity.create!({
@@ -960,7 +960,7 @@ book6 = Activity.create!({
   category: :Book})
 
   file = File.open(Rails.root.join("db/seeds/images/activities/proust.jpg"))
-  book1.photo.attach(io: file, filename: "proust.jpg", content_type: "image/jpeg")
+  book6.photo.attach(io: file, filename: "proust.jpg", content_type: "image/jpeg")
 
 
 # /////////////////////////
