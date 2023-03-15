@@ -13,10 +13,9 @@
     <%= link_to group_path(current_group.group) do %>
       <div class="right-element-groups">
         <div class="name-grpe">
-          <p><%= current_group.group.name %></p>
+          <p><%= if current_group.group.name.size > 15 then "#{current_group.group.name[0..15]...}" else current_group.group.name end %></p>
 
           <div class="groups-name">
-            <%= if current_group.group.activity.title.size > 20 then "#{current_group.group.activity.title[0..20]...}"end %>
               <div class="category-activity">
                 <% if current_group.group.activity.category == "Restaurant" %>
                   <i class="fas fa-utensils"></i>
@@ -43,7 +42,7 @@
       </div>
 
       <div class="groups-name size-groupe">
-        <%= if current_group.group.activity.title.size > 20 then "#{current_group.group.activity.title[0..20]...}" else current_group.group.activity.title end %>
+        <%= if current_group.group.activity.title.size > 15 then "#{current_group.group.activity.title[0..15]...}" else current_group.group.activity.title end %>
       </div>
 
       <div>
@@ -65,7 +64,7 @@
       <div class="infos-groups-2 align-items-end d-flex">
         <div class="groups-address">
           <i class="fa-solid fa-location-dot"></i>
-          <%= if current_group.group.activity.address.size > 18 then "#{current_group.group.activity.address[0..18]...}" else current_group.group.activity.address end %>
+          <%= current_group.group.activity.address.split.last.capitalize %>
         </div>
       </div>
 
@@ -106,7 +105,7 @@
             <%= link_to participate_group_user_path(current_group), data: { turbo_method: :patch}, class:"icon-link btn-done" do%>
               <i class="fa-regular fa-thumbs-up"></i>
             <% end %>
-              <i class="fa-solid fa-question"></i>
+              <i class="fa-solid fa-question icon-link btn-done"></i>
           </div>
         </div>
       <% end %>

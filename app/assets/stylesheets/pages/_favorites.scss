@@ -100,7 +100,8 @@
   transition: all ease .6s;
 }
 
-.fa-utensils {
+.fa-utensils, .fa-university, .fa-football-ball, .fa-film, .fa-glass-cheers, .fa-user-friends, .fa-cookie-bite, .fa-palette, .fa-book {
   font-size: 13px;
   color: $blue-dark;
+  margin-right: 10px;
 }

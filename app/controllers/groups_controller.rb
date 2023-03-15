@@ -51,7 +51,7 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     if @group.update(group_params) && !@group.done
-      redirect_to @group
+      redirect_to group_path(@group)
     else
       render :edit, status: :unprocessable_entity
     end
