@@ -44,7 +44,7 @@ export default class extends Controller {
           activity.classList.add('activity--nexting');
         }
 
-        if (e.deltaX > 20) {
+        if (e.deltaX > 1) {
           backContainer.style.background = "#69F7C6";
           backContainer.style.transition = ".3s";
           heart.style.background = "#69F7C6";
@@ -52,7 +52,7 @@ export default class extends Controller {
           heart.style.color = "white";
           heart.style.transition = ".3s";
           bgCross.style.display = "none";
-        } else if (e.deltaX < -20) {
+        } else if (e.deltaX < -1) {
           backContainer.style.background = "#FF775C";
           backContainer.style.transition = ".3s";
           cross.style.background = "#FF775C";

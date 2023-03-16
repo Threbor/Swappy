@@ -12,10 +12,12 @@
     <p class="title-profile"><strong>History</strong></p>
   </div>
   <div class="profile-activity">
-    <% @current_groups.each do |current_group| %>
-      <% if current_group.group.done %>
-        <%= render "shared/activity-done-group", group: current_group.group %>
+    <div class="cards-groups">
+      <% @current_groups.each do |current_group| %>
+        <% if current_group.group.done %>
+          <%= render "shared/activity-done-group", group: current_group.group %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
