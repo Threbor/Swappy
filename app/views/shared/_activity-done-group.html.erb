@@ -1,6 +1,6 @@
 <div class="cards-groups">
   <div class="card-product-groups d-flex flex-grow-1">
-    <div class="groups-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path group.activity.photo.key %>);">
+      <div class="groups-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path group.activity.photo.key %>);">
       <i class="fa-solid fa-user-group icon-card-group"><%= group.users.count %></i>
     </div>
     <div class="card-text-infos-groups flex-grow-1">
@@ -12,7 +12,7 @@
             <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
           </div>
       </div>
-      <div class="infos-groups d-flex align-items-center justify-content-between">
+      <div class="infos-groups d-flex align-items-end justify-content-between">
         <div class="groups-duration">
           <i class="icon-link fa-regular fa-calendar-check"></i>
           <%= group.date&.strftime("%d/%m/%Y") %>
