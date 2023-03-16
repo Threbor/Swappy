@@ -434,7 +434,7 @@ cinema3 = Activity.create!({
     description: "Two mobsters, Jules Winnfield (Samuel L. Jackson) and his friend Vincent Vega (John Travolta), who has just returned from Amsterdam, are tasked with recovering a briefcase with mysterious contents and returning it to Marsellus Wallace (Ving Rhames), their boss.",
     price: 0,
     duration: 150,
-    address: "From your TV",
+    address: "From your TV at Home",
     ages: "12 years and older",
     category: :Cinema})
 
@@ -1150,8 +1150,334 @@ favorite1 = Favorite.create!({
 print "."
 puts "all messages created !"
 
-# group1 = Group.create!({
-#   name: "restaurant 3",
-#   activity: restaurant3
-# })
-# print"."
+# création de seeds Spécifiques au Pitch
+puts "Creation of the seeds for the pitch"
+
+puts "Creation of the user Hugo:"
+user_hugo = User.create({first_name: "Hugo", last_name: "ROBERT", email: "hugo@gmail.com", password: "123456"})
+  file = File.open(Rails.root.join("db/seeds/images/users/photo_hugo.jpg"))
+  user_hugo.photo.attach(io: file, filename: "photo_hugo.jpg", content_type: "image/jpeg")
+  print "."
+puts "done"
+
+
+puts "Creation of his favorits activity:"
+  hugo_favorite1 = Favorite.create!({
+    activity: cinema3,
+    user: user_hugo
+  })
+  print "."
+
+  hugo_favorite2 = Favorite.create!({
+    activity: party2,
+    user: user_hugo
+  })
+  print "."
+
+  hugo_favorite3 = Favorite.create!({
+    activity: family5,
+    user: user_hugo
+  })
+  print "."
+
+puts "done"
+
+puts "Creation of groups for the demo:"
+
+  puts "Creation of demo_group1:"
+    demo_group1 = Group.new
+    demo_group1.activity = cinema3
+    demo_group1.name = "Un Classic"
+    demo_group1.user = user_hugo
+
+    print "."
+
+    puts "Adding users to the group demo_group1:"
+      demo_group_user1 = GroupUser.new
+      demo_group_user1.group = demo_group1
+      demo_group_user1.user = user_hugo
+      demo_group_user1.save!
+
+      print "."
+
+      demo_group_user2 = GroupUser.new
+      demo_group_user2.group = demo_group1
+      demo_group_user2.user = user2
+      demo_group_user2.save!
+
+      print "."
+
+      demo_group_user3 = GroupUser.new
+      demo_group_user3.group = demo_group1
+      demo_group_user3.user = user3
+      demo_group_user3.save!
+
+    puts "Done"
+
+
+    puts "Creation of the messages for the demo_group1:"
+
+      dg1_message1 = Message.new
+      dg1_message1.group = demo_group1
+      dg1_message1.user = user_hugo
+      dg1_message1.content = "Hello à tout le monde! Je n'ai jamais pris le temps de voir ce film.... Ca vous dit que l'on s'organise une séance entre nous ?"
+      dg1_message1.save
+      print "."
+
+      dg1_message2 = Message.new
+      dg1_message2.group = demo_group1
+      dg1_message2.user = user2
+      dg1_message2.content = "Salut, oui ! Je suis dispo à partir de vendredi de la semaine prochaine"
+      dg1_message2.save
+      print "."
+
+      dg1_message3 = Message.new
+      dg1_message3.group = demo_group1
+      dg1_message3.user = user3
+      dg1_message3.content = "Super! ça me convient aussi :) "
+      dg1_message3.save
+      print "."
+
+      dg1_message4 = Message.new
+      dg1_message4.group = demo_group1
+      dg1_message4.user = user_hugo
+      dg1_message4.content = "Ca marche! on se rejoint vendredi prochain alors ! :)"
+      dg1_message4.save
+      print "."
+
+    puts "Done"
+  puts "demo_group1 has been created!"
+
+  puts "Creation of demo_group2:"
+  demo_group2 = Group.new
+  demo_group2.activity = party2
+  demo_group2.name = "Les meilleurs"
+  demo_group2.user = user3
+
+  print "."
+
+  puts "Adding users to the group demo_group2:"
+    demo_group_user_g2_1 = GroupUser.new
+    demo_group_user_g2_1.group = demo_group2
+    demo_group_user_g2_1.user = user_hugo
+    demo_group_user_g2_1.save!
+
+    print "."
+
+    demo_group_user_g2_2 = GroupUser.new
+    demo_group_user_g2_2.group = demo_group2
+    demo_group_user_g2_2.user = user2
+    demo_group_user_g2_2.save!
+
+    print "."
+
+    demo_group_user_g2_3 = GroupUser.new
+    demo_group_user_g2_3.group = demo_group2
+    demo_group_user_g2_3.user = user3
+    demo_group_user_g2_3.save!
+
+    print "."
+
+    demo_group_user_g2_4 = GroupUser.new
+    demo_group_user_g2_4.group = demo_group2
+    demo_group_user_g2_4.user = user4
+    demo_group_user_g2_4.save!
+
+    print "."
+
+    demo_group_user_g2_5 = GroupUser.new
+    demo_group_user_g2_5.group = demo_group2
+    demo_group_user_g2_5.user = user5
+    demo_group_user_g2_5.save!
+
+    print "."
+
+    demo_group_user_g2_6 = GroupUser.new
+    demo_group_user_g2_6.group = demo_group2
+    demo_group_user_g2_6.user = user6
+    demo_group_user_g2_6.save!
+
+    print "."
+
+    demo_group_user_g2_7 = GroupUser.new
+    demo_group_user_g2_7.group = demo_group2
+    demo_group_user_g2_7.user = user7
+    demo_group_user_g2_7.save!
+
+    print "."
+
+    demo_group_user_g2_8 = GroupUser.new
+    demo_group_user_g2_8.group = demo_group2
+    demo_group_user_g2_8.user = user8
+    demo_group_user_g2_8.save!
+
+    print "."
+
+
+  puts "Done"
+
+
+  puts "Creation of the messages for the demo_group2:"
+
+    dg2_message1 = Message.new
+    dg2_message1.group = demo_group2
+    dg2_message1.user = user3
+    dg2_message1.content = "Y'a un event de David Guetta le mois prochain !! qui est chaud ???? "
+    dg2_message1.save
+    print "."
+
+    dg2_message2 = Message.new
+    dg2_message2.group = demo_group2
+    dg2_message2.user = user6
+    dg2_message2.content = "moi !"
+    dg2_message2.save
+    print "."
+
+    dg2_message3 = Message.new
+    dg2_message3.group = demo_group2
+    dg2_message3.user = user7
+    dg2_message3.content = "Moi ça me va :) "
+    dg2_message3.save
+    print "."
+
+    dg2_message4 = Message.new
+    dg2_message4.group = demo_group2
+    dg2_message4.user = user8
+    dg2_message4.content = "Moi !"
+    dg2_message4.save
+    print "."
+
+  puts "Done"
+puts "demo_group2 has been created!"
+
+puts "Creation of demo_group3:"
+demo_group3 = Group.new
+demo_group3.activity = family5
+demo_group3.name = "A la belle étoile"
+demo_group3.user = user5
+
+print "."
+
+puts "Adding users to the group demo_group3:"
+  demo_group_user_g3_4 = GroupUser.new
+  demo_group_user_g3_4.group = demo_group3
+  demo_group_user_g3_4.user = user_hugo
+  demo_group_user_g3_4.save!
+
+  print "."
+
+  demo_group_user_g3_5 = GroupUser.new
+  demo_group_user_g3_5.group = demo_group3
+  demo_group_user_g3_5.user = user5
+  demo_group_user_g3_5.save!
+
+  print "."
+
+  demo_group_user_g3_6 = GroupUser.new
+  demo_group_user_g3_6.group = demo_group3
+  demo_group_user_g3_6.user = user6
+  demo_group_user_g3_6.save!
+
+  print "."
+
+puts "Done"
+
+
+puts "Creation of the messages for the demo_group3:"
+
+  dg3_message1 = Message.new
+  dg3_message1.group = demo_group3
+  dg3_message1.user = user_hugo
+  dg3_message1.content = "J'ai vu qu'il y avait un évènement sur la pluie d'étoile filante Mardi soir. Est ce que ça vous dit d'y aller ?"
+  dg3_message1.save
+  print "."
+
+  dg3_message2 = Message.new
+  dg3_message2.group = demo_group3
+  dg3_message2.user = user5
+  dg3_message2.content = "Ca a l'ai super bien !"
+  dg3_message2.save
+  print "."
+
+  dg3_message2 = Message.new
+  dg3_message2.group = demo_group3
+  dg3_message2.user = user6
+  dg3_message2.content = "Je suis parant aussi! je vous propose dans manger chez moi avant !"
+  dg3_message2.save
+  print "."
+
+puts "Done"
+puts "demo_group3 has been created!"
+
+
+puts "Creation of his profile page (activity already done):"
+
+  demo_group_done_1 = Group.new
+  demo_group_done_1.activity = food5
+  demo_group_done_1.name = "Tradition"
+  demo_group_done_1.user = user_hugo
+  demo_group_done_1.date = Date.new(2023, 2, 25)
+  demo_group_done_1.done = true
+  demo_group_done_1.save!
+
+  print "."
+
+    demo_group_user7 = GroupUser.new
+    demo_group_user7.group = demo_group_done_1
+    demo_group_user7.user = user_hugo
+    demo_group_user7.save!
+
+    print "."
+
+  demo_group_done_2 = Group.new
+  demo_group_done_2.activity = restaurant1
+  demo_group_done_2.name = "Bon appétit!"
+  demo_group_done_2.user = user_hugo
+  demo_group_done_2.date = Date.new(2023, 3, 10)
+  demo_group_done_2.done = true
+  demo_group_done_2.save!
+
+  print "."
+
+    demo_group_user8 = GroupUser.new
+    demo_group_user8.group = demo_group_done_2
+    demo_group_user8.user = user_hugo
+    demo_group_user8.save!
+
+    print "."
+
+  demo_group_done_3 = Group.new
+  demo_group_done_3.activity = culture1
+  demo_group_done_3.name = "Petite visite"
+  demo_group_done_3.user = user_hugo
+  demo_group_done_3.date = Date.new(2023, 3, 15)
+  demo_group_done_3.done = true
+  demo_group_done_3.save!
+
+  print "."
+
+    demo_group_user9 = GroupUser.new
+    demo_group_user9.group = demo_group_done_3
+    demo_group_user9.user = user_hugo
+    demo_group_user9.save!
+
+    print "."
+
+  demo_group_done_4 = Group.new
+  demo_group_done_4.activity = sport1
+  demo_group_done_4.name = "Ballade"
+  demo_group_done_4.user = user_hugo
+  demo_group_done_4.date = Date.new(2023, 3, 15)
+  demo_group_done_4.done = true
+  demo_group_done_4.save!
+
+  print "."
+
+    demo_group_user10 = GroupUser.new
+    demo_group_user10.group = demo_group_done_4
+    demo_group_user10.user = user_hugo
+    demo_group_user10.save!
+
+    print "."
+
+puts "Done"
