@@ -47,6 +47,7 @@ a {
 
 .activity{
   padding: 0px 10px 0px 10px;
+  opacity: 1;;
 
   .fa-xmark {
     background: white;
@@ -62,6 +63,11 @@ a {
     background-color: transparent;
     border: none;
   }
+}
+.hide-activity {
+  opacity: 0;
+
+  transition: opacity 1s
 }
 .icon-price-swipe{
   margin-left: 10px;
