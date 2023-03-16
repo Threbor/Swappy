@@ -20,7 +20,7 @@
 
 
 .favorites-img img {
-  height: 100px;
+  height: 113px;
   width: 120px;
   margin: 0;
   object-fit: cover;
@@ -56,7 +56,8 @@
 }
 
 .head-favorites {
-  padding: 16px;
+  padding: 15px;
+  margin-left: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,13 +65,15 @@
 }
 
 .fa-location-dot {
-  margin-right: 10px;
+  margin-right: 3px;
   font-size: 12px;
+  color: $blue-pastel-fade;
 }
 
 .fa-clock {
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 10px;
+  color: $blue-pastel-fade;
 }
 .fa-ellipsis {
   border-radius: 50px;
@@ -87,6 +90,7 @@
 
 .title-favorites{
   font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .icon-favorite {
@@ -110,7 +114,13 @@
 }
 
 .fa-utensils, .fa-university, .fa-football-ball, .fa-film, .fa-glass-cheers, .fa-user-friends, .fa-cookie-bite, .fa-palette, .fa-book {
-  font-size: 13px;
+  font-size: 18px;
   color: $blue-dark;
   margin-right: 10px;
+}
+
+.card-favorite {
+  .groups-name {
+    font-weight: bold !important;
+  }
 }
