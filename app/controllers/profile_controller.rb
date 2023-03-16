@@ -4,7 +4,7 @@ class ProfileController < ApplicationController
     @groups = Group.all.sort.reverse
     @group_users = GroupUser.all
     @current_user_groups = GroupUser.where(user: current_user)
-    @current_groups = GroupUser.where(user_id: current_user.id).sort.reverse
+    @current_groups = GroupUser.includes(:group).where(user_id: current_user.id).order("groups.updated_at DESC")
 
   end
 

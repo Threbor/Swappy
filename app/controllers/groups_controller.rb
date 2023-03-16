@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all.sort.reverse
-    @current_groups = GroupUser.where(user_id: current_user.id)
+    @current_groups = GroupUser.includes(:group).where(user_id: current_user.id).order("groups.created_at DESC")
   end
 
   def show
