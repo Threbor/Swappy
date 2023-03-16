@@ -66,9 +66,11 @@ export default class extends Controller {
           activity.style.transform = ``;
           if (posX > thresholdMatch) {
             console.log("swipe droite ?")
+            activity.style.opacity = "0"
             acceptButton.form.submit()
           } else if (posX < -thresholdMatch) {
             console.log("swipe gauche ?")
+            activity.style.opacity = "0"
             refuseButton.form.submit()
           } else {
             activity.classList.add('activity--back');
