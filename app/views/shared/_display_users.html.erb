@@ -1,5 +1,5 @@
 <div class="display-user-container">
-  <div class="wrapper group-participants">
+  <div class="wrapper-group-participants">
     <% @participants.each do |participant| %>
       <% unless participant == current_user %>
         <div class = "d-flex align-items-center justify-content-between">
@@ -18,7 +18,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="wrapper group-user">
+  <div class="wrapper-group-user">
     <% @users.each do |user| %>
       <div class = "d-flex align-items-center justify-content-between">
         <div>
