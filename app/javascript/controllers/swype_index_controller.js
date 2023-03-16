@@ -10,6 +10,8 @@ export default class extends Controller {
     console.log(this.activityTarget);
     this.activityTarget.classList.remove("hide-activity");
     this.activityTarget.style.transition = "opacity 1s";
+    this.activityTarget.classList.remove("d-none");
+
   }
 
   next (event) {

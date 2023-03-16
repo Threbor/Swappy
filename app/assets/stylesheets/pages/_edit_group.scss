@@ -5,19 +5,36 @@
   padding: 1rem;
   display: flex;
   align-items: flex-end;
+}
+
+.group-name{
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 58px;
 }
+.group-name-name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom:0px;
+  width:100%;
+}
+
 .edit-group-infos {
   color: white;
   align-items: end;
   justify-content: space-between;
 }
+
 .card-group-activity-icon {
   display: flex;
   align-items: center;
   text-align: center;
 }
+
 .card-infos-subgroup {
   margin-right: 30px;
   .fa-location-dot, .fa-clock {
@@ -40,11 +57,4 @@
 .sticky-bottom{
   position: sticky;
   bottom: 64px;
-}
-
-.group-name{
-  display: flex;
-  justify-content: center;
-  position: sticky;
-  top: 150px;
 }

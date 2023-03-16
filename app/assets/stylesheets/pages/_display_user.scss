@@ -1,6 +1,5 @@
 .display-user-container {
 
-
   img{
     border-radius: 50%;
     width: 40px;
@@ -9,10 +8,16 @@
     margin-block: 5px;
   }
 
-  .wrapper{
+  .wrapper-group-participants{
     margin-top: 20px;
     margin-inline: 20px;
   }
+
+  .wrapper-group-user{
+    margin-top: 0px;
+    margin-inline: 20px;
+  }
+
   .button_to button {
     background-color: transparent;
     border: none;
@@ -40,6 +45,5 @@
   .btn-plus-group{
     background-color: $white;
   }
-
 
 }

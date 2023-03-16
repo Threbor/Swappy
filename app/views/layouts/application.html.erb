@@ -39,7 +39,7 @@
       <%= render "shared/topbar"%>
     <% end %>
 
-    <div class="main-container">
+    <div class="main-container <%='swipe-screen' if current_page?(activities_path)%>">
       <%= yield %>
     </div>
     <% unless current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path)%>

@@ -92,15 +92,25 @@
 .icon-favorite {
   background: transparent;
   border: none;
-  color: $red-75;
+  i {
+    color: $red-light;
+  }
 }
 
 .card-favorite .menu:checked ~ .menu-link {
-  max-width: 151px;
+  max-width: 119px;
   transition: all ease .6s;
 }
 
-.fa-utensils {
+.card-favorite .menu ~ .menu-link .icon-favorite i {
+  color: $blue-pastel-fade;
+}
+.card-favorite .menu:checked ~ .menu-link .icon-favorite i {
+  color: $red-light;
+}
+
+.fa-utensils, .fa-university, .fa-football-ball, .fa-film, .fa-glass-cheers, .fa-user-friends, .fa-cookie-bite, .fa-palette, .fa-book {
   font-size: 13px;
   color: $blue-dark;
+  margin-right: 10px;
 }

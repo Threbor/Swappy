@@ -11,7 +11,7 @@
       <%= link_to activity_path(favorite.activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %>
       <div class="right-element-groups">
         <div class="groups-name">
-          <%= if favorite.activity.title.size > 20 then "#{favorite.activity.title[0..20]...}" else favorite.activity.title end %>
+          <%= if favorite.activity.title.size > 14 then "#{favorite.activity.title[0..14]...}" else favorite.activity.title end %>
           <div class="category-activity">
             <% if favorite.activity.category == "Restaurant" %>
               <i class="fas fa-utensils"></i>
@@ -96,7 +96,7 @@
       <div class="infos-groups-2 align-items-end d-flex">
         <div class="groups-address">
           <i class="fa-solid fa-location-dot"></i>
-          <%= if favorite.activity.address.size > 18 then "#{favorite.activity.address[0..18]...}" else favorite.activity.address end %>
+          <%= favorite.activity.address.split.last.capitalize %>
         </div>
       </div>
 
@@ -104,20 +104,23 @@
         <input type="checkbox" class="menu" id="menu-<%= favorite.activity.id%>" style="display:none">
         <label for="menu-<%= favorite.activity.id%>" class="icon">
           <i class="icon-link fa-solid fa-ellipsis"></i>
+            <i class="fa-solid fa-xmark"></i>
         </label>
 
         <div class="menu-link">
         <% if params[:activity].present? %>
+          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class: "icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
+            <i class="fa-solid fa-heart-crack"></i>
+          <% end %>
           <%= link_to new_group_path(activity_id: favorite.activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
-            <i class="icon-link fa-solid fa-heart"></i><% end %>
         <% else %>
-        <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <%= button_to favorite_path(favorite), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
-            <i class="icon-link fa-solid fa-heart"></i><% end %>
+
+          <%= button_to favorite_path(favorite), method: :delete, class:"icon-link icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
+            <i class="fa-solid fa-heart-crack"></i>
+          <% end %>
+          <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="fa-solid fa-users user-menu-deroulant"></i><% end %>
         <% end %>
           <i class="icon-link fa-solid fa-ellipsis"></i>
-
         </div>
       </div>
     </div>

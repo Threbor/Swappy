@@ -1,29 +1,28 @@
 <div class="cards-groups">
   <div class="card-product-groups d-flex flex-grow-1">
-      <div class="groups-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path group.activity.photo.key %>);">
-        <i class="fa-solid fa-user-group icon-card-group"><%= group.users.count %></i>
-      </div>
+    <div class="groups-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path group.activity.photo.key %>);">
+      <i class="fa-solid fa-user-group icon-card-group"><%= group.users.count %></i>
+    </div>
     <div class="card-text-infos-groups flex-grow-1">
-        <div class="right-element-groups">
-            <div class="name-grpe">
-              <%= group.name %>
-            </div>
-            <div class="groups-name size-groupe">
-              <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
-            </div>
+      <div class="right-element-groups">
+          <div class="name-grpe">
+            <%= group.name %>
+          </div>
+          <div class="groups-name size-groupe">
+            <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
+          </div>
+      </div>
+      <div class="infos-groups d-flex align-items-center justify-content-between">
+        <div class="groups-duration">
+          <i class="icon-link fa-regular fa-calendar-check"></i>
+          <%= group.date&.strftime("%d/%m/%Y") %>
         </div>
-        <div class="infos-groups d-flex align-items-center justify-content-between">
-          <div class="groups-duration">
-            <i class="icon-link fa-regular fa-calendar-check"></i>
-            <%= group.date&.strftime("%d/%m/%Y") %>
-          </div>
-          <div class="profile-cancel">
-            <% if group.user_id == current_user.id %>
-              <%= button_to profile_path(group), method: :patch, params: { group: { done: false } } do %>
-                <i class="fa-solid fa-calendar-xmark icon-profile-cancel"></i>
-              <% end %>
+        <div class="profile-cancel">
+          <% if group.user_id == current_user.id %>
+            <%= button_to profile_path(group), method: :patch, params: { group: { done: false } } do %>
+              <i class="fa-solid fa-rotate-left icon-profile-cancel"></i>
             <% end %>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>

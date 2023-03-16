@@ -12,7 +12,7 @@
           <% elsif  @group.activity.price.between?(20, 50) %>
             <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
           <% else  @group.activity.price >= 50 %>
-            <i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
+            <i class="fas fa-euro-sign euro-index"></i></i><i class="fas fa-euro-sign euro-index"></i><i class="fas fa-euro-sign euro-index"></i>
           <% end %>
         </div>
         <div class="card-infos-subgroup">
@@ -21,7 +21,7 @@
         </div>
         <div class="card-infos-subgroup">
           <i class="fa-solid fa-location-dot"></i>
-          <%= @group.activity.address.split.last%>
+          <%= @group.activity.address.split.last.capitalize%>
         </div>
       </div>
     </div>
@@ -29,14 +29,22 @@
 
   <div class="group-infos">
     <div class="d-flex align-items-center">
-      <h1><%= @group.name %></h1>
+      <h1><%= if @group.name.size > 15
+        then "#{@group.name[0..15]...}"
+        else @group.name
+        end %></h1>
       <%= link_to edit_group_path(@group) do %>
         <i class="fas fa-pen"></i>
       <% end %>
     </div>
     <div class="img-group-users">
-      <% @group_users.each do |group_users| %>
+      <% @group_users.first(3).each do |group_users| %>
         <%= cl_image_tag(group_users.user.photo.key, crop: :thumb, gravity: :face) %>
+      <% end %>
+      <% if @group_users.size > 3 %>
+      <div class="pastille">
+      <p> +<%= @group_users.size - 3 %></p>
+      </div>
       <% end %>
     </div>
   </div>

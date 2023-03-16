@@ -53,6 +53,28 @@
   }
 }
 
+.pastille {
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-block: 5px;
+  margin-inline: -10px;
+  border: 2px solid white;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+
+  p {
+    margin-top: 5px;
+    font-size: 19px;
+    color: $blue-pastel;
+    font-weight: bold;
+  }
+}
+
+
+
 .chatroom {
   background: white;
   margin-top: 9px;
@@ -72,6 +94,7 @@
     overflow: scroll;
     padding: 1rem;
     padding-bottom: 136px;
+    display: grid;
 
     p {
       background-color: $blue-pastel-light;

@@ -2,7 +2,7 @@
   <div class="heart"><i class="heart-logo fa-solid fa-heart"></i></div>
   <div class="cross"><i class="fa-solid fa-xmark cross-logo"></i></div>
 </div>
-<div data-controller = "swype-index swipe" class="activity">
+<div data-controller="swype-index swipe" class="activity">
   <% @activities.each do |activity| %>
     <div class="activity hide-activity" data-swype-index-target="activity">
       <div class="background-img-index d-flex align-items-end" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path activity.photo.key %>);">
