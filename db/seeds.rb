@@ -630,8 +630,8 @@ family7 = Activity.create!({
   ages: "For children and adults",
   category: :Family})
 
-  file = File.open(Rails.root.join("db/seeds/images/activities/versailles.jpg"))
-  family7.photo.attach(io: file, filename: "versailles.jpg", content_type: "image/jpeg")
+  file = File.open(Rails.root.join("db/seeds/images/activities/village.jpg"))
+  family7.photo.attach(io: file, filename: "village.jpg", content_type: "image/jpeg")
 
 
 family8 = Activity.create!({
@@ -1217,14 +1217,14 @@ puts "Creation of groups for the demo:"
       dg1_message1 = Message.new
       dg1_message1.group = demo_group1
       dg1_message1.user = user_hugo
-      dg1_message1.content = "Hello à tout le monde! Je n'ai jamais pris le temps de voir ce film.... Ca vous dit que l'on s'organise une séance entre nous ?"
+      dg1_message1.content = "Hello tout le monde! Je n'ai jamais pris le temps de voir ce film.... Ca vous dit que l'on s'organise une séance entre nous ?"
       dg1_message1.save
       print "."
 
       dg1_message2 = Message.new
       dg1_message2.group = demo_group1
       dg1_message2.user = user2
-      dg1_message2.content = "Salut, oui ! Je suis dispo à partir de vendredi de la semaine prochaine"
+      dg1_message2.content = "Yes ! Je suis dispo à partir de jeudi soir !"
       dg1_message2.save
       print "."
 
@@ -1238,7 +1238,7 @@ puts "Creation of groups for the demo:"
       dg1_message4 = Message.new
       dg1_message4.group = demo_group1
       dg1_message4.user = user_hugo
-      dg1_message4.content = "Ca marche! on se rejoint vendredi prochain alors ! :)"
+      dg1_message4.content = "Ca marche! on se rejoint jeudi prochain alors ! :)"
       dg1_message4.save
       print "."
 
@@ -1384,16 +1384,9 @@ puts "Creation of the messages for the demo_group3:"
 
   dg3_message1 = Message.new
   dg3_message1.group = demo_group3
-  dg3_message1.user = user_hugo
+  dg3_message1.user = user5
   dg3_message1.content = "J'ai vu qu'il y avait un évènement sur la pluie d'étoile filante Mardi soir. Est ce que ça vous dit d'y aller ?"
   dg3_message1.save
-  print "."
-
-  dg3_message2 = Message.new
-  dg3_message2.group = demo_group3
-  dg3_message2.user = user5
-  dg3_message2.content = "Ca a l'ai super bien !"
-  dg3_message2.save
   print "."
 
   dg3_message2 = Message.new
@@ -1462,7 +1455,7 @@ puts "Creation of his profile page (activity already done):"
 
   demo_group_done_4 = Group.new
   demo_group_done_4.activity = sport1
-  demo_group_done_4.name = "Ballade"
+  demo_group_done_4.name = "Balade"
   demo_group_done_4.user = user_hugo
   demo_group_done_4.date = Date.new(2023, 3, 15)
   demo_group_done_4.done = true
