@@ -73,6 +73,7 @@
           <input type="checkbox" class="menu" id="menu-<%= current_group.group.name%>" style="display:none">
           <label for="menu-<%= current_group.group.name%>" class="icon">
             <i class="icon-link fa-solid fa-ellipsis"></i>
+            <i class="fa-solid fa-xmark"></i>
           </label>
           <div class="menu-link">
             <%= button_to group_path(current_group.group), method: :delete, class:"icon-link btn-done",  data: { turbo_confirm: 'Are you sure?' }  do%>
@@ -94,18 +95,27 @@
             <% case current_group.participation %>
             <% when "pending" %>
               <i class="fa-solid fa-question"></i>
+              <i class="fa-solid fa-xmark"></i>
             <% when "accepted" %>
               <i class="fa-regular fa-thumbs-up thumbs-up-accepted"></i>
             <% end %>
           </label>
           <div class="menu-link">
-            <%= link_to decline_group_user_path(current_group), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"icon-link btn-done"  do%>
-              <i class="fa-regular fa-thumbs-down"></i>
+          <% case current_group.participation %>
+            <% when "pending" %>
+              <%= link_to decline_group_user_path(current_group), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"icon-link btn-done"  do%>
+                <i class="fa-regular fa-thumbs-down"></i>
+              <% end %>
+              <%= link_to participate_group_user_path(current_group), data: { turbo_method: :patch}, class:"icon-link btn-done" do%>
+                <i class="fa-regular fa-thumbs-up"></i>
+              <% end %>
+                <i class="fa-solid fa-question icon-link btn-done"></i>
+            <% when "accepted" %>
+              <%= link_to decline_group_user_path(current_group), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"icon-link btn-done"  do%>
+                <i class="fa-regular fa-thumbs-down"></i>
+              <% end %>
+                <i class="fa-solid fa-question icon-link btn-done"></i>
             <% end %>
-            <%= link_to participate_group_user_path(current_group), data: { turbo_method: :patch}, class:"icon-link btn-done" do%>
-              <i class="fa-regular fa-thumbs-up"></i>
-            <% end %>
-              <i class="fa-solid fa-question icon-link btn-done"></i>
           </div>
         </div>
       <% end %>

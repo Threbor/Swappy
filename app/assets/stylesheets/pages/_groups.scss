@@ -174,14 +174,65 @@ label.icon {
 }
 
 .icon-link {
-  margin: 1rem;
+  margin: 0 1rem;
   text-align: center;
   color: $blue-pastel;
 }
 .menu:checked ~ .menu-link {
-  max-width: 204px;
+  max-width: 195px;
   transition: all ease .6s;
 }
+
+.card-product-groups .menu ~ .menu-link .fa-trash-can {
+  color: $blue-pastel-fade;
+}
+.card-product-groups .menu:checked ~ .menu-link .fa-trash-can {
+  color: $red-light;
+}
+
+.fa-question {
+  animation: scale 1s ease-in-out infinite alternate;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.card-product-groups .menu ~ .icon {
+  .fa-xmark {
+    display: none;
+  }
+  .fa-question {
+    display: flex;
+    color: $blue-pastel;
+  }
+  .fa-ellipsis {
+    display: flex;
+  }
+}
+.card-product-groups .menu:checked ~ .icon {
+  .fa-ellipsis {
+    display: none;
+  }
+  .fa-question {
+    display: none;
+  }
+  .fa-xmark {
+    display: flex;
+    background: transparent;
+    color: white;
+  }
+  .thumbs-up-accepted {
+    color: $blue-pastel;
+  }
+}
+
 
 .menu:checked ~ .menu-link-invited {
   max-width: 163px;
@@ -204,8 +255,12 @@ label.icon {
   position: relative;
 }
 
+.icon:has(.thumbs-up-accepted) {
+  background-color: $blue-pastel;
+}
+
 .thumbs-up-accepted {
-  color: green;
+  color: $blue-pastel-light;
 }
 
 
