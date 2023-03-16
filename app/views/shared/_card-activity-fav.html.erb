@@ -104,20 +104,23 @@
         <input type="checkbox" class="menu" id="menu-<%= favorite.activity.id%>" style="display:none">
         <label for="menu-<%= favorite.activity.id%>" class="icon">
           <i class="icon-link fa-solid fa-ellipsis"></i>
+            <i class="fa-solid fa-xmark"></i>
         </label>
 
         <div class="menu-link">
         <% if params[:activity].present? %>
+          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class: "icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
+            <i class="fa-solid fa-heart-crack"></i>
+          <% end %>
           <%= link_to new_group_path(activity_id: favorite.activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <%= button_to favorite_path(favorite, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
-            <i class="icon-link fa-solid fa-heart"></i><% end %>
         <% else %>
-        <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="icon-link fa-solid fa-users user-menu-deroulant"></i><% end %>
-          <%= button_to favorite_path(favorite), method: :delete, class:"icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
-            <i class="icon-link fa-solid fa-heart"></i><% end %>
+
+          <%= button_to favorite_path(favorite), method: :delete, class:"icon-link icon-favorite",  data: { turbo_confirm: 'Are you sure?' } do %>
+            <i class="fa-solid fa-heart-crack"></i>
+          <% end %>
+          <%= link_to new_group_path(activity_id: favorite.activity.id) do %><i class="fa-solid fa-users user-menu-deroulant"></i><% end %>
         <% end %>
           <i class="icon-link fa-solid fa-ellipsis"></i>
-
         </div>
       </div>
     </div>
