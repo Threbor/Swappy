@@ -43,7 +43,9 @@
 }
 
 .btn-invite{
-  width:44vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   background-color: $blue-dark;
   color: white;
   border: none;
@@ -52,6 +54,7 @@
   margin-inline:10px;
   position: sticky;
   top: 450px;
+  margin: auto;
 }
 
 .sticky-bottom{

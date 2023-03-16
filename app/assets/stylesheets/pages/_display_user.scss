@@ -16,6 +16,7 @@
   .wrapper-group-user{
     margin-top: 0px;
     margin-inline: 20px;
+    margin-bottom: 85px;
   }
 
   .button_to button {
@@ -31,10 +32,17 @@
     border: 2px solid $blue-dark;
     border-radius: 50%;
     width: 20px;
+    --webkit-appearance: none;
+    max-width: 20px;
     height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .btn-group-default {
+    background-color: transparent;
+    border: none;
+    padding: 0;
   }
 
   .btn-minus-group{

@@ -29,9 +29,11 @@
           <%= form_with(model: @group_user, url: "/group_users#create") do |f| %>
             <%= f.hidden_field :user_id, value:user.id %>
             <%= f.hidden_field :group_id, value:@group.id %>
-            <%= button_tag"",
+            <%= button_to "",
              type: 'submit',
-             class:"btn-group-action btn-plus-group" %>
+             class:"btn-group-default" do %>
+               <div class="btn-group-action btn-plus-group"></div>
+              <% end %>
           <% end %>
         </div>
       </div>
