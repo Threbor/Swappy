@@ -38,7 +38,6 @@ user5 = User.create({first_name: "Christina", last_name: "Martin", email: "chris
   file = File.open(Rails.root.join("db/seeds/images/users/femme2.jpg"))
   user5.photo.attach(io: file, filename: "femme2.jpg", content_type: "image/jpeg")
 
-
 user6 = User.create({first_name: "Sarah", last_name: "Bernard", email: "sarah.bernard@gmail.com", password: "123456"})
   file = File.open(Rails.root.join("db/seeds/images/users/femme4.jpg"))
   user6.photo.attach(io: file, filename: "femme4.jpg", content_type: "image/jpeg")
@@ -59,7 +58,7 @@ user10 = User.create({first_name: "Charlotte", last_name: "Leroy", email: "charl
   file = File.open(Rails.root.join("db/seeds/images/users/femme10.jpg"))
   user10.photo.attach(io: file, filename: "femme10.jpg", content_type: "image/jpeg")
 
-user11 = User.create({first_name: "Charlotte", last_name: "Leroy", email: "charlotte.leroy@gmail.com", password: "123456"})
+user11 = User.create({first_name: "Charles", last_name: "Ratier", email: "charles.ratier@gmail.com", password: "123456"})
   file = File.open(Rails.root.join("db/seeds/images/users/homme1.jpg"))
   user11.photo.attach(io: file, filename: "homme1.jpg", content_type: "image/jpeg")
 
@@ -141,7 +140,7 @@ restaurant3 = Activity.create!({
 
 restaurant4 = Activity.create!({
   user: user4,
-  title: "Ch’ Ti Breizh Bar Brasserie",
+  title: "Ch’ Ti Breizh",
   description: "The 100% Ch'ti brewery in the heart of Nantes Home-made northern cuisine Double-cooked Chips cooked in beef fat Cocktails and northern beers.",
   price: 16,
   duration: 120,
@@ -292,7 +291,7 @@ culture4 = Activity.create!({
 
   culture6 = Activity.create!({
     user: user6,
-    title: "The LU Tower & Le Lieu Unique",
+    title: "The LU Tower",
   description: "Part of the emblems of Nantes. A monument not to be missed. Once a cookie factory, today a cultural Mecca, with its national art scene, etc. Discover its past, as rich industrially as culturally.",
   price: 9,
   duration: 60,
@@ -493,6 +492,8 @@ cinema7 = Activity.create!({
 
   file = File.open(Rails.root.join("db/seeds/images/activities/callme.jpg"))
   cinema7.photo.attach(io: file, filename: "callme.jpg", content_type: "image/jpeg")
+
+puts "plus que la moitié à faire...patience"
 
     #   PARTY /////////////////////////
 
@@ -1138,15 +1139,6 @@ puts "> group3 messages created"
 
 puts "all messages created !"
 
-puts "creating favorits"
-
-favorite1 = Favorite.create!({
-  activity: restaurant1,
-  user: user1
-})
-print "."
-puts "all messages created !"
-
 # création de seeds Spécifiques au Pitch
 puts "Creation of the seeds for the pitch"
 
@@ -1154,6 +1146,27 @@ puts "Creation of the user Hugo:"
 user_hugo = User.create({first_name: "Hugo", last_name: "ROBERT", email: "hugo@gmail.com", password: "123456"})
   file = File.open(Rails.root.join("db/seeds/images/users/photo_hugo.jpg"))
   user_hugo.photo.attach(io: file, filename: "photo_hugo.jpg", content_type: "image/jpeg")
+  print "."
+puts "done"
+
+puts "Creation of the user Camille:"
+user_camille = User.create({first_name: "Camille", last_name: "Jaumier", email: "camille@gmail.com", password: "123456"})
+  file = File.open(Rails.root.join("db/seeds/images/users/photo_camille.jpg"))
+  user_camille.photo.attach(io: file, filename: "photo_camille.jpg", content_type: "image/jpeg")
+  print "."
+puts "done"
+
+puts "Creation of the user Helene:"
+user_helene = User.create({first_name: "Helene", last_name: "Mercerolle", email: "helene@gmail.com", password: "123456"})
+  file = File.open(Rails.root.join("db/seeds/images/users/photo_helene.jpg"))
+  user_helene.photo.attach(io: file, filename: "photo_helene.jpg", content_type: "image/jpeg")
+  print "."
+puts "done"
+
+puts "Creation of the user Kevin:"
+user_kevin = User.create({first_name: "Kevin", last_name: "Guenno", email: "kevin@gmail.com", password: "123456"})
+  file = File.open(Rails.root.join("db/seeds/images/users/photo_kevin.jpg"))
+  user_kevin.photo.attach(io: file, filename: "photo_kevin.jpg", content_type: "image/jpeg")
   print "."
 puts "done"
 
