@@ -494,9 +494,6 @@ cinema7 = Activity.create!({
   file = File.open(Rails.root.join("db/seeds/images/activities/callme.jpg"))
   cinema7.photo.attach(io: file, filename: "callme.jpg", content_type: "image/jpeg")
 
-
-
-
     #   PARTY /////////////////////////
 
 party1 = Activity.create!({

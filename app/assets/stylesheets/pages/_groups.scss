@@ -31,7 +31,7 @@
 }
 
 .groups-img {
-  height: 131px;
+  height: 137px;
   margin: 0;
   padding: 10px;
   width: 120px;
@@ -50,9 +50,8 @@
   align-items: flex-end;
   position: relative;
   font-size: 18px;
-  letter-spacing: 1px;
+  font-weight: bold;
 }
-
 
 .size-groupe {
   font-size: 15px;
@@ -91,14 +90,11 @@
 
 .infos-groups .infos-groups-2 {
   display: flex;
-
 }
 
 .infos-groups-2 {
-  margin-left: 10px;
   font-size: 12px;
 }
-
 
 .card-text-infos-groups {
   padding: 10px;
@@ -107,7 +103,9 @@
     color: $blue-dark;
   }
 }
-
+.infos-groups {
+  margin-top: 20px;
+}
 .head-groups {
   padding: 16px;
   display: flex;
@@ -117,9 +115,8 @@
 }
 
 .groups-duration {
-  font-size: 10px;
-  margin-top:20px;
   color: $blue-pastel-fade;
+  font-size: 10px;
 }
 
 .groups-address {
@@ -127,8 +124,13 @@
   color: $blue-pastel-fade;
 }
 .groups-price {
-  font-size: 12px;
-  color: $blue-dark;
+  margin-bottom: 10px;
+  font-size: 10px;
+
+  i {
+    color: $orange;
+    opacity: .8;
+  }
 }
 
 .icon {
@@ -266,5 +268,28 @@ label.icon {
 
 .fa-euro-sign {
   font-size: 13px;
-  color: $blue-pastel-fade;
+  color: $orange;
+}
+
+.card-product-groups {
+  .groups-name {
+    font-weight: 400;
+  }
+  .name-grpe {
+    font-weight: bold;
+  }
+  .card-text-infos-groups {
+    height: 137px;
+  }
+  .infos-groups {
+    margin-top: 10px;
+  }
+}
+.card-product-groups.card-favorite {
+  .card-text-infos-groups {
+    height: 113px;
+  }
+  .infos-groups {
+    margin-top: 20px;
+  }
 }
