@@ -28,10 +28,17 @@
               </div>
             </div>
             <div class="button-index d-flex justify-content-between" >
-              <%= link_to activity_path(activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %><i class="fa-solid fa-arrow-up"></i><% end %>
-              <%= button_to reject_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post, swipe_target: "refuseButton"}  do %><i class="fa-solid fa-xmark cross-index"></i><% end %>
-              <%= button_to favorites_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post, swipe_target: "acceptButton"} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
-              <%= link_to new_group_path(activity_id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="fa-solid fa-users"></i><% end %>
+              <% if params[:activity] %>
+                <%= link_to activity_path(activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %><i class="fa-solid fa-arrow-up"></i><% end %>
+                <%= button_to reject_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post, swipe_target: "refuseButton"}  do %><i class="fa-solid fa-xmark cross-index"></i><% end %>
+                <%= button_to favorites_path(id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :post, swipe_target: "acceptButton"} do %><i class="heart-index fa-solid fa-heart"></i><% end %>
+                <%= link_to new_group_path(activity_id: activity.id, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}) do %><i class="fa-solid fa-users"></i><% end %>
+              <% else %>
+                <%= link_to favorites_path do %><i class="fa-solid fa-arrow-up"></i><% end %>
+                <i class="fa-solid fa-xmark cross-index"></i>
+                <i class="heart-index fa-solid fa-heart"></i>
+                <i class="fa-solid fa-users"></i>
+              <% end %>
             </div>
         </div>
       </div>
