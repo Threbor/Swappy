@@ -1432,6 +1432,20 @@ puts "Creation of his profile page (activity already done):"
 
     print "."
 
+    demo_group_user71 = GroupUser.new
+    demo_group_user71.group = demo_group_done_1
+    demo_group_user71.user = user1
+    demo_group_user71.save!
+
+    print "."
+
+    demo_group_user72 = GroupUser.new
+    demo_group_user72.group = demo_group_done_1
+    demo_group_user72.user = user2
+    demo_group_user72.save!
+
+    print "."
+
   demo_group_done_2 = Group.new
   demo_group_done_2.activity = restaurant1
   demo_group_done_2.name = "Bon appétit!"
@@ -1446,6 +1460,13 @@ puts "Creation of his profile page (activity already done):"
     demo_group_user8.group = demo_group_done_2
     demo_group_user8.user = user_hugo
     demo_group_user8.save!
+
+    print "."
+
+    demo_group_user81 = GroupUser.new
+    demo_group_user81.group = demo_group_done_2
+    demo_group_user81.user = user1
+    demo_group_user81.save!
 
     print "."
 
@@ -1466,6 +1487,34 @@ puts "Creation of his profile page (activity already done):"
 
     print "."
 
+    demo_group_user91 = GroupUser.new
+    demo_group_user91.group = demo_group_done_3
+    demo_group_user91.user = user1
+    demo_group_user91.save!
+
+    print "."
+
+    demo_group_user92 = GroupUser.new
+    demo_group_user92.group = demo_group_done_3
+    demo_group_user92.user = user2
+    demo_group_user92.save!
+
+    print "."
+
+    demo_group_user93 = GroupUser.new
+    demo_group_user93.group = demo_group_done_3
+    demo_group_user93.user = user3
+    demo_group_user93.save!
+
+    print "."
+
+    demo_group_user94 = GroupUser.new
+    demo_group_user94.group = demo_group_done_3
+    demo_group_user94.user = user4
+    demo_group_user94.save!
+
+    print "."
+
   demo_group_done_4 = Group.new
   demo_group_done_4.activity = sport1
   demo_group_done_4.name = "Balade"
@@ -1480,6 +1529,20 @@ puts "Creation of his profile page (activity already done):"
     demo_group_user10.group = demo_group_done_4
     demo_group_user10.user = user_hugo
     demo_group_user10.save!
+
+    print "."
+
+    demo_group_user101 = GroupUser.new
+    demo_group_user101.group = demo_group_done_4
+    demo_group_user101.user = user1
+    demo_group_user101.save!
+
+    print "."
+
+    demo_group_user102 = GroupUser.new
+    demo_group_user102.group = demo_group_done_4
+    demo_group_user102.user = user2
+    demo_group_user102.save!
 
     print "."
 

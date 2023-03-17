@@ -43,7 +43,8 @@ class GroupsController < ApplicationController
     @user_groups = @group.group_users
     @participants = @user_groups.map {|user_group| user_group.user}
     @group_user = GroupUser.new
-    @users = User.all - @participants - [current_user]
+    @sorted_user = User.all.order("updated_at DESC")
+    @users = @sorted_user - @participants - [current_user]
   end
 
   def update
