@@ -9,7 +9,7 @@
           <%= group.name %>
         </div>
         <div class="groups-name size-groupe">
-          <%= if group.activity.title.size > 20 then "#{group.activity.title[0..20]...}" else group.activity.title end %>
+          <%= if group.activity.title.size > 17 then "#{group.activity.title.slice(0..17)...}" else group.activity.title end %>
         </div>
     </div>
     <div class="infos-groups d-flex align-items-end justify-content-between">

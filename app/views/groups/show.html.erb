@@ -1,8 +1,8 @@
 <div class="chatroom">
   <div class="img-chatroom" style="background-image: linear-gradient(180.04deg, rgba(255, 255, 255, 0) 38.55%, rgba(0, 0, 0, 0.6) 66.66%, rgba(0, 0, 0, 0.75) 91.64%), url(<%= cl_image_path @group.activity.photo.key %>);">
     <div class="chatroom-infos">
-    <h3><%= if @group.activity.title.size > 20
-    then "#{@group.activity.title[0..20]...}"
+    <h3><%= if @group.activity.title.size > 25
+    then "#{@group.activity.title.slice(0..25)...}"
     else @group.activity.title
     end %></h3>
       <div class="card-group-activity-icon">
@@ -29,8 +29,8 @@
 
   <div class="group-infos">
     <div class="d-flex align-items-center">
-      <h1><%= if @group.name.size > 15
-        then "#{@group.name[0..15]...}"
+      <h1><%= if @group.name.size > 13
+        then "#{@group.name.slice(0..13)...}"
         else @group.name
         end %></h1>
       <%= link_to edit_group_path(@group) do %>
