@@ -11,7 +11,7 @@
       <%= link_to activity_path(favorite.activity, activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]} ) do %>
         <div class="right-element-groups">
           <div class="groups-name">
-            <%= if favorite.activity.title.size > 17 then "#{favorite.activity.title.slice(0..17)...}" else favorite.activity.title end %>
+            <%= if favorite.activity.title.size > 15 then "#{favorite.activity.title[0..15]...}" else favorite.activity.title end %>
             <div class="category-activity">
               <% if favorite.activity.category == "Restaurant" %>
                 <i class="fas fa-utensils"></i>
