@@ -18,47 +18,47 @@ User.destroy_all
 puts "DB cleaned"
 puts "Creating users ..."
 
-user1 = User.create({first_name: "Laeticia", last_name: "Guerin", email: "laeticia.guerin@gmail.com", password: "123456"})
+user1 = User.create({first_name: "Laeticia", last_name: "Guerin", email: "laeticia.guerin@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme5.jpg"))
   user1.photo.attach(io: file, filename: "femme5.jpg", content_type: "image/jpeg")
 
-user2 = User.create({first_name: "Stéphanie", last_name: "Dupont", email: "stéphanie.dupont@gmail.com", password: "123456"})
+user2 = User.create({first_name: "Stéphanie", last_name: "Dupont", email: "stéphanie.dupont@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme6.jpg"))
   user2.photo.attach(io: file, filename: "femme6.jpg", content_type: "image/jpeg")
 
-user3 = User.create({first_name: "Marie", last_name: "Laval", email: "marie.laval@gmail.com", password: "123456"})
+user3 = User.create({first_name: "Marie", last_name: "Laval", email: "marie.laval@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme3.jpeg"))
   user3.photo.attach(io: file, filename: "femme3.jpg", content_type: "image/jpeg")
 
-user4 = User.create({first_name: "Laura", last_name: "Legrand", email: "laura.legrand@gmail.com", password: "123456"})
+user4 = User.create({first_name: "Laura", last_name: "Legrand", email: "laura.legrand@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme1.jpg"))
   user4.photo.attach(io: file, filename: "femme1.jpg", content_type: "image/jpeg")
 
-user5 = User.create({first_name: "Christina", last_name: "Martin", email: "christina.martin@gmail.com", password: "123456"})
+user5 = User.create({first_name: "Christina", last_name: "Martin", email: "christina.martin@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme2.jpg"))
   user5.photo.attach(io: file, filename: "femme2.jpg", content_type: "image/jpeg")
 
-user6 = User.create({first_name: "Sarah", last_name: "Bernard", email: "sarah.bernard@gmail.com", password: "123456"})
+user6 = User.create({first_name: "Sarah", last_name: "Bernard", email: "sarah.bernard@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme4.jpg"))
   user6.photo.attach(io: file, filename: "femme4.jpg", content_type: "image/jpeg")
 
-user7 = User.create({first_name: "Amélie", last_name: "Dubois", email: "amélie.dubois@gmail.com", password: "123456"})
+user7 = User.create({first_name: "Amélie", last_name: "Dubois", email: "amélie.dubois@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme7.jpg"))
   user7.photo.attach(io: file, filename: "femme7.jpg", content_type: "image/jpeg")
 
-user8 = User.create({first_name: "Georgia", last_name: "Petit", email: "georgina.petit@gmail.com", password: "123456"})
+user8 = User.create({first_name: "Georgia", last_name: "Petit", email: "georgina.petit@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme8.jpg"))
   user8.photo.attach(io: file, filename: "femme8.jpg", content_type: "image/jpeg")
 
-user9 = User.create({first_name: "Marion", last_name: "Durand", email: "marion.durand@gmail.com", password: "123456"})
+user9 = User.create({first_name: "Marion", last_name: "Durand", email: "marion.durand@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme9.jpg"))
   user9.photo.attach(io: file, filename: "femme9.jpg", content_type: "image/jpeg")
 
-user10 = User.create({first_name: "Charlotte", last_name: "Leroy", email: "charlotte.leroy@gmail.com", password: "123456"})
+user10 = User.create({first_name: "Charlotte", last_name: "Leroy", email: "charlotte.leroy@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/femme10.jpg"))
   user10.photo.attach(io: file, filename: "femme10.jpg", content_type: "image/jpeg")
 
-user11 = User.create({first_name: "Charles", last_name: "Ratier", email: "charles.ratier@gmail.com", password: "123456"})
+user11 = User.create({first_name: "Charles", last_name: "Ratier", email: "charles.ratier@gmail.com", password: "123456" })
   file = File.open(Rails.root.join("db/seeds/images/users/homme1.jpg"))
   user11.photo.attach(io: file, filename: "homme1.jpg", content_type: "image/jpeg")
 
