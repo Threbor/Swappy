@@ -1,9 +1,18 @@
 .session-wrapper {
   margin: 20px;
+  margin-top: 83px;
 }
 
-.log-in-btn {
-  border: 1px solid lightgray;
+.sign-btn {
   border-radius: 4px;
-  
+  background-color: $blue;
+  width: 100%;
+}
+
+.devise-shared-links {
+  margin-top: 20px;
+}
+
+#submit-color {
+  color: white;
 }
