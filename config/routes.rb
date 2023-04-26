@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "localisation", to: "pages#localisation"
   resources :favorites, only: %i[index update create destroy]
   post "reject", to: "rejects#create"
-  resources :activities, only: %i[index show]
+  resources :activities, only: %i[index show ]
+  delete "show_activities_rejected", to: "activities#show_activities_rejected"
   resources :groups, only: %i[index show new create edit update destroy] do
     member do
       post :done
