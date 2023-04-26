@@ -17,4 +17,12 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   # validates :photo, presence: true
+  before_validation :set_default_avatar
+
+  def set_default_avatar
+    return unless photo.filename.nil?
+
+    file = File.open(Rails.root.join("app/assets/images/default_user_img.jpg"))
+    photo.attach(io: file, filename: "default_user_img.jpg", content_type: "image/jpeg")
+  end
 end
