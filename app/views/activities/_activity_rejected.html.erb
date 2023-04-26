@@ -1,0 +1,8 @@
+
+<div class="home-page-text">
+    <div class="welcome-homepage">hey!</div>
+
+<p>You have viewed all available activities based on your criteria.</p>
+<p>Would you like to review the activities you previously dismissed?</p>
+  <%= link_to 'Review the activities!', show_activities_rejected_path(activity: {city: params[:activity][:city], km: params[:activity][:km], category: params[:activity][:category]}), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"homepage-button"  %>
+</div>
